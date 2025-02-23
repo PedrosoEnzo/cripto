@@ -2,23 +2,60 @@ body{
     background-color: black;
 }
 
+
+
 .texto-inicial1{
-    font-size: 30px;
+    font-size: 33px;
     color: aliceblue;
 }
 
 .texto-inicial2{
     color: aliceblue;
-    font-size: 20px;
+    font-size: 22px;
     padding-top: 8px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.all-texto-inicial{
-   text-align: center;
-   margin-top: 300px;
-margin-right: 600px;
-
+.imagem-fundo-inicial {
+    background: linear-gradient(rgba(0, 0, 0, 5), rgba(0, 0, 0, 0.6)), url("../assets/imagem-fundo-teste.jpg");
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca a imagem no fundo */
 }
 
 
+.all-texto-inicial{
+    text-align: center;
+    margin-top: 300px;
+ margin-right: 600px;
+ 
+}
+
+.logo {
+    background: url("../assets/logo.png");
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 70%;
+
+   
+}
+
+.imgMoeda {
+    background: url("../assets/img-moeda.png");
+    width: 400px;
+    height:400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;  /* Define a posição absoluta */
+    top: 50%;  /* Centraliza verticalmente */
+    right: 10px;  /* Ajusta a posição para a direita */
+    transform: translateY(-50%); /* Ajusta o centro exato */
+}
