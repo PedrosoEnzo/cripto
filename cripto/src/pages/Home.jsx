@@ -8,7 +8,7 @@ function Home() {
     
     <div className="all-texto-inicial">
       <div className="texto-inicial1">  
-        <h1>O futuro dos<br /> pagamentos é agora!</h1>
+        <h1>O futuro dos<br /> investimentos é agora!</h1>
       </div>
       <div className="texto-inicial2">Simples, seguro e 100% cripto!</div>
 
