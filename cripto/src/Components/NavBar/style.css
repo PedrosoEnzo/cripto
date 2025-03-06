@@ -1,5 +1,15 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+header {
+    background-color: #333;
+}
 .logo {
-    background: url("../NavBar/logo.png");
+    background: url("../NavBar/image.png");
     width: 120px;
     height: 120px;
     background-size: contain;
@@ -11,6 +21,9 @@
 
 .navbar{
 color: aliceblue;
-display: block;
+display: flex;
+justify-content: end;
+gap: 15px;
+padding: 26px;
 }
     
