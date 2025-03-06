@@ -1,8 +1,8 @@
 import React from "react";
-import "./Home.css"; // Importação do CSS
-import imagemFundoTeste from "../assets/imagem-fundo-teste.jpg"; // Caminho correto
-import imagemMoeda from "../assets/img-moeda.png";
-import Navbar from "../Components/NavBar";
+import "./Home.css"
+import Navbar from "../Components/NavBar/NavBar";
+import imagemMoeda from "../assets/imagemMoeda.png"
+
 
 function Home() {
   return (
@@ -15,7 +15,9 @@ function Home() {
         
         <div className="imagem-fundo-inicial">
          
-          <div className="imgMoeda"></div>
+          <div className="imgMoeda">
+            <img src={imagemMoeda} alt="Imagem de uma moeda de biticoin rosa" />
+          </div>
         </div>
       </div>
     </>
