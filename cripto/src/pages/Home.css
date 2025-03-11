@@ -1,33 +1,26 @@
-body{
+body {
     background-color: black;
 }
 
-.texto-inicial1{
+.texto-inicial1 {
     font-size: 29px;
     color: aliceblue;
-}
-
-
-
-.all-texto-inicial{
     text-align: center;
-    margin-top: 360px;
- margin-right: 550px;
- 
 }
 
+.all-texto-inicial {
+    text-align: center;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-   
-
-
-.imgMoeda {
-    background: url("../assets/img-moeda.png");
-    width: 400px;
-    height:400px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;  /* Define a posição absoluta */
-    top: 50%;  /* Centraliza verticalmente */
-    right: 10px;  /* Ajusta a posição para a direita */
-    transform: translateY(-50%); /* Ajusta o centro exato */
+.imgMoeda img {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+    position: absolute;
+    top: 20%;
+    right: 20px; 
 }
