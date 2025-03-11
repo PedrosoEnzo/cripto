@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Navbar from "../Components/NavBar/NavBar";
 import imagemMoeda from "../assets/imagemMoeda.png";
 
 function Home() {
