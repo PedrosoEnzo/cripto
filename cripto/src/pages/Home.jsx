@@ -6,7 +6,6 @@ import imagemMoeda from "../assets/imagemMoeda.png";
 function Home() {
   return (
     <>
-      <Navbar />
       <div className="all-texto-inicial">
         <div className="texto-inicial1">
           <h1>Simule, aprenda e invista<br /> no seu futuro!</h1>
