@@ -9,7 +9,6 @@ function AppRoutes() {
     return (
         <BrowserRouter> {/* Use apenas BrowserRouter */}
             <Navbar />
-
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} /> {/* Corrigido */}
@@ -19,4 +18,4 @@ function AppRoutes() {
     );
 }
 
-export default AppRoutes;
+export default AppRoutes
