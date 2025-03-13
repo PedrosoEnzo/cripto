@@ -10,17 +10,18 @@ body {
 
 .all-texto-inicial {
     text-align: center;
-    margin-top: 200px;
+    margin: 270px 590px 0 10px;
+    font-size: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .imgMoeda img {
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     object-fit: contain;
     position: absolute;
-    top: 20%;
+    top: 6%;
     right: 20px; 
 }

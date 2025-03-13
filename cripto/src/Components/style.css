@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #000000, #272042 );
+    background: linear-gradient(to bottom, #000000, #272042, #000000 );
     height: 100vh;
 }
 
@@ -31,14 +31,14 @@ gap: 15px;
 padding: 26px;
 }
 
-.link {
+.Link {
     margin-top: 10px;
     text-decoration: none;
     color: aliceblue;
     font-size: 26px;
 }
 
-.link:hover {
+.Link:hover {
     color: #482252;
     cursor: pointer;
     transition: all 0.5s;
@@ -50,6 +50,11 @@ padding: 26px;
     border-radius: 11px;
     color: aliceblue;
     background: linear-gradient(to left, #b12092, #3f025b);
+}
+
+.buttonGradient:hover {
+    transition: all 0.5s;
+
 }
 
 .imgMoeda {
