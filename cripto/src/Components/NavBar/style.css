@@ -31,10 +31,25 @@ gap: 15px;
 padding: 26px;
 }
 
-.navbar:hover {
-    cursor: pointer;
+.link {
+    margin-top: 10px;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 26px;
+}
+
+.link:hover {
     color: #482252;
-    transition: 0.5s;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.buttonGradient {
+    font-size: 26px;
+    padding: 10px;
+    border-radius: 11px;
+    color: aliceblue;
+    background: linear-gradient(to left, #b12092, #3f025b);
 }
 
 .imgMoeda {

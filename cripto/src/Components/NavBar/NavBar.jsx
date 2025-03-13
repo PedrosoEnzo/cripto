@@ -9,11 +9,13 @@ const Navbar = () => {
       <img src="" alt="" />
       <div className="navbar">
        
-        <h2>Entrar</h2>
-        <Link to="/login">
+        <Link to="/login" className="link">
           Pagina de login 
         </Link>
-        <h2>Cadastre-se</h2>
+        <Link to="About" />
+        <button className="buttonGradient">Cadastre-se
+        <Link to="/Cadastro" />
+        </button>
       </div>
     </header>
     </>
