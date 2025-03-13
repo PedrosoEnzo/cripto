@@ -57,6 +57,11 @@ padding: 26px;
 
 }
 
+.navbar .imgLogo {
+    display: flex;
+    margin-right: 1200px;
+}
+
 .imgMoeda {
     margin-right: 100px;
 }
