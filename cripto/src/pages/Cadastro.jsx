@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Home.css"
 
-export default function Cadastro() {
+function Cadastro() {
   return (
-    <div>
-      <h1>Cadastro</h1>
+    <div className="pagina-cadastro">
+      <h1>Bem vindo(a) a chainX</h1>
+      <p>Insira um e-mail que você costuma utilizar sempre. Será nele que os dados de acesso à sua conta chainX serão encaminhadas.</p>
+
     </div>
-  );
-}
+  )
+
+
+};
