@@ -5,6 +5,7 @@ import Navbar from "./Components/NavBar";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 //  <Route path="/Cadastro" element={<About />} />
+// 
 
 function AppRoutes() {
     return (

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 import imagemMoeda from "../assets/imagemMoeda.png";
+import "../Components/Footer"
+
 
 
 function Home() {
