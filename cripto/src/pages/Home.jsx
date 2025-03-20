@@ -2,10 +2,13 @@ import React from "react";
 import Footer from "../Components/Footer";
 import imagemMoeda from "../assets/imagemMoeda.png";
 import "./Home.css";
+import Cadastro from "./Cadastro";
+import Navbar from "../Components/NavBar";
 
 function Home() {
   return (
     <>
+    <Navbar />
       <div className="texto-inicial1">
         <div className="all-texto-inicial">
           <h1>
@@ -25,7 +28,7 @@ function Home() {
         </h3>
       </div>
       </div>
-      
+      <Cadastro />
       <Footer />
     </>
   );

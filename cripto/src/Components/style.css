@@ -12,6 +12,9 @@ body {
 header {
   background-color: transparent;
 }
+header img {
+  
+}
 
 .logo {
   display: flex;
@@ -23,8 +26,7 @@ header {
 .navbar {
   color: aliceblue;
   display: flex;
-  justify-content: end;
-  margin: 0px;
+  margin: 0px  120px;
   gap: 10px;
   padding: 20px;
 }

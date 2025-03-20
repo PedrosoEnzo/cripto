@@ -10,7 +10,6 @@ import Cadastro from "./pages/Cadastro";
 function AppRoutes() {
     return (
         <BrowserRouter> {/* Use apenas BrowserRouter */}
-            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} /> {/* Corrigido */}
