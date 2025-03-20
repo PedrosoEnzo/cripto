@@ -17,7 +17,7 @@ const Navbar = () => {
           Login 
         </Link>
         <Link to="About" className="Link">
-          About
+          Sobre
         </Link>
         <button className="buttonGradient">Cadastre-se
         <Link to="/Cadastro"/>

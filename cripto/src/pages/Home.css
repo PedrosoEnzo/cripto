@@ -17,11 +17,92 @@ body {
     align-items: center;
 }
 
+.all-texto-inicial h2 {
+    font-size: 35px;
+}
+
 .imgMoeda img {
     width: 800px;
     height: 800px;
     object-fit: contain;
     position: absolute;
     top: 6%;
-    right: 20px; 
+    right: 20px;
+}
+
+.frase1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 400px;
+
+}
+
+.frase1 {
+    width: 720px;
+    height: 110px;
+}
+
+.frase1 h1,
+.fraseAutor h1 {
+    color: aliceblue;
+}
+
+.frase1 {
+    font-size: 15px;
+}
+
+.fraseAutor {
+    font-size: 10px;
+}
+
+.frase2-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.frase2 h1 {
+    color: aliceblue;
+    font-size: 45px;
+    margin: 50px;
+}
+
+.frase2-gradiente {
+    background: linear-gradient(to right, #791475, #a1499e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container-card {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.card{
+    width: 350px;
+    padding: 20px;
+    border: 2px solid #791475;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 0 15px rgba(128, 20, 164, 0.5);
+}
+
+.icon {
+    font-size: 50px;
+    color: #791475;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 25px;
+    font-weight: bold;
+    color: aliceblue;
 }
