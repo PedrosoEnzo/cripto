@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./Components/NavBar";
 import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro";
+import Cadastro from "./pages/cadastro";
 //  <Route path="/Cadastro" element={<About />} />
 // 
 

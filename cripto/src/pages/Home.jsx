@@ -1,15 +1,17 @@
 import React from "react";
 import Footer from "../Components/Footer";
 import imagemMoeda from "../assets/imagemMoeda.png";
-import "./Home.css";
-import Cadastro from "./Cadastro";
+import Cadastro from "./cadastro";
 import Navbar from "../Components/NavBar";
+import "./Home.css";
+
 
 function Home() {
   return (
     <>
-    <Navbar />
-      <div className="texto-inicial1">
+
+      <Navbar />
+      <div className="container">
         <div className="all-texto-inicial">
           <h1>
             Simule, aprenda e invista
@@ -20,13 +22,13 @@ function Home() {
           <img src={imagemMoeda} alt="Imagem de uma moeda de Bitcoin rosa" />
         </div>
         <div className="frase">
-        <h3>
-          " O verdadeiro investidor não é aquele <br /> que tenta prever o
-          futuro, mas aquele
-          <br /> que se prepara para ele. " <br/><br/>
-          - Benjamin Graham -
-        </h3>
-      </div>
+          <h3>
+            " O verdadeiro investidor não é aquele <br /> que tenta prever o
+            futuro, mas aquele
+            <br /> que se prepara para ele. " <br/><br/>
+            - Benjamin Graham -
+          </h3>
+        </div>
       </div>
       <Cadastro />
       <Footer />
