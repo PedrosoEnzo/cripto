@@ -1,4 +1,4 @@
-* { 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,13 +6,13 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #000000, #272042, #000000 );
+    background: linear-gradient(to bottom, #000000, #272042, #000000);
     height: 100vh;
 }
 
 header {
     background-color: transparent;
-   
+
 }
 
 .logo {
@@ -22,13 +22,13 @@ header {
     width: 20px;
 }
 
-.navbar{
-color: aliceblue;
-display: flex;
-justify-content: end;
-margin: 0px;
-gap: 15px;
-padding: 26px;
+.navbar {
+    color: aliceblue;
+    display: flex;
+    justify-content: end;
+    margin: 0px;
+    gap: 15px;
+    padding: 26px;
 }
 
 .Link {
