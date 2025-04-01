@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './cadastro.css'
 
 const Cadastro = () => {
   const [nome, setNome] = useState('');
@@ -26,12 +27,11 @@ const Cadastro = () => {
   };
 
   return (
-    <div>
-      <h2>Cadastro</h2>
+    <div className='tudo'>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nome:</label>
+        <div className='inputs'>
           <input
+            placeholder='Nome:'
             type="text"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
@@ -39,8 +39,8 @@ const Cadastro = () => {
           />
         </div>
         <div>
-          <label>Email:</label>
           <input
+            placeholder='Email:'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -48,8 +48,8 @@ const Cadastro = () => {
           />
         </div>
         <div>
-          <label>Senha:</label>
           <input
+            placeholder='Senha:'
             type="password"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
@@ -57,11 +57,11 @@ const Cadastro = () => {
           />
         </div>
         <div>
-          <label>Data de Nascimento:</label>
           <input
-            type="date"
-            value={datadenascimento}
-            onChange={(e) => setDatadenascimento(e.target.value)}
+            placeholder='Confirmar Seha:'
+            type="password"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
             required
           />
         </div>
