@@ -27,8 +27,9 @@ const Login = () => {
    
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email:</label>
+          
           <input
+          placeholder='Email'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -36,8 +37,9 @@ const Login = () => {
           />
         </div>
         <div>
-          <label>Senha:</label>
+         
           <input
+          placeholder='Senha'
             type="password"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
