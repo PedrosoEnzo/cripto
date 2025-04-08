@@ -1,10 +1,11 @@
 import './Home.css'
 import React from 'react';
+import logo from './logo.png';
 
 function Home() {
   return (
     <div>
-      <h1>Teste</h1>
+      <h1>teste</h1>
     </div>
   );
 }
