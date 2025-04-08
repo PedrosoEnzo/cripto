@@ -29,7 +29,6 @@ const Cadastro = () => {
 
   return (
     <div className="tudo">
-      <Header />
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="inputs">
