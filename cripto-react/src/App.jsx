@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login'; // Importando a página de login
 import Cadastro from './pages/Cadastro'; // Importando a página de cadastro
 
+
 function App() {
   return (
     <div>

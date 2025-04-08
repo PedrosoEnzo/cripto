@@ -8,11 +8,14 @@
 
 /* Centraliza tudo na tela */
 .tudo {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #ffffff; /* Fundo branco */
+}
+
+.tudo h1 {
 }
 
 /* Estilização do formulário */
@@ -44,6 +47,10 @@ input:focus {
     background: #ffffff;
 }
 
+.box {
+    margin-left: 50px;
+}
+
 /* Botão */
 button {
     width: 100%;
@@ -54,20 +61,39 @@ button {
     color: white;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
 /* Efeito ao passar o mouse no botão */
 button:hover {
-    background: linear-gradient(90deg, #732d91, #8e44ad);
+    cursor: pointer;
     transform: scale(1.05);
+    background: linear-gradient(to left, #b12092, #3f025b);
 }
 
 /* Mensagem de erro ou sucesso */
 p {
     text-align: center;
-    color: red;
+    color: black;
     font-size: 14px;
-    margin-top: 10px;
+    margin-left: 75px;
+    margin-bottom: 5px;
+}
+
+/* 🔥 Responsividade para telas menores 🔥 */
+@media (max-width: 600px) {
+    form {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
 }
