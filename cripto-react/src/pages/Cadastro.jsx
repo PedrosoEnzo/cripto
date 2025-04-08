@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
-import Header from "../components/header-cad";
+import Header from "../components/Navbar";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
