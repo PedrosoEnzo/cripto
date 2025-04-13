@@ -75,12 +75,26 @@ const Cadastro = () => {
           </div>
           <div>
             <input
+              
               placeholder="Confirmar Senha:"
-              type="password"
+              type={showPassword ? "text" : "password"} 
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
             />
+             <img className="olhos"
+              src={olhos}
+              alt="Mostrar senha"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                width: "20px",
+              }}
+              />
           </div>
           <p>
             Já possui uma conta? <a href="/login">Entrar</a>
