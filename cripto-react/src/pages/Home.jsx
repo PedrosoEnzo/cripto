@@ -3,12 +3,13 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>
-      
-      <Header />
-      <h1>Teste</h1>
-    </div>
-    //<Navbar />
+    <>
+      <div>
+        <Header />
+        <h1>Teste</h1>
+      </div>
+      <Navbar />
+    </>
   );
 }
 

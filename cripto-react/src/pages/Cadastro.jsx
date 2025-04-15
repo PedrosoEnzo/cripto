@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
 import olhos from "../assets/eyes.png";
-import Header from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -77,24 +77,10 @@ const Cadastro = () => {
             <input
               
               placeholder="Confirmar Senha:"
-              type={showPassword ? "text" : "password"} 
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
             />
-             <img className="olhos"
-              src={olhos}
-              alt="Mostrar senha"
-              onClick={() => setShowPassword(!showPassword)}
-              style={{
-                position: "absolute",
-                right: "10px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                cursor: "pointer",
-                width: "20px",
-              }}
-              />
           </div>
           <p>
             Já possui uma conta? <a href="/login">Entrar</a>
