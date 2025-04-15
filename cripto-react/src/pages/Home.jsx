@@ -1,16 +1,19 @@
-import './Home.css'
 import React from 'react';
+import './Home.css';
+import moeda from '../assets/moeda.png';
 
-function Home() {
+export default function Home() {
   return (
-    <>
-      <div>
-        <Header />
-        <h1>Teste</h1>
+    <div className="home">
+      <div className="home-conteiner">
+        <div className="text1">
+      <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
+      <p>!!!!!</p>
+        </div>
+        <div className="imgMoeda">
+          <img src={moeda} alt="Moeda de bitcoin" />
+        </div>
       </div>
-      <Navbar />
-    </>
+    </div>
   );
 }
-
-export default Home;
