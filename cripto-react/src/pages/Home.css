@@ -1,13 +1,14 @@
-<<<<<<< HEAD
+
 body {
     background: linear-gradient(to bottom, #000, #3f025b);
     color: white;
-=======
+}
+
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
->>>>>>> ddda0b878cc6859faa92db367587e89f4eaf374a
+
 }
 
 .home {
