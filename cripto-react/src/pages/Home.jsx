@@ -4,11 +4,9 @@ import React from 'react';
 function Home() {
   return (
     <div>
-      
-      <Header />
-      <h1>Teste</h1>
+      <h1>teste
+      </h1>
     </div>
-    //<Navbar />
   );
 }
 

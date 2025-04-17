@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
 import olhos from "../assets/eyes.png";
-import Header from "../components/Navbar";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
