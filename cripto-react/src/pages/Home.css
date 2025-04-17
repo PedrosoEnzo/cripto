@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+body {
+    background: linear-gradient(to bottom, #000, #3f025b);
+    color: white;
+=======
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+>>>>>>> ddda0b878cc6859faa92db367587e89f4eaf374a
+}
+
 .home {
     background: linear-gradient(180deg, #0e061f, #140a2d);
     min-height: 100vh;
