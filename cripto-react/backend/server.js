@@ -19,7 +19,7 @@ const db = mysql.createConnection({
 
 // Rota de Cadastro
 app.post('/cadastro', (req, res) => {
-  const { nome, email, senha, datadenascimento } = req.body;
+  const { nome, email, senha } = req.body; // Removido datadenascimento
 
   // Verificar se o email já existe
   db.query('SELECT * FROM usuarios WHERE email = ?', [email], (err, results) => {
@@ -38,8 +38,8 @@ app.post('/cadastro', (req, res) => {
 
       // Inserir novo usuário no banco de dados
       db.query(
-        'INSERT INTO usuarios (nome, email, senha, datadenascimento) VALUES (?, ?, ?, ?)',
-        [nome, email, hashedPassword, datadenascimento],
+        'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)', // Removido datadenascimento
+        [nome, email, hashedPassword],
         (err, results) => {
           if (err) {
             return res.status(500).json({ message: 'Erro ao cadastrar o usuário', error: err });

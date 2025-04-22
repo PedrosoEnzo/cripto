@@ -7,6 +7,7 @@ function Home() {
     <div>
       <h1>teste</h1>
     </div>
+    //<Navbar />
   );
 }
 
