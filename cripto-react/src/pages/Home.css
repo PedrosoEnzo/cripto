@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 /* Reset básico */
-=======
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +10,11 @@ body {
   background: linear-gradient(to bottom, #000000, #272042, #000000);
   color: white;
   text-align: center;
-<<<<<<< HEAD
   font-size: 16px;
-=======
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 }
 
 .container {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -45,20 +38,6 @@ nav {
   align-items: center;
 }
 
-=======
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-/*
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-}
-
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 nav a {
   margin: 0 15px;
   color: white;
@@ -68,24 +47,15 @@ nav a {
 
 .nav {
   margin-top: 16px;
-<<<<<<< HEAD
-  font-size: 26px;
-  color: aliceblue;
-=======
   text-decoration: none;
   color: aliceblue;
   font-size: 26px;
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 }
 
 .nav:hover {
   color: #482252;
   cursor: pointer;
-<<<<<<< HEAD
-  transition: color 0.5s;
-=======
   transition: all 0.5s;
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 }
 
 .cadastro {
@@ -96,23 +66,14 @@ nav a {
   color: aliceblue;
   text-decoration: none;
   background: linear-gradient(to left, #b12092, #3f025b);
-<<<<<<< HEAD
   transition: opacity 0.5s;
-}
-
-.cadastro:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-=======
 }
 
 .cadastro:hover {
   opacity: 70%;
   transition: all 0.5s;
   cursor: pointer;
-}*/
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
+}
 
 .content {
   max-width: 800px;
@@ -121,10 +82,7 @@ nav a {
 
 .content h1 {
   font-size: 70px;
-<<<<<<< HEAD
   line-height: 1.2;
-=======
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 }
 
 .content p {
@@ -149,10 +107,7 @@ nav a {
 .frase h2 {
   text-align: center;
   font-size: 50px;
-<<<<<<< HEAD
   line-height: 1.2;
-=======
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 }
 
 .frase p {
@@ -205,28 +160,14 @@ nav a {
   align-items: center;
 }
 
-<<<<<<< HEAD
 /* Página About */
-=======
-
-/*Página About
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 .texto-about,
 .h1,
 .p {
   font-size: 26px;
-<<<<<<< HEAD
   color: rgb(255, 255, 255);
 }
 
-=======
-  width: 100px;
-  height: 150px;
-  color: rgb(255, 255, 255);
-}
-  */
-/*
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 footer {
   background: #272042;
   padding: 15px;
@@ -245,21 +186,16 @@ footer {
   text-decoration: none;
   color: #b3b3b3;
   font-size: 16px;
-  transition: 0.3s; 
+  transition: 0.3s;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
-<<<<<<< HEAD
 
 .footerLink a:hover {
   background: linear-gradient(to left, #dd28b6, #9b02e1);
-=======
-.footerLink a:hover {
-  background: linear-gradient(to left, #dd28b6, #9b02e1);
   -webkit-background-clip: text;
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
   -webkit-text-fill-color: transparent;
 }
 
@@ -272,13 +208,9 @@ footer {
 .redesSociais img {
   width: 30px;
   height: 30px;
-<<<<<<< HEAD
- 
-=======
-  display: block; 
+  display: block;
   margin-right: 10px;
   transform: scale(1);
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -287,15 +219,10 @@ footer {
   filter: brightness(1.5);
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
 .copy {
   text-align: center;
   margin-top: 30px;
 }
-<<<<<<< HEAD
 
 @media (max-width: 1024px) {
   .content h1 {
@@ -445,7 +372,3 @@ footer {
     font-size: 14px;
   }
 }
-
-=======
-*/
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4

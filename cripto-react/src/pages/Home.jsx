@@ -9,9 +9,7 @@ import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import twitter from '../assets/twitter.png';
 
-
 export default function Home() {
-<<<<<<< HEAD
   return (
     <>
       <header>
@@ -77,50 +75,5 @@ export default function Home() {
         </div>
       </footer>
     </>
-=======
-  return ( <>
-     <div class="container">
-    <div>
-      <div class="content">
-        <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
-        <p>Se prepare para o futuro agora!</p>
-      </div>
-    </div>
-    <Image src={moeda} alt="Imagem de moeda" className="moeda" />
-  </div>
-
-  <div class="frase">
-    <h2> " O verdadeiro investidor não é aquele<br /> que tenta prever o futuro, mas aquele<br /> que se prepara para
-      ele. "</h2>
-    <p>- Benjamin Graham -</p>
-  </div>
-
-  <section class="container-card">
-    <h1>A <span class="highlight">ChainX</span> é uma plataforma de <span class="highlight">educação<br/> financeira</span>
-      onde você tem acesso a:</h1>
-    <div class="cards">
-      <div class="card">
-        <Image src={aulas} alt="Ícone de aulas" className="aulas" />
-        <p>Aulas para você<br/> começar a investir e<br/> cuidar do seu dinheiro.</p>
-      </div>
-      <div class="card">
-      <Image src={cursos} alt="Ícone de cursos" className="cursos" />
-        <p>Cursos para você<br/> organizar suas<br/> finanças.</p>
-      </div>
-      <div class="card">
-      <Image src={simulador} alt="Ícone de simulador" className="simulador" />
-        <p>Simulador de<br/> investimentos para<br/> você aprender na<br/> prática.</p>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="simulador">
-  </section>
-
-  
-  </>
-
->>>>>>> 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4
   );
 }
