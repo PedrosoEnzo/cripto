@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-.paragrafo, h2  {
+.paragrafo {
     color: #80419b;
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -84,7 +84,7 @@ button:hover {
 /* Extra large screens */
 @media (min-width: 1920px) {
     body {
-        background: rgb(88, 43, 179) !important; /* Dá importância */
+        background: linear-gradient(to bottom, #000000, #272042, #000000) !important; 
     }
 
     .tudo {
