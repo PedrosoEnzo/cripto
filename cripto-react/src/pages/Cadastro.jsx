@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
-import Header from "../components/Navbar";
+
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -9,6 +9,7 @@ const Cadastro = () => {
   const [senha, setSenha] = useState("");
   const [confirmsenha, setConfirmsenha] = useState("");
   const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +30,6 @@ const Cadastro = () => {
 
   return (
     <div className="tudo">
-      <Header />
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="inputs">
@@ -53,16 +53,29 @@ const Cadastro = () => {
           <div>
             <input
               placeholder="Senha:"
-              type="password"
+              type={showPassword ? "text" : "password"} // Alterna entre oculto e visível
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
             />
+              <img className="olhos"
+              src={olhos}
+              alt="Mostrar senha"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                width: "20px",
+              }}
+            />
           </div>
           <div>
             <input
+              
               placeholder="Confirmar Senha:"
-              type="password"
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
