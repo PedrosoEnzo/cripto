@@ -195,7 +195,6 @@ footer {
 
 .footerLink a:hover {
   background: linear-gradient(to left, #dd28b6, #9b02e1);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
