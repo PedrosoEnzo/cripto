@@ -1,0 +1,273 @@
+[33mcommit c64b1c1a561c1d8a2f6630cf118c2a99ed423be8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 69cc79b 914a6fb
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 22 09:59:17 2025 -0300
+
+    Responsivo pagina home
+
+[33mcommit 69cc79b087dbbe0611c841d751f7206bf57de761[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 22 09:58:25 2025 -0300
+
+    Responsivo pagina home
+
+[33mcommit 914a6fbf6e66f9841c0412a0cc64f14d62bb84a4[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Fri Apr 18 21:16:30 2025 -0300
+
+    Criada pasta para os icones, dentro da pasta assets
+
+[33mcommit baa4dabc104e0e66e07da946e6ac4ef40843a91a[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Fri Apr 18 21:14:50 2025 -0300
+
+    Estruturando a página home
+
+[33mcommit bfc32facac29c066ae5a4f4600bbf0df54c48cc3[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Apr 17 17:23:07 2025 -0300
+
+    Arrumando erros de merge
+
+[33mcommit 993ec55d5a1b934115327afa82b27bc2f05f6def[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Apr 17 11:11:03 2025 -0300
+
+    Voltando a merge
+
+[33mcommit 0bddb25f4aa4c623376a7aba8714b21a36502079[m
+Merge: 19b7898 ddda0b8
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Apr 17 11:10:30 2025 -0300
+
+    arrumando rotas
+
+[33mcommit 19b7898532739b150dbf71092e725e0c0d261f0d[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Apr 17 11:08:44 2025 -0300
+
+    arrumando rotas
+
+[33mcommit ddda0b878cc6859faa92db367587e89f4eaf374a[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Tue Apr 15 16:45:17 2025 -0300
+
+    Editando os elementos da pagina home
+
+[33mcommit 9d6bbe7e15458cfb0cb98ef674845efc9dac2bbc[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Tue Apr 15 15:58:03 2025 -0300
+
+    Oranizando as rotas da pagina home
+
+[33mcommit 5cae93e1b0a822f130a1de9ed478a4f73a4353c9[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Sat Apr 12 22:56:34 2025 -0300
+
+    Adicionado olhos para ver a senha digitada, na pag de Cadastro
+
+[33mcommit b4a5fa77d09efabbfd6c51d836cd709493c885b1[m
+Author: Aninha-3 <anacbrito2007@gmail.com>
+Date:   Sat Apr 12 22:42:27 2025 -0300
+
+    Ajustando o responsivo da página de cadastro
+
+[33mcommit e2748fd6f0d10dba758e7a1ede15f05d71f8dedd[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 10:50:49 2025 -0300
+
+    Alterações no css para olhos
+
+[33mcommit cfcf9fc70243a6bef469ba83c27e15ab5533e3c9[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 10:39:15 2025 -0300
+
+    Adicionando olho para vizualização de senha
+
+[33mcommit aeda4b163c501ab89cd9f03c4ff531e16437298d[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 09:43:43 2025 -0300
+
+    Criando rotas para a navbar
+
+[33mcommit ea76e55fa329b0f3660a740ee5601cd0c1b797b8[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 08:58:09 2025 -0300
+
+    Criando rotas para a navbar
+
+[33mcommit b3c4e07758ac7f9ff3ab7b9f243004085e5b4f25[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 08:54:27 2025 -0300
+
+    Importando components em App.tsx
+
+[33mcommit 3aa56dc81d47310fe68a3ed71b643de27490a7fb[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 8 08:41:20 2025 -0300
+
+    Adicionado os components
+
+[33mcommit 5c2bfcf5973c04a7a150d4d1e15696ca8077dc6d[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 11:03:05 2025 -0300
+
+    arrumando erros no backend
+
+[33mcommit 23366498658663666ac7d6fe1c62568545209dc0[m
+Author: Aninha-03 <anacbrito2007@gmail.com>
+Date:   Tue Apr 1 10:26:15 2025 -0300
+
+    Clonando o repositório
+
+[33mcommit 072de62b827cce0b9e63e99a37fdab8b3c807d90[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 10:24:10 2025 -0300
+
+    arrumando style do botao
+
+[33mcommit 4bb5450778987e3c8e4ded929a62260d584b44a6[m
+Merge: 1c5d993 4e8cead
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 10:22:13 2025 -0300
+
+    Pagina de cadastro
+
+[33mcommit 4e8cead8325719d0275745298c006e4c5d214820[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 10:21:49 2025 -0300
+
+    Responsivo pagina de login
+
+[33mcommit 1c5d993b03de7d5155948e20ec841f13998ac54c[m
+Merge: 2780207 49d72b6
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 10:18:26 2025 -0300
+
+    atualizando pastas
+
+[33mcommit 49d72b602ba89b1a207c251343d296149f15721e[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 10:17:38 2025 -0300
+
+    Finalizando pagina login
+
+[33mcommit cf1115faaecb5f47e47c6cce1f0375ec064ef4b0[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 09:54:36 2025 -0300
+
+    atualizando
+
+[33mcommit 27802074aa2fce13a512596bfe05e264223c8aa8[m
+Merge: 58a2c44 cff9528
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 09:52:49 2025 -0300
+
+    atualizando pastas
+
+[33mcommit cff952821eb10d768f6517ee766b9251282c2d6b[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 09:47:19 2025 -0300
+
+    Centralizando textos da pagina de login
+
+[33mcommit 551ce342e398aecf37a1af4eb6c6ceb95bdba592[m
+Author: eduarda1023 <duda.cara@outlook.com>
+Date:   Tue Apr 1 09:06:10 2025 -0300
+
+    Excluindo img do assets
+
+[33mcommit f1d5281aae660854c2d802e864b858dcbc75be6d[m
+Author: Jumiranda28 <dri.kane@hotmail.com>
+Date:   Tue Apr 1 08:57:42 2025 -0300
+
+    Adicinando as imagens principais
+
+[33mcommit 80c0d19ac655ab74b99f42ecea0d66c6d2aa1aa3[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 08:24:37 2025 -0300
+
+    Troca de cor pra vermelho home.css
+
+[33mcommit 58a2c4449285c0c2b0c077372f63b9e811bb38c6[m
+Merge: a574747 4106071
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 08:13:20 2025 -0300
+
+    atualizando pastas
+
+[33mcommit 4106071123f6292af0346ea150a52613fbdd4f8a[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Tue Apr 1 08:12:32 2025 -0300
+
+    Ajustando para os integrantes codar
+
+[33mcommit a574747cf6797ed554fa852b882b97ed2fbe7693[m
+Merge: d49f87a 99f4f7f
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Tue Apr 1 07:36:15 2025 -0300
+
+    atualizando pastas
+
+[33mcommit 99f4f7f15410887607710fbfa4198d9748c16f43[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 15:05:14 2025 -0300
+
+    Pagina de cadastro e login feitas apenas o back
+
+[33mcommit 2522d51d8e4765dabc219a17e10fdc3858ac3221[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 14:48:28 2025 -0300
+
+    Conectando ao banco de dados
+
+[33mcommit 6fea877f58d680b5536010697e41d68e041bedc0[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 13:59:57 2025 -0300
+
+    Deixando o ambiente pronto para codar pagina home
+
+[33mcommit d49f87a23dfe795f54bb59cc45d8374b40ca4145[m
+Merge: db4ef95 698b2f9
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Mar 27 11:00:32 2025 -0300
+
+    resolvendo merge
+
+[33mcommit db4ef95054c9af714383ea38422110365c0683e7[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Mar 27 10:59:53 2025 -0300
+
+    merge
+
+[33mcommit 7d3e5a4aef3741f38dbc2f472063a569b35e38ea[m
+Author: Mari1916 <mariana.freitas1916@gmail.com>
+Date:   Thu Mar 27 10:57:40 2025 -0300
+
+    merge
+
+[33mcommit 698b2f9ff401eb0d29cf8a0ffa92fd72ac2796b5[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 10:55:57 2025 -0300
+
+    Atualizando package.json e adicionando package-lock.json
+
+[33mcommit 81ca0f15735ffd6a0fbd011c366bdab664be7c88[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 10:47:31 2025 -0300
+
+    Instalando as dependencias do git
+
+[33mcommit 5a7ef794d414969e83a07c5c513db39aabd8ea8e[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 10:45:25 2025 -0300
+
+    organizando ambiente pra começar a codar
+
+[33mcommit b54310c8165e4b79ab743dcd6cd1ce2eec22f832[m
+Author: PedrosoEnzo <enzopedroso77@gmail.com>
+Date:   Thu Mar 27 10:31:13 2025 -0300
+
+    Apagando e começando tudo do 0
+
+[33mcommit b69b3141855f9275c7242b241d5d23b2d1197779[m[33m ([m[1;31morigin/frontend[m[33m, [m[1;31morigin/ba

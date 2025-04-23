@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* Reset básico */
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +13,15 @@ body {
   background: linear-gradient(to bottom, #000000, #272042, #000000);
   color: white;
   text-align: center;
+<<<<<<< HEAD
+=======
+  font-size: 16px;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 }
 
 .container {
   display: flex;
+<<<<<<< HEAD
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -25,6 +34,31 @@ header {
   padding: 20px 50px;
 }
 
+=======
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+header img {
+  height: 70px;
+  width: 110px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 nav a {
   margin: 0 15px;
   color: white;
@@ -53,13 +87,21 @@ nav a {
   color: aliceblue;
   text-decoration: none;
   background: linear-gradient(to left, #b12092, #3f025b);
+<<<<<<< HEAD
+=======
+  transition: opacity 0.5s;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 }
 
 .cadastro:hover {
   opacity: 70%;
   transition: all 0.5s;
   cursor: pointer;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 
 .content {
   max-width: 800px;
@@ -68,6 +110,10 @@ nav a {
 
 .content h1 {
   font-size: 70px;
+<<<<<<< HEAD
+=======
+  line-height: 1.2;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 }
 
 .content p {
@@ -85,17 +131,32 @@ nav a {
 .frase {
   max-height: 650vh;
   height: 110vh;
+<<<<<<< HEAD
   color: #b3b3b3;
+=======
+  color: #ccc;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
   margin-top: 70vh;
 }
 
 .frase h2 {
   text-align: center;
   font-size: 50px;
+<<<<<<< HEAD
 }
 
 .frase p {
   font-size: 30px;
+=======
+  line-height: 1.2;
+}
+
+.frase p {
+  margin-top: 2rem;
+  font-size: 30px;
+  color: #ccc;
+  
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 }
 
 .container-card {
@@ -144,18 +205,28 @@ nav a {
   align-items: center;
 }
 
+<<<<<<< HEAD
 
 /*Página About
+=======
+/* Página About */
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 .texto-about,
 .h1,
 .p {
   font-size: 26px;
+<<<<<<< HEAD
   width: 100px;
   height: 150px;
   color: rgb(255, 255, 255);
 }
   */
 /*
+=======
+  color: rgb(255, 255, 255);
+}
+
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 footer {
   background: #272042;
   padding: 15px;
@@ -174,15 +245,25 @@ footer {
   text-decoration: none;
   color: #b3b3b3;
   font-size: 16px;
+<<<<<<< HEAD
   transition: 0.3s; 
+=======
+  transition: 0.3s;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
+<<<<<<< HEAD
 .footerLink a:hover {
   background: linear-gradient(to left, #dd28b6, #9b02e1);
   -webkit-background-clip: text;
+=======
+
+.footerLink a:hover {
+  background: linear-gradient(to left, #dd28b6, #9b02e1);
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
   -webkit-text-fill-color: transparent;
 }
 
@@ -195,7 +276,11 @@ footer {
 .redesSociais img {
   width: 30px;
   height: 30px;
+<<<<<<< HEAD
   display: block; 
+=======
+  display: block;
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
   margin-right: 10px;
   transform: scale(1);
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -206,9 +291,164 @@ footer {
   filter: brightness(1.5);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e602a494093978c84f4698492500088e8f2db194
 .copy {
   text-align: center;
   margin-top: 30px;
 }
+<<<<<<< HEAD
 */
+=======
+
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 50px;
+  }
+
+  .container .moeda-image {
+    width: 250px;
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .frase h2 {
+    font-size: 36px;
+  }
+
+  .frase p {
+    font-size: 24px;
+  }
+
+  .container-card h1 {
+    font-size: 32px;
+    margin-bottom: 100px;
+  }
+
+  .card {
+    width: 250px;
+  }
+
+  .nav {
+    font-size: 22px;
+  }
+
+  .cadastro {
+    font-size: 22px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 40px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .moeda-image {
+    width: 200px;
+    margin-top: 40px;
+  }
+
+  .frase h2 {
+    font-size: 28px;
+  }
+
+  .frase p {
+    font-size: 20px;
+  }
+
+  .container-card h1 {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .footerInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerLink a {
+    align-items: center;
+  }
+
+  .redesSociais {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .nav, .cadastro {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .moeda-image {
+    width: 150px;
+  }
+
+  .frase h2 {
+    font-size: 22px;
+  }
+
+  .frase p {
+    font-size: 18px;
+  }
+
+  .container-card h1 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .footerLink a {
+    font-size: 14px;
+  }
+
+  .copy p {
+    font-size: 14px;
+  }
+}
+>>>>>>> e602a494093978c84f4698492500088e8f2db194

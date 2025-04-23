@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
-import olhos from "../assets/eyes.png";
+
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
