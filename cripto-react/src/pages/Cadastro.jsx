@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
 
-
 const Cadastro = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -58,7 +57,8 @@ const Cadastro = () => {
               onChange={(e) => setSenha(e.target.value)}
               required
             />
-              <img className="olhos"
+            <img
+              className="olhos"
               src={olhos}
               alt="Mostrar senha"
               onClick={() => setShowPassword(!showPassword)}
@@ -74,7 +74,6 @@ const Cadastro = () => {
           </div>
           <div>
             <input
-              
               placeholder="Confirmar Senha:"
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
