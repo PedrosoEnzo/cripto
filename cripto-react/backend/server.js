@@ -58,24 +58,24 @@ app.post('/login', (req, res) => {
   // Buscar usuário pelo email
   db.query('SELECT * FROM usuarios WHERE email = ?', [email], (err, results) => {
     if (err) {
-      return res.status(500).json({ message: 'Erro ao verificar o usuário', error: err });
+      return res.status(500).json({ alert: 'Erro ao verificar o usuário', error: err });
     }
 
     if (results.length > 0) {
       // Comparar a senha fornecida com a senha criptografada no banco de dados
       bcrypt.compare(senha, results[0].senha, (err, isMatch) => {
         if (err) {
-          return res.status(500).json({ message: 'Erro ao comparar as senhas' });
+          return res.status(500).json({ alert: 'Erro ao comparar as senhas' });
         }
 
         if (isMatch) {
-          res.status(200).json({ message: 'Login bem-sucedido', user: results[0] });
+          res.status(200).json({ alert: 'Login bem-sucedido', user: results[0] });
         } else {
-          res.status(401).json({ message: 'Credenciais inválidas' });
+          res.status(401).json({ alert: 'Credenciais inválidas' });
         }
       });
     } else {
-      res.status(401).json({ message: 'Usuário não encontrado' });
+      res.status(401).json({ alert: 'Usuário não encontrado' });
     }
   });
 });
