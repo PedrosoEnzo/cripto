@@ -1,9 +1,13 @@
 import React from 'react';
 import './Home.css';
-//import moeda from './assets/moeda.svg';
-//import aulas from './assets/icons/aulas.svg';
-//import cursos from '/assets/icons/cursos.svg';
-//import simulador from '..//assets/icons/simulador.svg';
+import logo from '../assets/logo.png';
+import moeda from '../assets/imgMoeda.png';
+import aulas from '../assets/aulas.png';
+import cursos from '../assets/cursos.png';
+import simulacoes from '../assets/simulacoes.png';
+import instagram from '../assets/instagram.png';
+import facebook from '../assets/facebook.png';
+import twitter from '../assets/twitter.png';
 
 const Card = ({ image, alt, text, className }) => (
   <div className="card">
@@ -11,12 +15,11 @@ const Card = ({ image, alt, text, className }) => (
     <p dangerouslySetInnerHTML={{ __html: text }} />  
   </div>
 );
-import moeda from '../assets/imgMoeda.png';
-import aulas from '../assets/aulas.png';
-import cursos from '../assets/cursos.png';
+
 
 export default function Home() {
   return (
+
       <main className="container">
         <section className="intro">
           <div className="content">
