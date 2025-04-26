@@ -69,3 +69,7 @@ button {
   margin-bottom: 30px;
   align-self: center; 
 }
+
+.locked {
+  pointer-events: none;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CoursePage.module.css';
 import ProgressBar from './ProgressBar';
@@ -9,6 +9,8 @@ export default function CoursePage() {
   const [progress, setProgress] = useState(0);
   const [completedLessons, setCompletedLessons] = useState([]);
   const navigate = useNavigate();
+
+  const totalLessons = 8; // Quantidade total de aulas
 
   const courseData = [
     {
@@ -31,17 +33,53 @@ export default function CoursePage() {
     },
   ];
 
+  useEffect(() => {
+    // Ao montar, buscar progresso salvo
+    const storedLessons = localStorage.getItem('completedLessons');
+    if (storedLessons) {
+      const parsedLessons = JSON.parse(storedLessons);
+      setCompletedLessons(parsedLessons);
+      setProgress((parsedLessons.length / totalLessons) * 100);
+    }
+  }, []);
+
   function handleComplete(lessonId) {
     if (!completedLessons.includes(lessonId)) {
       const updatedLessons = [...completedLessons, lessonId];
       setCompletedLessons(updatedLessons);
-      setProgress((updatedLessons.length / 8) * 100); // Atualiza a barra de progresso
+      setProgress((updatedLessons.length / totalLessons) * 100);
+
+      // Salvar no localStorage
+      localStorage.setItem('completedLessons', JSON.stringify(updatedLessons));
     }
   }
 
   function handleLessonClick(lessonId) {
     navigate(`/lesson/${lessonId}`); // Navega para a lição
   }
+
+  // Função que prepara as aulas com travamento
+  const getCourseDataWithLocks = () => {
+    const allLessons = courseData.flatMap(mod => mod.lessons); // Lista todas as aulas em um array só
+    const completedSet = new Set(completedLessons);
+
+    return courseData.map(mod => ({
+      ...mod,
+      lessons: mod.lessons.map(lesson => {
+        const index = allLessons.findIndex(l => l.id === lesson.id);
+        const previousLesson = allLessons[index - 1];
+
+        const isLocked = previousLesson ? !completedSet.has(previousLesson.id) : false; // Primeira aula liberada
+
+        return {
+          ...lesson,
+          isLocked,
+        };
+      }),
+    }));
+  };
+
+  const courseDataWithLocks = getCourseDataWithLocks();
 
   return (
     <div className={styles.container}>
@@ -52,17 +90,16 @@ export default function CoursePage() {
         </h1>
       </div>
       <ProgressBar progress={progress} />
-      {courseData.map((mod, idx) => (
+      {courseDataWithLocks.map((mod, idx) => (
         <ModuleSection
           key={idx}
           title={mod.title}
           lessons={mod.lessons}
           completed={completedLessons}
           onComplete={handleComplete}
-          onLessonClick={handleLessonClick} // Passando a função de navegação
+          onLessonClick={handleLessonClick}
         />
       ))}
     </div>
   );
 }
-
