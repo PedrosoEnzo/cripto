@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .content {
+    display: flex;
+    gap: 40px; /* Espaço entre vídeo e PDFs */
+  }
+  
+  .videoContainer {
+    flex: 1; /* O vídeo ocupará o espaço disponível à esquerda */
+    max-width: 600px;
+  }
+  
+  .pdfContainer {
+    flex: 1;
+  }
+
+  .title span {
+    color: #791475;
+  }
+

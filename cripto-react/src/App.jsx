@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login'; 
 import Cadastro from './pages/Cadastro'; 
+import CoursePage from './components/CoursePage'
+import LessonPage from './components/LessonPage';
 
 
 
@@ -15,6 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />  {/* Página inicial */}
         <Route path="/login" element={<Login />} />  {/* Página de login */}
         <Route path="/cadastro" element={<Cadastro />} />  {/* Página de cadastro */}
+        <Route path="/curso" element={<CoursePage />} />
+        <Route path="/lesson/:id" element={<LessonPage />} />
       </Routes>
     </div>
   );

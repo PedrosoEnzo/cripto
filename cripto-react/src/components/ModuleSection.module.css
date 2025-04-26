@@ -1,0 +1,15 @@
+.module {
+  margin: 40px 0;
+}
+
+.module h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.lessonGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
