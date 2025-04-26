@@ -1,0 +1,126 @@
+.page {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #000, #272042);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 3em;
+    color: #fff; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+  }
+  
+  .formAndChartContainer {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+  
+  .simulatorForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .simulatorForm label {
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+  
+  .simulatorForm input {
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+
+  
+  .simulatorForm button {
+    padding: 12px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .simulationResult {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .chartContainer {
+    flex-grow: 1;
+    max-width: 600px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .selicText {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #3f025b;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 1024px) {
+    .main {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .formContainer {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .chartContainer {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+  
+  

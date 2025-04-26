@@ -5,8 +5,7 @@ import Login from './pages/Login';
 import Cadastro from './pages/Cadastro'; 
 import CoursePage from './components/CoursePage'
 import LessonPage from './components/LessonPage';
-
-
+import Simulador from './components/SimulatorPage';
 
 
 
@@ -19,6 +18,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />  {/* Página de cadastro */}
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
+        <Route path="/simulador" element={<Simulador />} />
       </Routes>
     </div>
   );

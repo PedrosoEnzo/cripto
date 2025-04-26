@@ -1,24 +1,110 @@
-.container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .content {
-    display: flex;
-    gap: 40px; /* Espaço entre vídeo e PDFs */
-  }
-  
-  .videoContainer {
-    flex: 1; /* O vídeo ocupará o espaço disponível à esquerda */
-    max-width: 600px;
-  }
-  
-  .pdfContainer {
-    flex: 1;
-  }
+.page {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #000, #272042);
+}
 
-  .title span {
-    color: #791475;
-  }
+.header {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.title span {
+  color: #791475;
+}
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.videoContainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.videoContainer iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 8px;
+}
+
+.pdfContainer {
+  flex: 1;
+  min-width: 250px;
+}
+
+.pdfContainer h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.pdfContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pdfContainer li {
+  margin-bottom: 10px;
+}
+
+.pdfContainer a {
+  text-decoration: none;
+  color: #791475;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.pdfContainer a:hover {
+  color: #a51ea0;
+}
+
+.error {
+  margin-top: 100px;
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.simulatorLinkContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.simulatorLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #791475;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.simulatorLink:hover {
+  background-color: #590e56;
+}
