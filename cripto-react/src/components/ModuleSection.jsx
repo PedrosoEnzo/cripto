@@ -13,7 +13,7 @@ export default function ModuleSection({ title, lessons, completed, onComplete, o
             lesson={lesson}
             isCompleted={completed.includes(lesson.id)}
             onComplete={onComplete}
-            onLessonClick={onLessonClick} // Passando a função de navegação para cada lição
+            onLessonClick={onLessonClick}
           />
         ))}
       </div>

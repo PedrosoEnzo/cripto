@@ -93,7 +93,7 @@ export default function SimulatorPage() {
           label: 'Valor acumulado',
           data: values,
           fill: false,
-          borderColor: '#3f025b',
+          borderColor: '#b12092',
           tension: 0.1,
         },
       ],

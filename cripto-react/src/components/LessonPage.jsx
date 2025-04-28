@@ -23,10 +23,13 @@ export default function LessonPage() {
         <div className={styles.content}>
           <div className={styles.videoContainer}>
             <iframe
-              src={`https://www.youtube.com/embed/${id}`}
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/eMDgWLWOX84?si=UOAgTUenDlhC_qlH"
               title="YouTube video player"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </div>
@@ -34,13 +37,12 @@ export default function LessonPage() {
           <div className={styles.pdfContainer}>
             <h3>Materiais Complementares</h3>
             <ul>
-              <li><a href="/pdf/anexo1.pdf" target="_blank" rel="noopener noreferrer">Anexo 1 - Introdução ao Investimento</a></li>
+            <li><a href="../assets/pdf/anexo1.pdf" target="_blank" rel="noopener noreferrer">Anexo 1 - Introdução ao Investimento</a></li>
               <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">Anexo 2 - Renda Fixa</a></li>
               <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">Anexo 3 - Fundos de Investimento</a></li>
             </ul>
           </div>
         </div>
-
 
         <div className={styles.simulatorLinkContainer}>
           <Link to="/simulador" className={styles.simulatorLink}>

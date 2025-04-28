@@ -10,7 +10,7 @@ export default function CoursePage() {
   const [completedLessons, setCompletedLessons] = useState([]);
   const navigate = useNavigate();
 
-  const totalLessons = 8; // Quantidade total de aulas
+  const totalLessons = 11; 
 
   const courseData = [
     {
@@ -31,10 +31,22 @@ export default function CoursePage() {
         { id: 8, title: "Aula 4: Investimentos Internacionais", description: "Aprenda sobre investimentos no exterior..." },
       ],
     },
+    {
+      title: "Intermediário I",
+      lessons: [
+        { id: 9, title: "Aula 1: Criptomoedas", description: "Entenda o funcionamento e as oportunidades das criptomoedas..." },
+        { id: 10, title: "Aula 2: Gestão de Riscos", description: "Aprenda como gerenciar riscos em seus investimentos..." },
+      ],
+    },
+    {
+      title: "Avançado",
+      lessons: [
+        { id: 11, title: "Aula 1: Estratégias de Investimento", description: "Explore estratégias avançadas para maximizar seus lucros..." },
+      ],
+    },
   ];
-
+  
   useEffect(() => {
-    // Ao montar, buscar progresso salvo
     const storedLessons = localStorage.getItem('completedLessons');
     if (storedLessons) {
       const parsedLessons = JSON.parse(storedLessons);
@@ -55,12 +67,12 @@ export default function CoursePage() {
   }
 
   function handleLessonClick(lessonId) {
-    navigate(`/lesson/${lessonId}`); // Navega para a lição
+    navigate(`/lesson/${lessonId}`); 
   }
 
-  // Função que prepara as aulas com travamento
+
   const getCourseDataWithLocks = () => {
-    const allLessons = courseData.flatMap(mod => mod.lessons); // Lista todas as aulas em um array só
+    const allLessons = courseData.flatMap(mod => mod.lessons);
     const completedSet = new Set(completedLessons);
 
     return courseData.map(mod => ({

@@ -6,6 +6,7 @@ import Cadastro from './pages/Cadastro';
 import CoursePage from './components/CoursePage'
 import LessonPage from './components/LessonPage';
 import Simulador from './components/SimulatorPage';
+import ProfilePage from './components/ProfilePage';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/simulador" element={<Simulador />} />
+        <Route path="/perfil" element={<ProfilePage />} />
       </Routes>
     </div>
   );
