@@ -103,7 +103,9 @@ export default function SimulatorPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
+      <a href="/curso" className={styles.link}>
         <h1 className={styles.title}>Simulador de <span className="highlight">Investimentos</span></h1>
+      </a>
       </header>
 
       <main className={styles.main}>
@@ -112,6 +114,7 @@ export default function SimulatorPage() {
             <form onSubmit={handleSimulation} className={styles.simulatorForm}>
               <label>
                 Tipo de Investimento:
+                <br />
                 <select value={investmentType} onChange={(e) => setInvestmentType(e.target.value)}>
                   <option value="selic">Selic</option>
                   <option value="poupanca">Poupança</option>
