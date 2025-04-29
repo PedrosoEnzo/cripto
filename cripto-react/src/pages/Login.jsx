@@ -26,12 +26,11 @@ const Login = () => {
     <div className="tudo">
       <div className="box">
         <form onSubmit={handleSubmit}>
-          <div className="login">
-            <div className="paragrafo">
-              <h2>Bem-vindo de volta!</h2>
-              <h4>Entre com seu e-mail e senha para acessar sua conta.</h4>
-            </div>
-
+          <div className="paragrafo">
+            <h2>Bem-vindo de volta!</h2>
+            <h4>Entre com seu e-mail e senha para acessar sua conta.</h4>
+          </div>
+          <div>
             <input
               placeholder="Email"
               type="email"
