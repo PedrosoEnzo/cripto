@@ -2,12 +2,11 @@ import React from 'react';
 import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
-import aulas from '../assets/aulas.png';
 import cursos from '../assets/cursos.png';
 import simulacoes from '../assets/simulacoes.png';
-import instagram from '../assets/instagram.png';
-import facebook from '../assets/facebook.png';
-import twitter from '../assets/twitter.png';
+import instagram from '../assets/icons/instagram.png';
+import facebook from '../assets/icons/facebook.png';
+import twitter from '../assets/icons/twitter.png';
 
 const Card = ({ image, alt, text, className }) => (
   <div className="card">
