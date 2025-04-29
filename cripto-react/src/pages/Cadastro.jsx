@@ -31,10 +31,10 @@ const Cadastro = () => {
     <div className="tudo">
       <div className="box">
         <form onSubmit={handleSubmit}>
-        <div className="paragrafo">
-              <h2>Bem-vindo!</h2>
-              <h4>Crie sua conta. Cadastre-se.</h4>
-            </div>
+          <div className="paragrafo">
+            <h2>Bem-vindo!</h2>
+            <h4>Crie sua conta. Cadastre-se.</h4>
+          </div>
           <div className="inputs">
             <input
               placeholder="Nome:"
@@ -73,7 +73,9 @@ const Cadastro = () => {
           <p>
             Já possui uma conta? <a href="/login">Entrar</a>
           </p>
-          <button id="button" type="submit">Cadastrar</button>
+          <button id="button" type="submit">
+            Cadastrar
+          </button>
         </form>
         {message && <p>{message}</p>}
       </div>
