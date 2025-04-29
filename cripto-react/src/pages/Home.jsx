@@ -12,7 +12,7 @@ export default function Home() {
       <header>
         <a href="/"><img src={logo} alt="logo" className="logo" height="70px" width="110px" /></a>
         <nav>
-          <a href="/chainxEduc" className="nav">ChainXEducation</a>
+          <a href="/curso" className="nav">ChainXEducation</a>
           <a href="/about" className="nav">Sobre</a>
           <a href="/login" className="nav">Entrar</a>
           <a href="/cadastro"><button className="cadastro">Cadastre-se</button></a>
