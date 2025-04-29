@@ -9,7 +9,7 @@ export default function CoursePage() {
   const [progress, setProgress] = useState(0);
   const [completedLessons, setCompletedLessons] = useState([]);
   const navigate = useNavigate();
-
+  
   const totalLessons = 11; 
 
   const courseData = [
