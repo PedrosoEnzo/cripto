@@ -128,6 +128,7 @@ export default function SimulatorPage() {
               {investmentType === 'crypto' && (
                 <label>
                   Criptomoeda:
+                  <br />
                   <select value={cryptoType} onChange={(e) => setCryptoType(e.target.value)}>
                     <option value="bitcoin">Bitcoin (BTC)</option>
                     <option value="ethereum">Ethereum (ETH)</option>
