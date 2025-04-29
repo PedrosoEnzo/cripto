@@ -1,189 +1,144 @@
-
 /* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom, #000000, #272042, #000000);
-  color: white;
-  text-align: center;
-  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000;
+  color: #333;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
+/* HEADER (Navbar) */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 15px 50px;
+  background-color: transparent; /* Remove a barra da navbar */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 50px;
+  gap: 40px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-}
-
-header img {
-  height: 70px;
-  width: 110px;
+.logo {
+  cursor: pointer;
 }
 
 nav {
   display: flex;
+  gap: 20px;
   align-items: center;
-}
-
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-  font-weight: 400;
 }
 
 .nav {
-  margin-top: 16px;
   text-decoration: none;
-  color: aliceblue;
-  font-size: 26px;
+  color: #a259ff; /* Roxo */
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav:hover {
-  color: #482252;
-  cursor: pointer;
-  transition: all 0.5s;
+  background-color: #a259ff;
+  color: #fff;
 }
 
 .cadastro {
-  font-size: 26px;
-  padding: 10px;
-  border-radius: 11px;
-  margin: 8px;
-  color: aliceblue;
-  text-decoration: none;
-  background: linear-gradient(to left, #b12092, #3f025b);
-  transition: opacity 0.5s;
+  background-color: #a259ff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cadastro:hover {
-  opacity: 70%;
-  transition: all 0.5s;
-  cursor: pointer;
-}*/
+  background-color: #fff;
+  color: #a259ff;
+}
 
-
-.content {
-  max-width: 800px;
-  margin-top: 180px;
+/* CONTAINER PRINCIPAL */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
 }
 
 .content h1 {
-  font-size: 70px;
-  line-height: 1.2;
+  font-size: 48px;
+  color: #a259ff;
+  margin-bottom: 20px;
 }
 
 .content p {
-  margin-top: 10px;
-  font-size: 18px;
-  color: #b3b3b3;
+  font-size: 20px;
+  color: #333;
 }
 
-.container .moeda-image {
-  margin-top: 100px;
-  margin-left: 200px;
-  width: 350px;
+.moeda-image {
+  width: 300px;
+  height: auto;
 }
 
+/* FRASE DE DESTAQUE */
 .frase {
-  max-height: 650vh;
-  height: 110vh;
-  color: #b3b3b3;
-  color: #ccc;
-  margin-top: 70vh;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #a259ff;
+  color: #fff;
 }
 
 .frase h2 {
-  text-align: center;
-  font-size: 50px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .frase p {
-  font-size: 30px;
-  line-height: 1.2;
+  font-style: italic;
 }
 
-.frase p {
-  margin-top: 2rem;
-  font-size: 30px;
-  color: #ccc;
+/* FOOTER */
+footer {
+  background-color: #a259ff;
+  color: #fff;
+  padding: 30px 50px 10px;
 }
 
-.container-card {
-  padding: 50px 20px;
-  margin-bottom: 100px;
-}
-
-.container-card h1 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 200px;
-}
-
-.highlight {
-  color: #A13EA1;
-}
-
-.cards {
+.footerInfo {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.card {
-  background: transparent;
-  border: 2px solid #A13EA1;
-  border-radius: 10px;
-  padding: 20px;
-  width: 300px;
+.footerLink a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footerLink a:hover {
+  text-decoration: underline;
+}
+
+.redesSociais img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.copy {
   text-align: center;
-}
-
-.card img {
-  width: 80px;
-  margin-bottom: 15px;
-}
-
-.card .cursos {
-  width: 90px;
-}
-
-.simulador {
-  display: flex;
-  align-items: center;
-}
-
-
-/*Página About
-=======
-/* Página About */
-.texto-about,
-.h1,
-.p {
-  font-size: 26px;
-  width: 100px;
-  height: 150px;
-  color: rgb(255, 255, 255);
+  margin-top: 20px;
+  font-size: 14px;
 }

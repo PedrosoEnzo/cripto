@@ -2,71 +2,57 @@ import React from 'react';
 import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
-import cursos from '../assets/cursos.png';
-import simulacoes from '../assets/simulacoes.png';
 import instagram from '../assets/icons/instagram.png';
 import facebook from '../assets/icons/facebook.png';
 import twitter from '../assets/icons/twitter.png';
 
-const Card = ({ image, alt, text, className }) => (
-  <div className="card">
-    <img src={image} alt={alt} className={className} />
-    <p dangerouslySetInnerHTML={{ __html: text }} />  
-  </div>
-);
-
-
 export default function Home() {
   return (
+    <>
+      <header>
+        <a href="/"><img src={logo} alt="logo" className="logo" height="70px" width="110px" /></a>
+        <nav>
+          <a href="/chainxEduc" className="nav">ChainXEducation</a>
+          <a href="/about" className="nav">Sobre</a>
+          <a href="/login" className="nav">Entrar</a>
+          <a href="/cadastro"><button className="cadastro">Cadastre-se</button></a>
+        </nav>
+      </header>
 
-      <main className="container">
-        <section className="intro">
-          <div className="content">
-            <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
-            <p>Se prepare para o futuro agora!</p>
+      <div className="container">
+        <div className="content">
+          <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
+          <p>Se prepare para o futuro agora!</p>
+        </div>
+        <img src={moeda} alt="imgmoeda" className="moeda-image" />
+      </div>
+
+      <div className="frase">
+        <h2>" O verdadeiro investidor não é aquele<br /> que tenta prever o futuro, mas aquele<br /> que se prepara para ele. "</h2>
+        <p>- Benjamin Graham -</p>
+      </div>
+
+      <section className="simulador"></section>
+
+      <footer>
+        <div className="footerInfo">
+          <div className="footerLink">
+            <a href="/chainxEduc">Chain Education</a>
+            <a href="/about">Sobre nós</a>
+            <a href="#">Suporte</a>
           </div>
-          <img src={moeda} alt="Imagem de moeda" className="moeda" />
-        </section>
 
-        <section className="frase">
-          <h2>
-            " O verdadeiro investidor não é aquele <br />
-            que tenta prever o futuro, mas aquele <br />
-            que se prepara para ele. "
-          </h2>
-          <p>- Benjamin Graham -</p>
-        </section>
-
-        <section className="container-card">
-          <h1>
-            A <span className="highlight">ChainX</span> é uma plataforma de <span className="highlight">educação<br /> financeira</span>
-            onde você tem acesso a:
-          </h1>
-          <div className="cards">
-            <Card
-              image={aulas}
-              alt="Ícone de aulas"
-              className="aulas"
-              text={`Aulas para você<br/> começar a investir e<br/> cuidar do seu dinheiro.`}
-            />
-            <Card
-              image={cursos}
-              alt="Ícone de cursos"
-              className="cursos"
-              text={`Cursos para você<br/> organizar suas<br/> finanças.`}
-            />
-            <Card
-              image={simulador}
-              alt="Ícone de simulador"
-              className="simulador"
-              text={`Simulador de<br/> investimentos para<br/> você aprender na<br/> prática.`}
-            />
+          <div className="redesSociais">
+            <a href="#"><img src={instagram} alt="Instagram" /></a>
+            <a href="#"><img src={facebook} alt="Facebook" /></a>
+            <a href="#"><img src={twitter} alt="Twitter" /></a>
           </div>
-        </section>
+        </div>
 
-        <section className="simulador">
-          {/* Futuro conteúdo do simulador */}
-        </section>
-      </main>
-    )
+        <div className="copy">
+          <p>&copy; Todos os direitos reservados a ChainX 2025</p>
+        </div>
+      </footer>
+    </>
+  );
 }
