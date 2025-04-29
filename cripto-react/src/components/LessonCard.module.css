@@ -65,6 +65,8 @@ button {
   cursor: pointer;
   height: 30px;
   width: 200px;
+  background: linear-gradient(to right, #3f025b, #b12092);
+  color: #ffffff;
   margin-top: auto; 
   margin-bottom: 30px;
   align-self: center; 
