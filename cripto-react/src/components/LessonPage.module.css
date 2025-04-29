@@ -19,14 +19,16 @@
   color: #fff;
 }
 
-.title span {
-  color: #791475;
+.highlight {
+  color: #791475 ;
 }
 
-.main {
-  width: 100%;
-  max-width: 1200px;
-  padding: 30px;
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #fff;
 }
 
 .subtitle {

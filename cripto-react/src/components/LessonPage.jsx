@@ -13,7 +13,9 @@ export default function LessonPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.title}>
-          ChainX <span>Educ</span>
+          <a href="/curso" className={styles.link}>
+          ChainX <span className={styles.highlight}>Educ</span>
+          </a>
         </h1>
       </header>
 
