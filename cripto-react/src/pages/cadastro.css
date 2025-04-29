@@ -14,8 +14,16 @@
     background-color: #ffffff; /* Fundo branco */
 }
 
-/*.tudo h1 {
-}*/
+.box {
+    margin-left: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.paragrafo {
+    margin-left: 70px;
+}
 
 /* Estilização do formulário */
 form {
@@ -26,6 +34,7 @@ form {
     max-width: 1200px;
     width: 100%;
     text-align: center;
+    margin-right: 40px;
 }
 
 /* Inputs */
@@ -47,32 +56,17 @@ input:focus {
     background: #ffffff;
 }
 
-.box {
-    margin-left: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-img, olhos {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    width: 20px;
-}
-button {
-    width: 100%;
-    padding: 1rem;
+#button {
+    height: 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     background: linear-gradient(90deg, #8e44ad, #732d91);
     color: white;
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-left: 70px;
 }
 
 button:hover {

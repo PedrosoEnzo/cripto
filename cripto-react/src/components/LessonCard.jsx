@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './LessonCard.module.css';
-import teste from '../assets/cursos/roxa.png'; // Substitua pelo caminho correto da imagem
 
 export default function LessonCard({ lesson, isCompleted, onComplete, onLessonClick }) {
   const handleClick = () => {
@@ -26,7 +25,10 @@ export default function LessonCard({ lesson, isCompleted, onComplete, onLessonCl
       }}
     >
       <div className={styles.info}>
+<<<<<<< HEAD
+=======
         <img src={teste} alt="Imagem da lição" style={{ width: '100%', height: '56px', position: 'revert', borderRadius: '18px', marginTop: '14px'}} />
+>>>>>>> dacd230cbd6d8fc0e2265201e1715207025e7b54
         <h3>{lesson.title}</h3>
         <p>{lesson.description}</p>
       </div>
