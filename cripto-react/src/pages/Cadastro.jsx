@@ -59,7 +59,7 @@ const Cadastro = () => {
               required
             />
               <img className="olhos"
-              src={olhos}
+           
               alt="Mostrar senha"
               onClick={() => setShowPassword(!showPassword)}
               style={{
