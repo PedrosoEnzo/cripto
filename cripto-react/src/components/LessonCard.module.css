@@ -3,7 +3,7 @@
   border-radius: 12px;
   overflow: hidden;
   width: 380px;
-  height: 200px;
+  height: 300px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
   display: flex;
