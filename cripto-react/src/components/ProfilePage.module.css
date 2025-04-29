@@ -4,10 +4,14 @@
     align-items: center;
     min-height: 100vh;
     background: #fff;
-    padding: 10px;
+    padding: 20px;
 }
-.dropdownHeade .toggle h2 {
+.dropdownHeader .toggleh2 {
     color: #000;
+}
+
+.dropdownHeader {
+    margin-right: 30px;
 }
 
 .profileContainer {
@@ -34,6 +38,7 @@
     color: #666;
     text-align: center;
     margin-left: 0;
+    margin-top: 10px;
 }
 
 .levelSection {
@@ -44,4 +49,8 @@
     font-size: 1.2rem;
     color: #3f025b;
     margin: 0;
+}
+
+.btnEdit {
+    background: linear-gradient(90deg, #3f025b, #b12092);
 }

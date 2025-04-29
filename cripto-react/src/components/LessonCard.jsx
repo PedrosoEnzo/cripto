@@ -25,8 +25,6 @@ export default function LessonCard({ lesson, isCompleted, onComplete, onLessonCl
       }}
     >
       <div className={styles.info}>
-
-        <img src={teste} alt="Imagem da lição" style={{ width: '100%', height: '56px', position: 'revert', borderRadius: '18px', marginTop: '14px'}} />
         <h3>{lesson.title}</h3>
         <p>{lesson.description}</p>
       </div>
