@@ -30,6 +30,13 @@
     padding: 2rem;
 }
 
+.box {
+    margin-left: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /* Estilização do formulário */
 form {
     background: rgba(255, 255, 255, 0.9);
@@ -75,6 +82,7 @@ button {
 
 /* Efeito ao passar o mouse no botão */
 button:hover {
+    cursor: pointer;
     background: linear-gradient(90deg, #732d91, #8e44ad);
     transform: scale(1.05);
 }
