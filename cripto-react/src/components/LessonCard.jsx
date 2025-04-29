@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LessonCard.module.css';
-import teste from '../assets/icons/logo.png'; // Substitua pelo caminho correto da imagem
+import teste from '../assets/icons/logo.png'; 
 
 export default function LessonCard({ lesson, isCompleted, onComplete, onLessonClick }) {
   const handleClick = () => {
@@ -26,7 +26,6 @@ export default function LessonCard({ lesson, isCompleted, onComplete, onLessonCl
       }}
     >
       <div className={styles.info}>
-        <img src={teste} alt="Imagem da lição" style={{ width: '100%', height: 'auto' }} />
         <h3>{lesson.title}</h3>
         <p>{lesson.description}</p>
       </div>
