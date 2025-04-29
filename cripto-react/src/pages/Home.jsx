@@ -19,7 +19,8 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="container">
+      {/* Seção Navbar + Moeda */}
+      <div className="section-navbar-img">
         <div className="content">
           <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
           <p>Se prepare para o futuro agora!</p>
@@ -27,12 +28,11 @@ export default function Home() {
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
       </div>
 
+      {/* Seção Frase Inspiradora */}
       <div className="frase">
         <h2>" O verdadeiro investidor não é aquele<br /> que tenta prever o futuro, mas aquele<br /> que se prepara para ele. "</h2>
         <p>- Benjamin Graham -</p>
       </div>
-
-      <section className="simulador"></section>
 
       <footer>
         <div className="footerInfo">
