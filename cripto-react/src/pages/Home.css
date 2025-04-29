@@ -11,19 +11,31 @@ body {
   color: #fff; /* Texto em branco */
 }
 
-/* HEADER (Navbar) */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background-color: transparent; /* Remove a barra da navbar */
+  padding: 20px 50px; /* aumentei o padding vertical */
+  background-color: transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-size: 50px;
-  gap: 50px;
+  font-size: 90px;
+  gap: 70px;
 }
+
+.cadastro {
+  background-color: #a259ff;
+  color: #000000;
+  font-size: 20px; /* ajuste mais controlado para evitar corte */
+  border: none;
+  border-radius: 5px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+margin: -2px;
+}
+
 
 .logo {
   cursor: pointer;
@@ -33,33 +45,19 @@ nav {
   display: flex;
   gap: 20px;
   align-items: center;
+  font-size: 18px; /* antes era 50px, mas provavelmente isso não estava surtindo efeito se .nav tinha 16px */
 }
 
 .nav {
   text-decoration: none;
-  color: #a259ff; /* Roxo */
+  color: #a259ff;
   font-weight: 500;
-  font-size: 16px;
-  padding: 8px 12px;
+  font-size: 18px; /* aumentado de 16px para 18px */
+  padding: 10px 14px; /* leve aumento no espaçamento para acompanhar o tamanho */
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav:hover {
-  background-color: #a259ff;
-  color: #fff;
-}
-
-.cadastro {
-  background-color: #a259ff;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 .cadastro:hover {
   background-color: #fff;
@@ -71,9 +69,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 80px;
-  background-color: #000; /* Fundo preto para essa seção */
-  margin-bottom: 40px;
+  background-color: #000; 
 }
 
 .content h1 {
@@ -88,7 +84,7 @@ nav {
 }
 
 .moeda-image {
-  width: 300px;
+  width: 400px;
   height: auto;
 }
 
@@ -108,8 +104,6 @@ nav {
 .frase p {
   font-style: italic;
 }
-
-/* SEÇÃO CARD (desapareceu) */
 
 /* FOOTER */
 footer {
@@ -145,4 +139,58 @@ footer {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
+}
+
+/* RESPONSIVO PARA RESOLUÇÕES DE PC E NOTEBOOK */
+
+/* Para telas maiores, como PCs (1200px ou mais) */
+@media (min-width: 1200px) {
+  .section-navbar-img {
+    padding: 40px 100px; /* Mais espaçamento */
+  }
+
+  .content h1 {
+    font-size: 60px; /* Tamanho maior para telas grandes */
+  }
+
+  .moeda-image {
+    width: 350px; /* Ajuste no tamanho da imagem */
+  }
+}
+
+/* Para telas médias, como notebooks (800px a 1199px) */
+@media (min-width: 800px) and (max-width: 1199px) {
+  .section-navbar-img {
+    padding: 30px 60px; /* Menos espaçamento */
+  }
+
+  .content h1 {
+    font-size: 50px; /* Ajuste para telas médias */
+  }
+
+  .moeda-image {
+    width: 350px; /* Ajuste no tamanho da imagem */
+  }
+}
+
+/* Para telas pequenas, como dispositivos móveis (menos de 800px) */
+@media (max-width: 799px) {
+  header {
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  .section-navbar-img {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px; /* Menos espaçamento */
+  }
+
+  .moeda-image {
+    width: 80%; /* Imagem ajustada para caber na tela */
+  }
+
+  .content h1 {
+    font-size: 30px; /* Menor para telas pequenas */
+  }
 }
