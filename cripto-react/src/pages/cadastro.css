@@ -23,6 +23,11 @@
 
 .paragrafo {
     margin-left: 70px;
+    color: grey;
+}
+
+.paragrafo, h4 {
+    font-size: 20px;
 }
 
 /* Estilização do formulário */

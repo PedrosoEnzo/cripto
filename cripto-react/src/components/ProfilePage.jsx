@@ -12,18 +12,18 @@ const ProfilePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.dropdownHeader} onClick={toggleDropdown}>
-      <h2 className={styles.name}>Perfil</h2>
+        <h2 className={styles.toggleh2}>Perfil</h2>
         <span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
       </div>
 
       {isOpen && (
         <div className={styles.profileContainer}>
-                  <h2 className={styles.name}>Cassia Pedrosa</h2>
-          <p className={styles.email}>caca_jobs@gmail.com</p>
+          <h2 className={styles.name}>Cassia Pedrosa</h2>
           <p className={styles.bio}>Apaixonado por tecnologia e investimentos.</p>
           <div className={styles.levelSection}>
             <h3 className={styles.levelTitle}>Nível: {userLevel}</h3>
-            <button>editar</button>
+            <br />
+            <button classname={styles.btnEdit}>editar</button>
           </div>
         </div>
       )}
