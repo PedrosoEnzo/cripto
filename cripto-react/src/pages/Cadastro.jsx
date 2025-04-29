@@ -57,14 +57,10 @@ const Cadastro = () => {
               onChange={(e) => setSenha(e.target.value)}
               required
             />
-<<<<<<< HEAD
             <img
               className="olhos"
               src={olhos}
-=======
-              <img className="olhos"
-           
->>>>>>> cfcb8ee0610c7cc8604b96e1e6da75b6f0e69d19
+              <img className="olhos"/>
               alt="Mostrar senha"
               onClick={() => setShowPassword(!showPassword)}
               style={{
