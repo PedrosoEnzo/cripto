@@ -3,6 +3,7 @@ import './About.css';
 import mundo from '../assets/mundo.png';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
 import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
+import marianaPerfil from '../assets/marianaPerfil.jpeg';
 import instagram  from'../assets/instagram.png';
 import github from '../assets/github.png';
 
@@ -88,7 +89,7 @@ const developers = [
   {
     name: 'Mariana',
     role: 'Back-End',
-    img: '../images/user.jpg',
+    img: marianaPerfil,
     instagram: 'https://www.instagram.com/mah_freitas19/',
     github: 'https://github.com/Mari1916',
   },
