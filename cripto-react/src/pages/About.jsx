@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import mundo from '../assets/mundo.png';
 import anaPerfil from '../assets/anaPerfil.jpeg';
+import nicolePerfil from '../assets/nicolePerfil.jpeg';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
 import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
 import marianaPerfil from '../assets/marianaPerfil.jpeg';
@@ -69,7 +70,7 @@ const developers = [
   {
     name: 'Nicole',
     role: 'Front-End',
-    img: '../images/user.jpg',
+    img: nicolePerfil,
     instagram: 'https://www.instagram.com/nicoleeaalencar/',
     github: 'https://github.com/nicoleeaalencar',
   },
