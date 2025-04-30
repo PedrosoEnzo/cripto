@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import mundo from '../assets/mundo.png';
+import anaPerfil from '../assets/anaPerfil.jpeg';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
 import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
 import marianaPerfil from '../assets/marianaPerfil.jpeg';
@@ -61,7 +62,7 @@ const developers = [
   {
     name: 'Ana Clara',
     role: 'Front-End',
-    img: '../images/user.jpg',
+    img: anaPerfil,
     instagram: 'https://www.instagram.com/ana_brito2707/',
     github: 'https://github.com/Aninha-3',
   },
