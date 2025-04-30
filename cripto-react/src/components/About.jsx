@@ -14,8 +14,8 @@ function About() {
             de investimento e cursos práticos...
           </p>
         </div>
-        <div className="img">
-          <img src="../images/mundo.png" alt="Mundo" height="300px" />
+        <div className="imgMundo">
+          
         </div>
         <div className="texto">
           <h2>Nossa missão:</h2>
@@ -58,6 +58,27 @@ const developers = [
     img: '../images/user.jpg',
     instagram: 'https://www.instagram.com/ana_brito2707/',
     github: 'https://github.com/Aninha-3',
+  },
+  {
+    name: 'Nicole',
+    role: 'Front-End',
+    img: '../images/user.jpg',
+    instagram: 'https://www.instagram.com/nicoleeaalencar/',
+    github: 'https://github.com/nicoleeaalencar',
+  },
+  {
+    name: 'Julia',
+    role: 'Design',
+    img: '../images/user.jpg',
+    instagram: 'https://www.instagram.com/julia_miranda288/',
+    github: 'https://github.com/Jumiranda28',
+  },
+  {
+    name: 'Mariana',
+    role: 'Back-End',
+    img: '../images/user.jpg',
+    instagram: 'https://www.instagram.com/mah_freitas19/',
+    github: 'https://github.com/Mari1916',
   },
   {
     name: 'Enzo',
