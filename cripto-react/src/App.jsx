@@ -7,7 +7,7 @@ import CoursePage from './components/CoursePage'
 import LessonPage from './components/LessonPage';
 import Simulador from './components/SimulatorPage';
 import ProfilePage from './components/ProfilePage';
-import About from './components/About'; // Importando o componente About
+import About from './components/About';
 
 
 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/simulador" element={<Simulador />} />
         <Route path="/perfil" element={<ProfilePage />} />
-        <Route path="/about" element={<About />} /> {/* Página de sobre */}
+        <Route path="/about" element={<About />} />
     
       </Routes>
     </div>
