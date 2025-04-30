@@ -1,23 +1,27 @@
 import React from 'react';
-import './About.css'; 
+import './About.css';
+import mundo from '../assets/mundo.png';
+import enzoPerfil from '../assets/enzoPerfil.jpeg';
+import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
+import instagram  from'../assets/instagram.png';
+import github from '../assets/github.png';
+
 
 
 function About() {
   return (
     <>
       <section className="intro">
-        <div className="texto">
-          <h1>Bem vindo ao Chain-x</h1>
+        <div className="textoEsquerdo">
+          <h2>Bem vindo ao Chain-x</h2>
           <p>
             A Chain-X visa capacitar pessoas e empresas a fazerem<br />
             escolhas financeiras inteligentes, oferecendo simulações<br />
             de investimento e cursos práticos...
           </p>
         </div>
-        <div className="imgMundo">
-          
-        </div>
-        <div className="texto">
+          <img src={mundo} alt="Mundo" className='imgMundo'/>
+        <div className="textoDireito">
           <h2>Nossa missão:</h2>
           <p>
             Nossa missão é transformar conhecimento em<br />
@@ -37,12 +41,13 @@ function About() {
               <p>{dev.role}</p>
               <div className="card-sobre">
                 <a className="social-link1" href={dev.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="bi bi-instagram" />
+                  <img src={instagram} alt="Instagram" className="icon-social" />
                 </a>
                 <a className="social-link2" href={dev.github} target="_blank" rel="noopener noreferrer">
-                  <i className="bi bi-github" />
+                  <img src={github}alt="GitHub" className="icon-social" />
                 </a>
               </div>
+
             </div>
           ))}
         </div>
@@ -74,6 +79,13 @@ const developers = [
     github: 'https://github.com/Jumiranda28',
   },
   {
+    name: 'Maria Eduarda',
+    role: 'Design',
+    img: '../images/user.jpg',
+    instagram: 'https://www.instagram.com/eduarda_caraa',
+    github: 'https://github.com/eduarda1023',
+  },
+  {
     name: 'Mariana',
     role: 'Back-End',
     img: '../images/user.jpg',
@@ -83,14 +95,14 @@ const developers = [
   {
     name: 'Enzo',
     role: 'Back-End',
-    img: '../images/user.jpg',
+    img: enzoPerfil,
     instagram: 'https://www.instagram.com/pedroso.4m/',
     github: 'https://github.com/PedrosoEnzo',
   },
   {
     name: 'Isabella',
     role: 'Document-Writer',
-    img: '../images/user.jpg',
+    img: isabellaPerfil,
     instagram: 'https://www.instagram.com/isa.dmg/',
     github: 'https://github.com/isinha05-ox',
   },

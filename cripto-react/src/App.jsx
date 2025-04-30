@@ -7,7 +7,7 @@ import CoursePage from './components/CoursePage'
 import LessonPage from './components/LessonPage';
 import Simulador from './components/SimulatorPage';
 import ProfilePage from './components/ProfilePage';
-import About from './components/About';
+import About from './pages/About';
 
 
 
