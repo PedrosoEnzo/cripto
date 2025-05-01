@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000; /* Fundo preto */
   color: #fff; /* Texto em branco */
 }
 
@@ -86,6 +85,20 @@ nav {
 .moeda-image {
   width: 400px;
   height: auto;
+
+
+  animation: girar 10s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes girar {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 /* SEÇÃO 2 - FRASE + CONTEÚDO */
