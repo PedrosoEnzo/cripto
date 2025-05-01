@@ -1,0 +1,117 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 80px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.textoEsquerdo,
+.textoDireito {
+    flex: 1;
+    max-width: 400px;
+}
+
+.textoEsquerdo h2,
+.textoDireito h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.textoEsquerdo p,
+.textoDireito p {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(148, 146, 146);
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.imgMundo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+.imagem-intro img {
+    width: 250px;
+    max-width: 100%;
+}
+
+.desenvolvedores {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.desenvolvedores h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    margin: 4px 0;
+}
+
+.card-sobre {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-link1,
+.social-link2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.social-link1 img,
+.social-link2 img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-link1:hover img,
+.social-link2:hover img {
+    transform: scale(1.2);
+}

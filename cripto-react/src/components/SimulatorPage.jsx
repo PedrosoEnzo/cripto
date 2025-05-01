@@ -104,7 +104,7 @@ export default function SimulatorPage() {
     <div className={styles.page}>
       <header className={styles.header}>
       <a href="/curso" className={styles.link}>
-        <h1 className={styles.title}>Simulador de <span className="highlight">Investimentos</span></h1>
+        <h1 className={styles.title}>Simulador de <span className={styles.corTitulo }>Investimentos</span></h1>
       </a>
       </header>
 
