@@ -7,6 +7,7 @@ import cursos from '../assets/cursos.png';
 import instagram from '../assets/icons/instagram.png';
 import facebook from '../assets/icons/facebook.png';
 import twitter from '../assets/icons/twitter.png';
+import simulador2 from '../assets/simulador2.png';
 
 export default function Home() {
   return (
@@ -70,10 +71,12 @@ export default function Home() {
       </div>
 
       <div className='simulador'>
-        <h2>Simulador de Investimentos</h2>
+        <img src={simulador2} alt="simulador" className='simuladorImage' />
+        <h2>Simulador de <br />
+          <span className='hightLight'>Investimentos</span></h2>
         <p>Aprenda a investir com segurança e confiança.</p>
         <a href="/simulador">
-          <button className='simuladorButton'>Acesse o Simulador</button>
+          <button className='simuladorButton'>Acessar</button>
         </a>
         <img src="" alt="" />
       </div>
