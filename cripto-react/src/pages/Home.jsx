@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
+import cursos from '../assets/cursos.png';
 import instagram from '../assets/icons/instagram.png';
 import facebook from '../assets/icons/facebook.png';
 import twitter from '../assets/icons/twitter.png';
@@ -36,6 +37,47 @@ export default function Home() {
         <h2>" O verdadeiro investidor não é aquele<br /> que tenta prever o futuro, mas aquele<br /> que se prepara para ele. "</h2>
         <p>- Benjamin Graham -</p>
       </div>
+
+      <div className='plataformaCursos'>
+        <h2>A ChainX é uma plataforma de 
+          <span className='highlight'> educação <br />
+            financeira </span>onde você tem acesso a:</h2>
+        <div className='plataformaCursosContent'>
+          <div className='plataformaCursosCard'>
+            <div className='plataformaCursosCardIcon'>
+            <img src={cursos} alt="cursos" />
+            <br />
+            <h3>Simulador de Investimentos</h3>
+            <p>Aprenda a investir com segurança e confiança.</p>
+            </div>
+          </div>
+          <div className='plataformaCursosCard'>
+          <div className='plataformaCursosCardIcon'>
+            <img src={cursos} alt="cursos" />
+            <h3>Conteúdo Exclusivo</h3><br />
+            <p>Acesse cursos e materiais de alta qualidade.</p>
+            </div>
+          </div>
+          <div className='plataformaCursosCard'>
+          <div className='plataformaCursosCardIcon'>
+           <img src={cursos} alt="cursos" /> 
+            <h3>Comunidade Ativa</h3>
+            <br />
+            <p>Participe de discussões e trocas de experiências.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='simulador'>
+        <h2>Simulador de Investimentos</h2>
+        <p>Aprenda a investir com segurança e confiança.</p>
+        <a href="/simulador">
+          <button className='simuladorButton'>Acesse o Simulador</button>
+        </a>
+        <img src="" alt="" />
+      </div>
+        
 
       <footer>
         <div className="footerInfo">

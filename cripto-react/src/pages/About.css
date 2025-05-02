@@ -31,12 +31,12 @@ body {
 
 .textoEsquerdo p,
 .textoDireito p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     display: flex;
     text-align: center;
     font-size: 18px;
-    color: rgb(148, 146, 146);
+    color: rgba(225, 225, 225, 0.903);
     margin-top: 10px;
     line-height: 1.6;
 }
@@ -91,7 +91,7 @@ body {
 
 .profile p {
     margin: 4px 0;
-    color: rgb(148, 146, 146);
+    color: rgba(225, 225, 225, 0.903);
 }
 
 .card-sobre {
