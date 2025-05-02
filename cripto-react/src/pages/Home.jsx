@@ -7,6 +7,7 @@ import facebook from '../assets/icons/facebook.png';
 import twitter from '../assets/icons/twitter.png';
 
 
+
 export default function Home() {
   
   return (
@@ -28,6 +29,9 @@ export default function Home() {
           <p>Se prepare para o futuro agora!</p>
         </div>
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
+
+
+
       </div>
 
       {/* Seção Frase Inspiradora */}
