@@ -22,6 +22,8 @@ body {
 
 .textoEsquerdo h2,
 .textoDireito h2 {
+    font-family: 'orbitron', sans-serif;
+    font-weight: 200;
     font-size: 38px;
     margin-bottom: 20px;
     color: white;
@@ -29,6 +31,8 @@ body {
 
 .textoEsquerdo p,
 .textoDireito p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
     display: flex;
     text-align: center;
     font-size: 18px;
@@ -55,6 +59,8 @@ body {
 
 .desenvolvedores h2 {
     font-size: 40px;
+    font-family: 'orbitron', sans-serif;
+    font-weight: 200;
     margin-bottom: 40px;
 }
 
@@ -70,6 +76,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: #fff;
     max-width: 200px;
 }
 
@@ -84,6 +91,7 @@ body {
 
 .profile p {
     margin: 4px 0;
+    color: rgb(148, 146, 146);
 }
 
 .card-sobre {
