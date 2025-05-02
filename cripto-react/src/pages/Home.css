@@ -1,4 +1,5 @@
-/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -6,35 +7,23 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff; /* Texto em branco */
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #272042, #1a1a1a);
+  background-attachment: fixed;/* Fixa o fundo para não se mover com o scroll */
+  color: #fff;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px; /* aumentei o padding vertical */
+  padding: 20px 0 20px; 
   background-color: transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-size: 90px;
-  gap: 70px;
+  
 }
-
-.cadastro {
-  background-color: #a259ff;
-  color: #000000;
-  font-size: 20px; /* ajuste mais controlado para evitar corte */
-  border: none;
-  border-radius: 5px;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-margin: -2px;
-}
-
 
 .logo {
   cursor: pointer;
@@ -42,51 +31,83 @@ margin: -2px;
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
-  font-size: 18px; /* antes era 50px, mas provavelmente isso não estava surtindo efeito se .nav tinha 16px */
 }
 
 .nav {
   text-decoration: none;
-  color: #a259ff;
   font-weight: 500;
-  font-size: 18px; /* aumentado de 16px para 18px */
-  padding: 10px 14px; /* leve aumento no espaçamento para acompanhar o tamanho */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 24px;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.cadastro:hover {
-  background-color: #fff;
-  color: #a259ff;
+.nav:hover {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 8px #362c5b;
 }
 
-/* SEÇÃO 1 - NAVBAR + IMG MOEDA */
-.section-navbar-img {
+.cadastroButton {
+  background: linear-gradient(135deg, #3f025b, #b12092);
+  color: #fff;
+  height: 50PX;
+  font-size: 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px 20px;
+}
+
+.cadastroButton:hover {
+  color: #fff;
+  box-shadow: 0 0 10px #362c5b;
+}
+/*
+/* Seção Navbar + Moeda */
+.navbar-img-moeda {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #000; 
+  align-items: center;;
+  padding: 80px 8%;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .content h1 {
-  font-size: 48px;
-  color: #a259ff;
+  font-size: 95px;
+  color: #fff;
   margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .content p {
-  font-size: 20px;
+  display: flex;
+  text-align: start;
+  font-size: 40px;
   color: #fff;
 }
 
 .moeda-image {
   width: 400px;
   height: auto;
-
-
   animation: girar 10s linear infinite;
   transform-style: preserve-3d;
 }
@@ -95,13 +116,12 @@ nav {
   from {
     transform: rotateY(0deg);
   }
-
   to {
     transform: rotateY(360deg);
   }
 }
 
-/* SEÇÃO 2 - FRASE + CONTEÚDO */
+/* Seção Frase Inspiradora */
 .frase {
   text-align: center;
   padding: 40px 20px;
@@ -118,7 +138,7 @@ nav {
   font-style: italic;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   background-color: #a259ff;
   color: #fff;
@@ -137,6 +157,7 @@ footer {
   color: #fff;
   text-decoration: none;
   margin: 5px 0;
+  transition: text-decoration 0.3s ease;
 }
 
 .footerLink a:hover {
@@ -146,6 +167,12 @@ footer {
 .redesSociais img {
   width: 30px;
   margin-left: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.redesSociais img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
 }
 
 .copy {
@@ -154,56 +181,36 @@ footer {
   font-size: 14px;
 }
 
-/* RESPONSIVO PARA RESOLUÇÕES DE PC E NOTEBOOK */
-
-/* Para telas maiores, como PCs (1200px ou mais) */
-@media (min-width: 1200px) {
-  .section-navbar-img {
-    padding: 40px 100px; /* Mais espaçamento */
-  }
-
-  .content h1 {
-    font-size: 60px; /* Tamanho maior para telas grandes */
-  }
-
-  .moeda-image {
-    width: 350px; /* Ajuste no tamanho da imagem */
-  }
-}
-
-/* Para telas médias, como notebooks (800px a 1199px) */
-@media (min-width: 800px) and (max-width: 1199px) {
-  .section-navbar-img {
-    padding: 30px 60px; /* Menos espaçamento */
-  }
-
-  .content h1 {
-    font-size: 50px; /* Ajuste para telas médias */
-  }
-
-  .moeda-image {
-    width: 350px; /* Ajuste no tamanho da imagem */
-  }
-}
-
-/* Para telas pequenas, como dispositivos móveis (menos de 800px) */
+/* Responsivo */
 @media (max-width: 799px) {
   header {
     flex-direction: column;
-    font-size: 18px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .section-navbar-img {
     flex-direction: column;
     align-items: center;
-    padding: 20px 20px; /* Menos espaçamento */
+    padding: 20px;
   }
 
   .moeda-image {
-    width: 80%; /* Imagem ajustada para caber na tela */
+    width: 80%;
   }
 
   .content h1 {
-    font-size: 30px; /* Menor para telas pequenas */
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .content p {
+    text-align: center;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
@@ -6,32 +7,28 @@ import instagram from '../assets/icons/instagram.png';
 import facebook from '../assets/icons/facebook.png';
 import twitter from '../assets/icons/twitter.png';
 
-
-
 export default function Home() {
-  
   return (
     <>
       <header>
-        <a href="/"><img src={logo} alt="logo" className="logo" height="70px" width="110px" /></a>
+        <a href="/">
+          <img src={logo} alt="logo" className="logo" height="70px" width="110px" />
+        </a>
         <nav>
           <a href="/curso" className="nav">ChainXEducation</a>
           <a href="/about" className="nav">Sobre</a>
           <a href="/login" className="nav">Entrar</a>
-          <a href="/cadastro"><button className="cadastro">Cadastre-se</button></a>
+          <a href="/cadastro">
+            <button className="cadastroButton">Cadastre-se</button>
+          </a>
         </nav>
       </header>
-
-      {/* Seção Navbar + Moeda */}
-      <div className="section-navbar-img">
+      <div className="navbar-img-moeda">
         <div className="content">
-          <h1>Simule, aprenda, <br /> invista no seu futuro!</h1>
+          <h1 className="text">Simule, aprenda, <br /> invista no seu futuro!</h1>
           <p>Se prepare para o futuro agora!</p>
         </div>
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
-
-
-
       </div>
 
       {/* Seção Frase Inspiradora */}
