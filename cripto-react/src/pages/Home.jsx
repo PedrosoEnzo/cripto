@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+
 import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';

@@ -13,5 +13,15 @@
     background: linear-gradient(90deg, #3f025b, #b12092);
     border-radius: 50px; 
     transition: width 0.7s ease;
+    position: relative;
   }
   
+
+  
+  .progressText {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(194, 193, 193);
+  }
