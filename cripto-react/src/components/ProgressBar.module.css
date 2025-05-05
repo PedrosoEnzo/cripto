@@ -8,7 +8,6 @@
   margin: 0 auto 2rem auto;
 }
 
-<<<<<<< HEAD
 .progressBar {
   height: 100%;
   background: linear-gradient(90deg, #3f025b, #b12092);
@@ -24,11 +23,10 @@
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
   color: white;
-  pointer-events: none; /* impede que o texto bloqueie cliques */
+  font-weight: bold;
+  pointer-events: none;
 }
-=======
-    margin: 0 auto 2rem auto;
-  }
+
   
   .progressBar {
     height: 100%;
@@ -47,4 +45,3 @@
     transform: translateY(-50%);
     color: rgb(194, 193, 193);
   }
->>>>>>> 3dde91fb3d7da96a0babc633e2c5bac32cd3aabb
