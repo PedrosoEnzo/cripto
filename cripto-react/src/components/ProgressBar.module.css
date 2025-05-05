@@ -8,6 +8,7 @@
   margin: 0 auto 2rem auto;
 }
 
+<<<<<<< HEAD
 .progressBar {
   height: 100%;
   background: linear-gradient(90deg, #3f025b, #b12092);
@@ -25,3 +26,25 @@
   color: white;
   pointer-events: none; /* impede que o texto bloqueie cliques */
 }
+=======
+    margin: 0 auto 2rem auto;
+  }
+  
+  .progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, #3f025b, #b12092);
+    border-radius: 50px; 
+    transition: width 0.7s ease;
+    position: relative;
+  }
+  
+
+  
+  .progressText {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(194, 193, 193);
+  }
+>>>>>>> 3dde91fb3d7da96a0babc633e2c5bac32cd3aabb
