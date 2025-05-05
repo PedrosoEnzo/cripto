@@ -7,7 +7,7 @@
 body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, #000, #272042, #1a1a1a);
-  background-attachment: fixed;/* Fixa o fundo para não se mover com o scroll */
+  background-attachment: fixed;
   color: #fff;
 }
 
@@ -153,7 +153,7 @@ nav {
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  margin-top: 70px;
+  margin-top: 86px;
   color: #fff;
 }
 
@@ -178,15 +178,12 @@ nav {
   padding-top: 30px;
 }
 
-.plataformaCursosCard {
+/*.plataformaCursosCard {
   width: 300px;
   height: 320px;
   background: transparent;
   border: 3px solid;
-  background:
-  linear-gradient(#000000, #000000) padding-box,
-  linear-gradient(to right, #b12092, #3f025b, #b12092) border-box;
- /* border-image: linear-gradient(135deg, #b12092, #3f025b) padding-box;*/
+  border-image: linear-gradient(135deg, #3f025b, #b12092) 1;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
@@ -196,7 +193,26 @@ nav {
   flex-direction: column;
   justify-content: center;
   transition: transform 0.3s ease;
+}*/
+.plataformaCursosCard {
+  width: 300px;
+  height: 320px;
+  background: transparent;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 12px #3f025b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box, 
+              linear-gradient(135deg, #3f025b, #b12092) border-box;
+  border: 3px solid transparent;
 }
+
 
 .plataformaCursosCard:hover {
   transform: scale(1.03);
@@ -215,61 +231,69 @@ nav {
 }
 
 .plataformaCursosCard p {
+  margin-left: auto;
+  margin-right: auto;
   font-size: 16px;
   color: #e0e0e0;
   line-height: 1.5;
 }
-
 .simulador {
   display: flex;
+  flex-direction: row; 
   justify-content: center;
-  align-items: start;
-  margin-left: 28px;
-  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  margin-top: 50px;
+  margin: 90px 0 0 28px;
   color: #fff;
 }
+
+.simuladorTexto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .simulador h2 {
   font-weight: 500;
   font-size: 100px;
-  margin-top: 70px;
+  margin: 0; 
   color: #fff;
 }
 
 .simulador h2 span {
   color: #b12092;
 }
+
 .simulador p {
   font-size: 30px;
-  margin-left: 30px;
-  margin-top: 10px;
-  color: #7d7c7c;
+  margin: 10px ;
+  color: #b2b2b2;
 }
 
-.simuladorButton{
-  margin-left: 250px;
+.simuladorButton {
+  margin-top: 50px;
   background: linear-gradient(135deg, #3f025b, #b12092);
   color: #fff;
   height: 50px;
   font-size: 18px;
-  margin-top: 50px;
   border: none;
   border-radius: 20px;
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   padding: 10px 20px;
+  margin-left: 36%;
+  
 }
 
-.simuladorImage{
-  display: flex;
-  margin-left: 800px;
- 
-
+.simuladorImage {
+  width: 470px; 
+  margin-right: 50px;
 }
+
 /* Footer */
 footer {
+  background: linear-gradient(135deg, #000, #272042, #1a1a1a);
   color: #fff;
   padding: 30px 50px 10px;
 }
