@@ -24,8 +24,8 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  cursor: pointer;
+.logo img {
+    cursor: pointer;
 }
 
 nav {
