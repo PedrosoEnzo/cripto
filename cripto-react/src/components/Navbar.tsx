@@ -1,15 +1,24 @@
 import React from 'react';
-import './Navbar.css';
-import logo from '../assets/logo.png';
+import styles from './Navbar.module.css';
+import logo from '../assets/logo.png'; // Certifique-se de ter a imagem correta e no diretório certo
 
- return Navbar () [
-    <div className="App">
-    <header className="App-header">
-      <img src={logo} alt="Minha Logo" style={{ width: '150px', height: 'auto' }} />
-      <h1>Bem-vindo ao Meu Projeto React!</h1>
+const Navbar = () => {
+  return (
+    <header className={styles.navbar}>
+      <a href="/">
+        <img src={logo} alt="logo" className={styles.logo} height="70px" width="110px" />
+      </a>
+      <nav>
+        <a href="/curso" className={styles.nav}>ChainXEducation</a>
+        <a href="/about" className={styles.nav}>Sobre</a>
+        <a href="/login" className={styles.nav}>Entrar</a>
+        <a href="/cadastro">
+            <button className="cadastroButton">Cadastre-se</button>
+        </a>
+      </nav>
     </header>
-  </div>
- ]
+  );
+};
 
-export default NavBar;
-// <button className="button-cadastro"><Link>Cadastre-se</Link></button>
+export default Navbar;
+

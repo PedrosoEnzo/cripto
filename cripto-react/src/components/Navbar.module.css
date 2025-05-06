@@ -1,0 +1,67 @@
+/* Header/Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 14px;
+    border-radius: 24px;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav:hover {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 8px #362c5b;
+}
+
+.cadastroButton {
+    background: linear-gradient(135deg, #3f025b, #b12092);
+    color: #fff;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 20px;
+}
+
+.cadastroButton:hover {
+    color: #fff;
+    box-shadow: 0 0 10px #110e1d;
+    transform: scale(1.05);
+}
+
+/* Seção Moeda + Navbar */
+.navbar-img-moeda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+}

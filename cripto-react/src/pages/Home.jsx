@@ -6,10 +6,13 @@ import moeda from '../assets/imgMoeda.png';
 import cursos from '../assets/cursos.png';
 import simulador2 from '../assets/simulador2.png';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
     <>
+    < Navbar />
+    {/*
       <header>
         <a href="/">
           <img src={logo} alt="logo" className="logo" height="70px" width="110px" />
@@ -23,6 +26,7 @@ export default function Home() {
           </a>
         </nav>
       </header>
+      */}
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
