@@ -101,7 +101,7 @@ p {
     }
 
     form {
-        max-width: 500px;
+        max-width: 200px;
         /* Aumenta a largura máxima do formulário */
         padding: 3rem;
         /* Adiciona mais espaçamento interno */
@@ -127,3 +127,4 @@ p {
         /* Adiciona mais espaçamento interno */
     }
 }
+
