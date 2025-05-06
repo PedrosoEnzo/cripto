@@ -35,7 +35,7 @@ export default function CoursePage() {
       ],
     },
     {
-      title: "Intermediário I",
+      title: "Intermediário",
       lessons: [
         { id: 9, title: "Aula 1: Criptomoedas", description: "Entenda o funcionamento e as oportunidades das criptomoedas..." },
         { id: 10, title: "Aula 2: Gestão de Riscos", description: "Aprenda como gerenciar riscos em seus investimentos..." },

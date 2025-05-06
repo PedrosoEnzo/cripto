@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import mundo from '../assets/mundo.png';
+import robo from '../assets/mascote/ZynxOla.png';
 import anaPerfil from '../assets/anaPerfil.jpeg';
 import nicolePerfil from '../assets/nicolePerfil.jpeg';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
@@ -23,7 +23,7 @@ function About() {
             de investimento e cursos práticos...
           </p>
         </div>
-          <img src={mundo} alt="Mundo" className='imgMundo'/>
+          <img src={robo} alt="Nosso mascote" className='imgMundo'/>
         <div className="textoDireito">
           <h2>Nossa missão:</h2>
           <p>
