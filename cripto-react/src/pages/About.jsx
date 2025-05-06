@@ -23,7 +23,15 @@ function About() {
             de investimento e cursos práticos...
           </p>
         </div>
+        <div className="imgEsquerdo">
           <img src={robo} alt="Nosso mascote" className='imgMundo'/>
+          <p>
+            <span className="highlight">Zynx</span> é uma plataforma de simulação de<br />
+            investimentos e cursos práticos, que visa capacitar<br />
+            pessoas e empresas a fazerem escolhas financeiras<br />
+            inteligentes.
+          </p>
+          </div>
         <div className="textoDireito">
           <h2>Nossa missão:</h2>
           <p>
