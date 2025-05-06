@@ -65,6 +65,7 @@ const Cadastro = () => {
           <div>
             <input
               placeholder="Confirmar Senha:"
+              type={showPassword ? "text" : "password"} // Alterna entre oculto e visí
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
