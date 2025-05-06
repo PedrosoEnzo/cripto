@@ -274,49 +274,6 @@ nav {
   margin-right: 50px;
 }
 
-/* Footer */
-footer {
-  background: linear-gradient(135deg, #000, #272042, #1a1a1a);
-  color: #fff;
-  padding: 30px 50px 10px;
-}
-
-.footerInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footerLink a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  margin: 5px 0;
-  transition: text-decoration 0.3s ease;
-}
-
-.footerLink a:hover {
-  text-decoration: underline;
-}
-
-.redesSociais img {
-  width: 30px;
-  margin-left: 10px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.redesSociais img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.5);
-}
-
-.copy {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
 /* Responsivo */
 @media (max-width: 799px) {
   header {
