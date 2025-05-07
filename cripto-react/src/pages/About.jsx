@@ -3,17 +3,22 @@ import './About.css';
 import robo from '../assets/mascote/ZynxOla.png';
 import anaPerfil from '../assets/anaPerfil.jpeg';
 import nicolePerfil from '../assets/nicolePerfil.jpeg';
+import juliaPerfil from '../assets/juliaPerfil.jpeg';
+import eduardaPerfil from '../assets/eduardaPerfil.jpeg';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
 import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
 import marianaPerfil from '../assets/marianaPerfil.jpeg';
-import instagram  from'../assets/instagram.png';
+import instagram from '../assets/instagram.png';
 import github from '../assets/github.png';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
 
 function About() {
   return (
     <>
+      < Navbar />
       <section className="intro">
         <div className="textoEsquerdo">
           <h2>Bem vindo ao Chain-x</h2>
@@ -23,15 +28,14 @@ function About() {
             de investimento e cursos práticos...
           </p>
         </div>
-        <div className="imgEsquerdo">
-          <img src={robo} alt="Nosso mascote" className='imgMundo'/>
+
+        <div className="divCentral">
+          <img src={robo} alt="Nosso mascote" className="imgMundo" />
           <p>
-            <span className="highlight">Zynx</span> é uma plataforma de simulação de<br />
-            investimentos e cursos práticos, que visa capacitar<br />
-            pessoas e empresas a fazerem escolhas financeiras<br />
-            inteligentes.
+            <span className="highlight">Zynx</span> é o mascote da Zynx e representa nossa missão de facilitar o acesso ao conhecimento financeiro. Com abordagem prática, orienta os usuários em decisões de investimento mais estratégicas.
           </p>
-          </div>
+        </div>
+
         <div className="textoDireito">
           <h2>Nossa missão:</h2>
           <p>
@@ -41,6 +45,7 @@ function About() {
           </p>
         </div>
       </section>
+
 
       <section className="desenvolvedores">
         <h2>Desenvolvedores:</h2>
@@ -55,7 +60,7 @@ function About() {
                   <img src={instagram} alt="Instagram" className="icon-social" />
                 </a>
                 <a className="social-link2" href={dev.github} target="_blank" rel="noopener noreferrer">
-                  <img src={github}alt="GitHub" className="icon-social" />
+                  <img src={github} alt="GitHub" className="icon-social" />
                 </a>
               </div>
 
@@ -63,6 +68,7 @@ function About() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 }
@@ -85,14 +91,14 @@ const developers = [
   {
     name: 'Julia',
     role: 'Design',
-    img: '../images/user.jpg',
+    img: juliaPerfil,
     instagram: 'https://www.instagram.com/julia_miranda288/',
     github: 'https://github.com/Jumiranda28',
   },
   {
     name: 'Maria Eduarda',
     role: 'Design',
-    img: '../images/user.jpg',
+    img: eduardaPerfil,
     instagram: 'https://www.instagram.com/eduarda_caraa',
     github: 'https://github.com/eduarda1023',
   },

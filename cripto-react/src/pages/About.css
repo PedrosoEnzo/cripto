@@ -48,7 +48,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1100px;
+    width: 700px;
 }
 
 .imgEsquerdo {
@@ -75,6 +75,31 @@ body {
     margin-right: auto;
     line-height: 1.6;
 }
+
+.divCentral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: 500px;
+}
+
+.imgMundo {
+    max-width: 2000px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.divCentral p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(225, 225, 225, 0.903);
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
 
 .imagem-intro img {
     width: 250px;
