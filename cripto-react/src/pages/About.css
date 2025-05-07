@@ -1,8 +1,15 @@
 body {
-    
-    color: white;
-    font-family: Arial, sans-serif;
-}
+    background: linear-gradient(135deg, #000, #1f1133, #000000);
+    background-size: 200% 200%;
+    animation: bgShift 10s ease infinite;
+  }
+  
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
 
 .intro {
     display: flex;
@@ -26,7 +33,10 @@ body {
     font-weight: 200;
     font-size: 38px;
     margin-bottom: 20px;
-    color: white;
+    background: linear-gradient(45deg, #b12092, #3f025b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 .textoEsquerdo p,
@@ -50,6 +60,44 @@ body {
     align-items: center;
     width: 700px;
 }
+/* O robo da uma flutluada quando a página recarrega
+@keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .imgMundo {
+    animation: fadeInSlide 1s ease-out forwards;
+  }*/
+/* Ele brilha
+  @keyframes glow {
+    0% { filter: drop-shadow(0 0 0px #b12092); }
+    50% { filter: drop-shadow(0 0 12px #b12092); }
+    100% { filter: drop-shadow(0 0 0px #b12092); }
+  }
+  
+  .imgMundo {
+    animation: float 3s ease-in-out infinite, glow 2.5s ease-in-out infinite;
+  }
+  */
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .imgMundo {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  
 
 .imgEsquerdo {
     flex: 1;
@@ -57,9 +105,11 @@ body {
 }
 
 .highlight {
-    font-family: "orbitron", sans-serif;
-    font-weight: 400;
-    color: #b12092;
+    font-size: 23px;
+    background: linear-gradient(45deg, #b12092, #6e44ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
   }
   
 
