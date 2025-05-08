@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import styles from './SimulatorPage.module.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -101,7 +103,8 @@ export default function SimulatorPage() {
   }
 
   return (
-    
+    <>
+    < Navbar />
     <div className={styles.page}>
       <header className={styles.header}>
       <a href="/lesson/1" className={styles.link}>
@@ -196,6 +199,8 @@ export default function SimulatorPage() {
         </div>
       </main>
     </div>
+    <Footer />
+    </>
   );
 }
 
