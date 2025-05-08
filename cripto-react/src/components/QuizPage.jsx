@@ -4,35 +4,106 @@ import styles from './QuizPage.module.css';
 
 const questions = [
   {
-    question: "O que é um investimento?",
+    question: "Por que investir é importante, segundo o conteúdo da aula?",
     options: [
-      "Gasto desnecessário",
-      "Compra parcelada",
-      "Aplicação de recursos para obter retorno",
-      "Doação em dinheiro"
+      "A) Porque é obrigatório por lei",
+      "B) Para fugir dos impostos",
+      "C) Para evitar que o dinheiro perca valor com o tempo devido à inflação",
+      "D) Para guardar dinheiro no cofre"
     ],
     correctAnswer: 2,
   },
   {
-    question: "Qual o objetivo principal de investir?",
+    question: "O que é inflação?",
     options: [
-      "Perder dinheiro",
-      "Guardar em casa",
-      "Maximizar lucros",
-      "Evitar trabalho"
+      "A) Quando o governo imprime mais dinheiro",
+      "B) Quando o salário das pessoas aumenta",
+      "C) Quando os preços dos produtos caem",
+      "D) Quando o dinheiro perde valor com o tempo"
+    ],
+    correctAnswer: 3,
+  },
+  {
+    question: "Qual das opções representa um exemplo de investimento em renda fixa?",
+    options: [
+      "A) Ações",
+      "B) Fundos Imobiliários",
+      "C) Tesouro Direto",
+      "D) Criptomoedas"
     ],
     correctAnswer: 2,
   },
   {
-    question: "O que representa a taxa Selic?",
+    question: "Qual é a principal diferença entre poupar e investir?",
     options: [
-      "Imposto de renda",
-      "Inflação",
-      "Taxa básica de juros da economia",
-      "Cotação do dólar"
+      "A) Poupar dá mais lucro",
+      "B) Investir é ilegal",
+      "C) Poupar é guardar dinheiro, investir é fazê-lo crescer",
+      "D) Investir é só para bancos"
     ],
     correctAnswer: 2,
   },
+  {
+    question: "Quem pode começar a investir, segundo a aula?",
+    options: [
+      "A) Apenas quem entende de economia",
+      "B) Somente pessoas com muito dinheiro",
+      "C) Qualquer pessoa que queira aprender",
+      "D) Apenas empresários"
+    ],
+    correctAnswer: 2,
+  },
+  {
+    question: "Investir é como jogar na loteria?",
+    options: [
+      "A) Sim, porque depende de sorte",
+      "B) Não, porque depende de conhecimento e estratégia",
+      "C) Sim, ambos envolvem risco igual",
+      "D) Não, porque não há riscos em investir"
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "Qual das opções abaixo representa um perfil conservador de investidor?",
+    options: [
+      "A) Aceita correr mais riscos em busca de lucros",
+      "B) Gosta de segurança e estabilidade",
+      "C) Investe apenas em criptomoedas",
+      "D) Sempre investe em ações"
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "O que você precisa ter para começar a investir na prática?",
+    options: [
+      "A) Apenas vontade de aprender",
+      "B) Uma conta bancária e CPF, além de abrir conta em uma corretora",
+      "C) Diploma em economia ou contabilidade",
+      "D) Um salário alto e estabilidade financeira"
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "Qual das alternativas é uma característica da renda variável?",
+    options: [
+      "A) Rendimento garantido",
+      "B) Baixo risco e retorno previsível",
+      "C) Pode subir ou cair, mas tem potencial de maiores lucros",
+      "D) Isento de qualquer risco"
+    ],
+    correctAnswer: 2,
+  },
+  {
+    question: "Qual é a metáfora usada na aula para explicar a diferença entre poupar e investir?",
+    options: [
+      "A) Poupar é como correr, investir é como caminhar",
+      "B) Poupar é deixar no cofre, investir é gastar",
+      "C) Poupar é estacionar o carro, investir é pegar a estrada",
+      "D) Poupar é como estudar, investir é como trabalhar"
+    ],
+    correctAnswer: 2,
+  },
+  
 ];
 
 export default function QuizPage() {
