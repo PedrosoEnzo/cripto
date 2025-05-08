@@ -16,6 +16,10 @@ const Login = () => {
         senha,
       });
 
+      // response.data.token
+      // setItem("token", token);
+      sessionStorage.setItem("token", "");
+
       setMessage(response.data.message);
     } catch (error) {
       setMessage("Erro ao fazer login");

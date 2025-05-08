@@ -69,6 +69,10 @@ app.post('/login', (req, res) => {
         }
 
         if (isMatch) {
+
+          // gerarToken
+
+          // retorna o token
           res.status(200).json({ alert: 'Login bem-sucedido', user: results[0] });
         } else {
           res.status(401).json({ alert: 'Credenciais inválidas' });

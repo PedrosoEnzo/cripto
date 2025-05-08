@@ -7,6 +7,17 @@ import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
 
+interface CourseInterface {
+  title: string;
+  lessons: LessonInterface[];
+}
+
+interface LessonInterface {
+    id: number;
+    title: string;
+    description: string;
+}
+
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
   const [completedLessons, setCompletedLessons] = useState([]);
@@ -15,7 +26,7 @@ export default function CoursePage() {
 
   const totalLessons = 11;
 
-  const courseData = [
+  const courseData: CourseInterface[] = [
     {
       title: "Básico I",
       lessons: [
@@ -120,10 +131,10 @@ export default function CoursePage() {
       ...mod,
       lessons: mod.lessons.map((lesson) => {
         const index = allLessons.findIndex((l) => l.id === lesson.id);
-        const isUnlocked = completedLessons.includes(lesson.id);
+        const isUnlocked = completedLessons.includes( lesson.id as never);
 
         const isLocked =
-          lesson.id === 1 ? false : !completedLessons.includes(lesson.id - 1);
+          lesson.id === 1 ? false : !completedLessons.includes((lesson.id - 1) as never);
 
         return {
           ...lesson,
@@ -135,6 +146,22 @@ export default function CoursePage() {
   };
 
   const courseDataWithLocks = getCourseDataWithLocks();
+
+  /* 
+  
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    // null
+
+    disandsaiodsansdao
+    // verifica se o token e valido na API
+
+    // continuar
+
+  }, [])
+  
+  */
 
   return (
     <>
@@ -158,6 +185,7 @@ export default function CoursePage() {
             lessons={mod.lessons}
             completed={completedLessons}
             onLessonClick={handleLessonClick}
+            onComplete={() => {}}
           />
         ))}
 
