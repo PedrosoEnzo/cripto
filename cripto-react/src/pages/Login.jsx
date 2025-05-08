@@ -25,7 +25,7 @@ const Login = () => {
   return (
     <div className="tudo">
       <div className="box">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <div className="paragrafo">
             <h2>Bem-vindo de volta!</h2>
            <br />
@@ -38,6 +38,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="input"
             />
           </div>
           <div>
@@ -47,6 +48,7 @@ const Login = () => {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
+              className="input"
             />
           </div>
           
