@@ -10,6 +10,7 @@ body {
   color: #fff;
   position: relative;
 }
+
 body::before {
   content: '';
   position: fixed;
@@ -23,6 +24,7 @@ body::before {
   animation: bgShift 10s ease infinite;
   pointer-events: none; 
 }
+
 @keyframes bgShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
