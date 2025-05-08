@@ -60,7 +60,7 @@ body {
     align-items: center;
     width: 700px;
 }
-/* O robo da uma flutluada quando a página recarrega
+/*
 @keyframes fadeInSlide {
     from {
       opacity: 0;
@@ -75,7 +75,7 @@ body {
   .imgMundo {
     animation: fadeInSlide 1s ease-out forwards;
   }*/
-/* Ele brilha
+/*
   @keyframes glow {
     0% { filter: drop-shadow(0 0 0px #b12092); }
     50% { filter: drop-shadow(0 0 12px #b12092); }
@@ -89,14 +89,14 @@ body {
 
   @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-30px); }
     100% { transform: translateY(0); }
   }
   
   .imgMundo {
     animation: float 3s ease-in-out infinite;
   }
-  
+
   
 
 .imgEsquerdo {

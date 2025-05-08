@@ -1,17 +1,10 @@
 import React from 'react';
 import styles from './LessonCard.module.css';
 
-export default function LessonCard({ lesson, isCompleted, onComplete, onLessonClick }) {
+export default function LessonCard({ lesson, onLessonClick }) {
   const handleClick = () => {
     if (!lesson.isLocked) {
       onLessonClick(lesson.id);
-    }
-  };
-
-  const handleComplete = (e) => {
-    e.stopPropagation();
-    if (!lesson.isLocked) {
-      onComplete(lesson.id);
     }
   };
 
@@ -28,16 +21,14 @@ export default function LessonCard({ lesson, isCompleted, onComplete, onLessonCl
         <h3>{lesson.title}</h3>
         <p>{lesson.description}</p>
       </div>
-      <button
-        onClick={handleComplete}
-        disabled={isCompleted || lesson.isLocked}
-      >
-        {isCompleted
-          ? 'Concluída'
-          : lesson.isLocked
+
+      <div className={styles.status}>
+        {lesson.isLocked
           ? 'Bloqueada'
-          : 'Marcar como concluída'}
-      </button>
+          : lesson.isUnlocked
+          ? 'Concluída'
+          : 'Disponível'}
+      </div>
     </div>
   );
 }

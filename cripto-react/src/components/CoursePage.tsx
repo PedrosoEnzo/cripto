@@ -6,11 +6,10 @@ import ModuleSection from './ModuleSection';
 import { FaArrowLeft } from 'react-icons/fa';
 import adImage from '../assets/ChainAds.png';
 
-
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
   const [completedLessons, setCompletedLessons] = useState([]);
-  const [visibleAd, setVisibleAd] = useState(false);  // Inicialmente o anúncio está escondido
+  const [visibleAd, setVisibleAd] = useState(false);
   const navigate = useNavigate();
 
   const totalLessons = 11;
@@ -52,30 +51,16 @@ export default function CoursePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisibleAd(true);
-    }, 3000); 
-
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    const storedLessons = localStorage.getItem('completedLessons');
-    if (storedLessons) {
-      const parsedLessons = JSON.parse(storedLessons);
-      setCompletedLessons(parsedLessons);
-      setProgress((parsedLessons.length / totalLessons) * 100);
-    }
+    const storedProgress = localStorage.getItem('chainx-progress');
+    const parsed = storedProgress ? JSON.parse(storedProgress) : []; // Aula 1 desbloqueada
+    setCompletedLessons(parsed);
+    setProgress((parsed.length / totalLessons) * 100);
   }, []);
-
-  function handleComplete(lessonId) {
-    if (!completedLessons.includes(lessonId)) {
-      const updatedLessons = [...completedLessons, lessonId];
-      setCompletedLessons(updatedLessons);
-      setProgress((updatedLessons.length / totalLessons) * 100);
-
-      // Salvar no localStorage
-      localStorage.setItem('completedLessons', JSON.stringify(updatedLessons));
-    }
-  }
 
   function handleLessonClick(lessonId) {
     navigate(`/lesson/${lessonId}`);
@@ -83,19 +68,22 @@ export default function CoursePage() {
 
   const getCourseDataWithLocks = () => {
     const allLessons = courseData.flatMap(mod => mod.lessons);
-    const completedSet = new Set(completedLessons);
 
     return courseData.map(mod => ({
       ...mod,
       lessons: mod.lessons.map(lesson => {
         const index = allLessons.findIndex(l => l.id === lesson.id);
-        const previousLesson = allLessons[index - 1];
+        const isUnlocked = completedLessons.includes(lesson.id);
 
-        const isLocked = previousLesson ? !completedSet.has(previousLesson.id) : false; // Primeira aula liberada
+        const isLocked =
+          lesson.id === 1
+            ? false
+            : !completedLessons.includes(lesson.id - 1);
 
         return {
           ...lesson,
           isLocked,
+          isUnlocked,
         };
       }),
     }));
@@ -111,14 +99,15 @@ export default function CoursePage() {
           ChainX <span>Educ</span>
         </h1>
       </div>
+
       <ProgressBar progress={progress} />
+
       {courseDataWithLocks.map((mod, idx) => (
         <ModuleSection
           key={idx}
           title={mod.title}
           lessons={mod.lessons}
           completed={completedLessons}
-          onComplete={handleComplete}
           onLessonClick={handleLessonClick}
         />
       ))}
@@ -127,12 +116,10 @@ export default function CoursePage() {
         <div className={styles.floatingAd}>
           <button className={styles.closeButton} onClick={() => setVisibleAd(false)}>×</button>
           <a href="https://www.youtube.com/@primorico" target="_blank" rel="noopener noreferrer">
-          <img src={adImage} alt="Anúncio promocional" />
-
+            <img src={adImage} alt="Anúncio promocional" />
           </a>
         </div>
       )}
     </div>
   );
 }
-
