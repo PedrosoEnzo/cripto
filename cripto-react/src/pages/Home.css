@@ -50,7 +50,6 @@ body {
   font-size: 80px;
   color: #e4dfdfeb;
   margin-bottom: 50px;
-  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .content p {
@@ -224,39 +223,5 @@ body {
 .simuladorImage {
   width: 470px;
   margin-right: 50px;
-}
-
-/* Responsivo */
-@media (max-width: 799px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-   
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .section-navbar-img {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .moeda-image {
-    width: 70%;
-  }
-
-  .content h1 {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .content p {
-    text-align: center;
-  }
 }
 
