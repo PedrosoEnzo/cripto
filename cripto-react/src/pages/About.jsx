@@ -49,7 +49,9 @@ function About() {
 
 
       <section className="desenvolvedores">
+      <span className="highligh">
         <h2>Desenvolvedores:</h2>
+        </span>
         <div className="row">
           {developers.map((dev) => (
             <div className="profile" key={dev.name}>

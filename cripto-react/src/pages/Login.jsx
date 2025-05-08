@@ -28,9 +28,10 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="paragrafo">
             <h2>Bem-vindo de volta!</h2>
+           <br />
             <h4>Entre com seu e-mail e senha para acessar sua conta.</h4>
           </div>
-          <div>
+          <div className="campos">
             <input
               placeholder="Email"
               type="email"
@@ -48,10 +49,9 @@ const Login = () => {
               required
             />
           </div>
-
-          <button id="button" type="submit">
-            Entrar
-          </button>
+          
+          <button id="button" type="submit">Entrar</button>
+  
         </form>
         {message && <p>{message}</p>}
       </div>
