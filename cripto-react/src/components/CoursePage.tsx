@@ -8,19 +8,6 @@ import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
 import axios from "axios";
 
-interface CourseInterface {
-  title: string;
-  lessons: LessonInterface[];
-}
-
-interface LessonInterface {
-  id: number;
-  title: string;
-  description: string;
-  isLocked?: boolean;
-  isUnlocked?: boolean;
-}
-
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
   const [completedLessons, setCompletedLessons] = useState<number[]>([]);
@@ -31,12 +18,11 @@ export default function CoursePage() {
 
   const totalLessons = 11;
 
-  // Dados do curso (poderiam vir da API)
-  const courseData: CourseInterface[] = [
+  const courseData = [
     // ... (seus dados de curso existentes)
   ];
 
-  // Verifica autenticação e carrega progresso
+  // Verifica autenticação ao carregar a página
   useEffect(() => {
     const token = sessionStorage.getItem("token");
     
@@ -45,32 +31,40 @@ export default function CoursePage() {
       return;
     }
 
-    const verifyAuth = async () => {
+    const fetchUserProgress = async () => {
       try {
-        // Verifica token com o backend
-        const response = await axios.get("http://localhost:5000/perfil", {
+        // Verifica token e busca progresso do usuário
+        const response = await axios.get("http://localhost:5000/progresso", {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
 
-        // Carrega progresso do usuário
-        const storedProgress = localStorage.getItem("chainx-progress");
-        const parsed = storedProgress ? JSON.parse(storedProgress) : [];
+        const userProgress = response.data.progresso || [];
+        setCompletedLessons(userProgress);
+        setProgress((userProgress.length / totalLessons) * 100);
         
-        setCompletedLessons(parsed);
-        setProgress((parsed.length / totalLessons) * 100);
-        setIsLoading(false);
+        // Carrega progresso local como fallback
+        const localProgress = localStorage.getItem("chainx-progress");
+        if (localProgress && JSON.parse(localProgress).length > userProgress.length) {
+          setCompletedLessons(JSON.parse(localProgress));
+        }
 
       } catch (err) {
-        sessionStorage.removeItem("token");
-        navigate("/login");
+        console.error("Erro ao buscar progresso:", err);
+        // Fallback para progresso local
+        const storedProgress = localStorage.getItem("chainx-progress");
+        const parsed = storedProgress ? JSON.parse(storedProgress) : [];
+        setCompletedLessons(parsed);
+        setProgress((parsed.length / totalLessons) * 100);
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    verifyAuth();
+    fetchUserProgress();
 
-    // Anúncio (mantido da versão original)
+    // Timer para o anúncio
     const timer = setTimeout(() => setVisibleAd(true), 3000);
     return () => clearTimeout(timer);
   }, [navigate, totalLessons]);
@@ -88,46 +82,51 @@ export default function CoursePage() {
     return !completedLessons.includes(lessonId - 1);
   };
 
+  // Função para marcar aula como completa
   const handleCompleteLesson = async (lessonId: number) => {
     try {
       const token = sessionStorage.getItem("token");
       if (!token) throw new Error("Não autenticado");
 
-      // Atualiza no backend (exemplo)
+      // Atualiza no backend
       await axios.post(
         "http://localhost:5000/aulas/completar",
-        { lessonId },
+        { aulaId: lessonId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
       // Atualiza localmente
-      const newCompleted = [...completedLessons, lessonId];
+      const newCompleted = [...new Set([...completedLessons, lessonId])];
       setCompletedLessons(newCompleted);
       setProgress((newCompleted.length / totalLessons) * 100);
       localStorage.setItem("chainx-progress", JSON.stringify(newCompleted));
 
     } catch (err) {
       console.error("Erro ao completar aula:", err);
+      // Fallback local se a API falhar
+      const newCompleted = [...new Set([...completedLessons, lessonId])];
+      setCompletedLessons(newCompleted);
+      localStorage.setItem("chainx-progress", JSON.stringify(newCompleted));
     }
   };
 
   if (isLoading) {
     return (
       <div className={styles.loadingContainer}>
-        <div className={styles.loader}></div>
+        <div className={styles.spinner}></div>
         <p>Carregando seu progresso...</p>
       </div>
     );
   }
 
-  if (error) {
-    return (
-      <div className={styles.errorContainer}>
-        <p>{error}</p>
-        <button onClick={() => navigate("/login")}>Fazer Login</button>
-      </div>
-    );
-  }
+  const courseDataWithLocks = courseData.map((mod) => ({
+    ...mod,
+    lessons: mod.lessons.map((lesson) => ({
+      ...lesson,
+      isLocked: isLessonLocked(lesson.id),
+      isUnlocked: completedLessons.includes(lesson.id)
+    }))
+  }));
 
   return (
     <>
@@ -144,19 +143,15 @@ export default function CoursePage() {
 
         <ProgressBar progress={progress} />
 
-        {courseData.map((mod, idx) => (
+        {courseDataWithLocks.map((mod, idx) => (
           <ModuleSection
-          key={idx}
-          title={mod.title}
-          lessons={mod.lessons.map(lesson => ({
-            ...lesson,
-            isLocked: isLessonLocked(lesson.id),
-            isUnlocked: completedLessons.includes(lesson.id)
-          }))} 
-          completed={mod.completed} // Adicione esta linha
-          onLessonClick={handleLessonClick}
-          onComplete={handleCompleteLesson}
-        />
+            key={idx}
+            title={mod.title}
+            lessons={mod.lessons}
+            completed={completedLessons}
+            onLessonClick={handleLessonClick}
+            onComplete={handleCompleteLesson}
+          />
         ))}
 
         {visibleAd && (
