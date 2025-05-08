@@ -89,12 +89,20 @@ body {
 }
 
 .highligh {
+    font-size: 38px;
+    background: linear-gradient(45deg, #b12092, #6e44ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.highligh h2 {
     font-size: 23px;
     background: linear-gradient(45deg, #b12092, #6e44ff);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-  }
+}
   
 
 .imgEsquerdo p {
@@ -148,6 +156,7 @@ body {
 
 .desenvolvedores h2 {
     font-size: 40px;
+    font-weight: bold;
     font-family: 'orbitron', sans-serif;
     font-weight: 200;
     margin-bottom: 40px;
