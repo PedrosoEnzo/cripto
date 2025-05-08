@@ -1,15 +1,16 @@
 body {
-    background: linear-gradient(130deg, #000, #1f1133, #000000);
-    background-size: 200% 200%;
-    animation: bgShift 10s ease infinite;
-  }
-  
-  @keyframes bgShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
+  background-image: linear-gradient(135deg, #000000, #1f1133, #000000);
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  animation: bgShift 10s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .intro {
     display: flex;
@@ -34,6 +35,7 @@ body {
     font-size: 38px;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #b12092, #3f025b);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -89,7 +91,7 @@ body {
 
   @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
+    50% { transform: translateY(-20px); }
     100% { transform: translateY(0); }
   }
   
