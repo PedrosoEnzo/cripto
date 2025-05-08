@@ -28,6 +28,11 @@
     color: rgb(2, 2, 2);
 }
 
+.paragrafo h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(94, 93, 93);
+}
+
 .paragrafo, h4 {
     margin-bottom: 16px;
     font-size: 20px;
