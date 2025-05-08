@@ -4,6 +4,8 @@ import './Home.css';
 import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
 import cursos from '../assets/cursos.png';
+import cursos1 from '../assets/cursos1.png';
+import cursos2 from '../assets/cursos2.png';
 import simulador2 from '../assets/simulador2.png';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -12,21 +14,6 @@ export default function Home() {
   return (
     <>
     < Navbar />
-    {/*
-      <header>
-        <a href="/">
-          <img src={logo} alt="logo" className="logo" height="70px" width="110px" />
-        </a>
-        <nav>
-          <a href="/curso" className="nav">ChainXEducation</a>
-          <a href="/about" className="nav">Sobre</a>
-          <a href="/login" className="nav">Entrar</a>
-          <a href="/cadastro">
-            <button className="cadastroButton">Cadastre-se</button>
-          </a>
-        </nav>
-      </header>
-      */}
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
@@ -47,7 +34,7 @@ export default function Home() {
         <div className='plataformaCursosContent'>
           <div className='plataformaCursosCard'>
             <div className='plataformaCursosCardIcon'>
-              <img src={cursos} alt="cursos" />
+              <img src={cursos1} alt="cursos" />
               <br />
               <h3>Simulador de Investimentos</h3>
               <p>Aprenda a investir com segurança e confiança.</p>
@@ -62,7 +49,7 @@ export default function Home() {
           </div>
           <div className='plataformaCursosCard'>
             <div className='plataformaCursosCardIcon'>
-              <img src={cursos} alt="cursos" />
+              <img src={cursos2} alt="cursos" />
               <h3>Comunidade Ativa</h3>
               <br />
               <p>Participe de discussões e trocas de experiências.</p>
