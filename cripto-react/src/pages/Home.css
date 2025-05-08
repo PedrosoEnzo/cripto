@@ -174,13 +174,14 @@ nav {
 
 .plataformaCursos h2 {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 40px;
   margin: 70px 0;
   text-align: center;
 }
 
-.highlight {
+.plataformaCursos .highlight {
   color: #b12092;
+  font-size: 40px;
 }
 
 .plataformaCursosContent {
