@@ -51,6 +51,9 @@ export default function LessonPage() {
           <Link to="/simulador" className={styles.simulatorLink}>
             Acessar Simulador de Investimentos
           </Link>
+          <Link to="/quiz" className={styles.simulatorLink}>
+            Concluir
+          </Link>
         </div>
       </main>
     </div>

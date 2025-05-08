@@ -79,3 +79,9 @@ button:hover {
 .locked {
   pointer-events: none;
 }
+
+.status {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: #7f01b9;
+}

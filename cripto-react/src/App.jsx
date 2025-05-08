@@ -8,6 +8,8 @@ import LessonPage from './components/LessonPage';
 import Simulador from './components/SimulatorPage';
 import ProfilePage from './components/ProfilePage';
 import About from './pages/About';
+import QuizPage from './components/QuizPage';
+import SimulatorPage from './components/SimulatorPage';
 
 
 
@@ -21,7 +23,9 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />  {/* Página de cadastro */}
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
-        <Route path="/simulador" element={<Simulador />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/simulador" element={<SimulatorPage />} />
+        <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
     
