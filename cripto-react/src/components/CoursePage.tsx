@@ -6,6 +6,7 @@ import ModuleSection from "./ModuleSection";
 import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 interface CourseInterface {
   title: string;
@@ -13,155 +14,120 @@ interface CourseInterface {
 }
 
 interface LessonInterface {
-    id: number;
-    title: string;
-    description: string;
+  id: number;
+  title: string;
+  description: string;
+  isLocked?: boolean;
+  isUnlocked?: boolean;
 }
 
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
-  const [completedLessons, setCompletedLessons] = useState([]);
+  const [completedLessons, setCompletedLessons] = useState<number[]>([]);
   const [visibleAd, setVisibleAd] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const totalLessons = 11;
 
+  // Dados do curso (poderiam vir da API)
   const courseData: CourseInterface[] = [
-    {
-      title: "Básico I",
-      lessons: [
-        {
-          id: 1,
-          title: "Aula 1: Introdução",
-          description: "Conheça os conceitos fundamentais de investimentos...",
-        },
-        {
-          id: 2,
-          title: "Aula 2: Planejamento",
-          description: "Aprenda a avaliar sua situação financeira...",
-        },
-        {
-          id: 3,
-          title: "Aula 3: Fundos de Investimento",
-          description: "Descubra como funcionam os fundos de investimento...",
-        },
-        {
-          id: 4,
-          title: "Aula 4: Renda Fixa",
-          description: "Explore opções de investimentos em renda fixa...",
-        },
-      ],
-    },
-    {
-      title: "Básico II",
-      lessons: [
-        {
-          id: 5,
-          title: "Aula 1: Análise Técnica",
-          description: "Aprenda sobre análise técnica de ações...",
-        },
-        {
-          id: 6,
-          title: "Aula 2: Análise Fundamentalista",
-          description: "Estude a análise fundamentalista de empresas...",
-        },
-        {
-          id: 7,
-          title: "Aula 3: Derivativos e Alavancagem",
-          description: "Descubra o mundo dos derivativos...",
-        },
-        {
-          id: 8,
-          title: "Aula 4: Investimentos Internacionais",
-          description: "Aprenda sobre investimentos no exterior...",
-        },
-      ],
-    },
-    {
-      title: "Intermediário",
-      lessons: [
-        {
-          id: 9,
-          title: "Aula 1: Criptomoedas",
-          description:
-            "Entenda o funcionamento e as oportunidades das criptomoedas...",
-        },
-        {
-          id: 10,
-          title: "Aula 2: Gestão de Riscos",
-          description: "Aprenda como gerenciar riscos em seus investimentos...",
-        },
-      ],
-    },
-    {
-      title: "Avançado",
-      lessons: [
-        {
-          id: 11,
-          title: "Aula 1: Estratégias de Investimento",
-          description:
-            "Explore estratégias avançadas para maximizar seus lucros...",
-        },
-      ],
-    },
+    // ... (seus dados de curso existentes)
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisibleAd(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const storedProgress = localStorage.getItem("chainx-progress");
-    const parsed = storedProgress ? JSON.parse(storedProgress) : []; // Aula 1 desbloqueada
-    setCompletedLessons(parsed);
-    setProgress((parsed.length / totalLessons) * 100);
-  }, []);
-
-  function handleLessonClick(lessonId) {
-    navigate(`/lesson/${lessonId}`);
-  }
-
-  const getCourseDataWithLocks = () => {
-    const allLessons = courseData.flatMap((mod) => mod.lessons);
-
-    return courseData.map((mod) => ({
-      ...mod,
-      lessons: mod.lessons.map((lesson) => {
-        const index = allLessons.findIndex((l) => l.id === lesson.id);
-        const isUnlocked = completedLessons.includes( lesson.id as never);
-
-        const isLocked =
-          lesson.id === 1 ? false : !completedLessons.includes((lesson.id - 1) as never);
-
-        return {
-          ...lesson,
-          isLocked,
-          isUnlocked,
-        };
-      }),
-    }));
-  };
-
-  const courseDataWithLocks = getCourseDataWithLocks();
-
-  /* 
-  
+  // Verifica autenticação e carrega progresso
   useEffect(() => {
     const token = sessionStorage.getItem("token");
+    
+    if (!token) {
+      navigate("/login");
+      return;
+    }
 
-    // null
+    const verifyAuth = async () => {
+      try {
+        // Verifica token com o backend
+        const response = await axios.get("http://localhost:5000/perfil", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
 
-    disandsaiodsansdao
-    // verifica se o token e valido na API
+        // Carrega progresso do usuário
+        const storedProgress = localStorage.getItem("chainx-progress");
+        const parsed = storedProgress ? JSON.parse(storedProgress) : [];
+        
+        setCompletedLessons(parsed);
+        setProgress((parsed.length / totalLessons) * 100);
+        setIsLoading(false);
 
-    // continuar
+      } catch (err) {
+        sessionStorage.removeItem("token");
+        navigate("/login");
+      }
+    };
 
-  }, [])
-  
-  */
+    verifyAuth();
+
+    // Anúncio (mantido da versão original)
+    const timer = setTimeout(() => setVisibleAd(true), 3000);
+    return () => clearTimeout(timer);
+  }, [navigate, totalLessons]);
+
+  const handleLessonClick = (lessonId: number) => {
+    if (isLessonLocked(lessonId)) {
+      alert("Complete a aula anterior primeiro!");
+      return;
+    }
+    navigate(`/lesson/${lessonId}`);
+  };
+
+  const isLessonLocked = (lessonId: number) => {
+    if (lessonId === 1) return false;
+    return !completedLessons.includes(lessonId - 1);
+  };
+
+  const handleCompleteLesson = async (lessonId: number) => {
+    try {
+      const token = sessionStorage.getItem("token");
+      if (!token) throw new Error("Não autenticado");
+
+      // Atualiza no backend (exemplo)
+      await axios.post(
+        "http://localhost:5000/aulas/completar",
+        { lessonId },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // Atualiza localmente
+      const newCompleted = [...completedLessons, lessonId];
+      setCompletedLessons(newCompleted);
+      setProgress((newCompleted.length / totalLessons) * 100);
+      localStorage.setItem("chainx-progress", JSON.stringify(newCompleted));
+
+    } catch (err) {
+      console.error("Erro ao completar aula:", err);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loader}></div>
+        <p>Carregando seu progresso...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.errorContainer}>
+        <p>{error}</p>
+        <button onClick={() => navigate("/login")}>Fazer Login</button>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -178,15 +144,19 @@ export default function CoursePage() {
 
         <ProgressBar progress={progress} />
 
-        {courseDataWithLocks.map((mod, idx) => (
+        {courseData.map((mod, idx) => (
           <ModuleSection
-            key={idx}
-            title={mod.title}
-            lessons={mod.lessons}
-            completed={completedLessons}
-            onLessonClick={handleLessonClick}
-            onComplete={() => {}}
-          />
+          key={idx}
+          title={mod.title}
+          lessons={mod.lessons.map(lesson => ({
+            ...lesson,
+            isLocked: isLessonLocked(lesson.id),
+            isUnlocked: completedLessons.includes(lesson.id)
+          }))} 
+          completed={mod.completed} // Adicione esta linha
+          onLessonClick={handleLessonClick}
+          onComplete={handleCompleteLesson}
+        />
         ))}
 
         {visibleAd && (
