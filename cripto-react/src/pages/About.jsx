@@ -31,7 +31,9 @@ function About() {
         <div className="divCentral">
           <img src={robo} alt="Nosso mascote" className="imgMundo" />
           <p>
-            <span className="highlight">Zynx</span> é o mascote da Zynx e representa nossa missão de facilitar o acesso ao conhecimento financeiro. Com abordagem prática, orienta os usuários em decisões de investimento mais estratégicas.
+            <span className="highligh">Zynx</span> <br />
+            O nosso mascote veio para facilitar o acesso ao conhecimento financeiro, orientando investimentos estratégicos.
+
           </p>
         </div>
 
