@@ -13,7 +13,7 @@ const Navbar = () => {
         <a href="/about" className={styles.nav}>Sobre</a>
         <a href="/login" className={styles.nav}>Entrar</a>
         <a href="/cadastro">
-            <button className="cadastroButton">Cadastre-se</button>
+            <button className={styles.cadastroButton}>Cadastre-se</button>
         </a>
       </nav>
     </header>
