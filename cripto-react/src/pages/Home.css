@@ -228,7 +228,7 @@ html, body {
 }
 
 /* Responsividade para notebooks e tablets */
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .content h1 {
     font-size: 48px;
   }
