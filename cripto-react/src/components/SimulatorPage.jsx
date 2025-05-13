@@ -1,62 +1,73 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import styles from './SimulatorPage.module.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import axios from 'axios';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function SimulatorPage() {
   const [investmentType, setInvestmentType] = useState('selic');
   const [cryptoType, setCryptoType] = useState('bitcoin');
-  const [rate, setRate] = useState<number | null>(null);
+  const [rate, setRate] = useState(null);
   const [riskLevel, setRiskLevel] = useState('');
   const [initialInvestment, setInitialInvestment] = useState('');
   const [monthlyContribution, setMonthlyContribution] = useState('');
   const [years, setYears] = useState('');
-  const [finalAmount, setFinalAmount] = useState<number | string | null>(null);
+  const [finalAmount, setFinalAmount] = useState(null);
   const [chartData, setChartData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [savedSimulations, setSavedSimulations] = useState([]);
-  const navigate = useNavigate();
 
-  // Verifica autenticação ao carregar a página
   useEffect(() => {
-    const token = sessionStorage.getItem('token');
-    
-    if (!token) {
-      navigate('/login');
-      return;
-    }
-
-    // Carrega histórico de simulações
-    const loadSavedSimulations = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/simulacoes', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        setSavedSimulations(response.data.simulacoes);
-      } catch (error) {
-        console.error('Erro ao carregar simulações:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadSavedSimulations();
     fetchRate(investmentType);
-  }, [navigate, investmentType, cryptoType]);
+  }, [investmentType, cryptoType]);
 
   const fetchRate = async (type) => {
-    // ... (mantenha sua implementação existente)
+    if (type === 'selic') {
+      fetch('https://brasilapi.com.br/api/taxas/v1/selic')
+        .then((response) => response.json())
+        .then((data) => {
+          setRate(parseFloat(data.valor));
+          setRiskLevel('Baixo risco'); 
+        })
+        .catch((error) => {
+          console.error('Erro ao buscar taxa Selic:', error);
+          setRate(10);
+          setRiskLevel('Baixo risco');
+        });
+    } else if (type === 'poupanca') {
+      setRate(6);
+      setRiskLevel('Baixo risco'); 
+    } else if (type === 'tesouro') {
+      setRate(10);
+      setRiskLevel('Baixo risco'); 
+    } else if (type === 'fii') {
+      setRate(12);
+      setRiskLevel('Médio risco'); 
+    } else if (type === 'acoes') {
+      setRate(15);
+      setRiskLevel('Alto risco'); 
+    } else if (type === 'crypto') {
+      try {
+        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cryptoType}&vs_currencies=usd`);
+        const data = await response.json();
+        const priceNow = data[cryptoType]?.usd;
+
+        if (priceNow) {
+          setRate(50);
+        } else {
+          setRate(30);
+        }
+        setRiskLevel('Alto risco');
+      } catch (error) {
+        console.error('Erro ao buscar preço da cripto:', error);
+        setRate(30);
+        setRiskLevel('Alto risco');
+      }
+    }
   };
 
-  const handleSimulation = async (e) => {
+  function handleSimulation(e) {
     e.preventDefault();
 
     const P = parseFloat(initialInvestment);
@@ -76,8 +87,7 @@ export default function SimulatorPage() {
       values.push(accumulatedValue.toFixed(2));
     }
 
-    const finalValue = values[n - 1];
-    setFinalAmount(finalValue);
+    setFinalAmount(values[n - 1]);
     setChartData({
       labels: Array.from({ length: n }, (_, index) => index + 1),
       datasets: [
@@ -90,177 +100,107 @@ export default function SimulatorPage() {
         },
       ],
     });
-
-    // Salva a simulação no backend
-    try {
-      const token = sessionStorage.getItem('token');
-      if (!token) throw new Error('Não autenticado');
-
-      await axios.post(
-        'http://localhost:5000/simulacoes',
-        {
-          tipoInvestimento: investmentType,
-          valorInicial: P,
-          aporteMensal: PMT,
-          prazoAnos: parseInt(years),
-          taxaEstimada: rate,
-          valorFinal: finalValue,
-          dataSimulacao: new Date().toISOString()
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
-
-      // Atualiza a lista de simulações
-      const response = await axios.get('http://localhost:5000/simulacoes', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      setSavedSimulations(response.data.simulacoes);
-
-    } catch (error) {
-      console.error('Erro ao salvar simulação:', error);
-    }
-  };
-
-  const loadSimulation = (simulation) => {
-    setInvestmentType(simulation.tipoInvestimento);
-    setInitialInvestment(simulation.valorInicial.toString());
-    setMonthlyContribution(simulation.aporteMensal.toString());
-    setYears(simulation.prazoAnos.toString());
-    // Dispara a simulação automaticamente
-    setTimeout(() => {
-      document.getElementById('simulate-button')?.click();
-    }, 100);
-  };
-
-  if (isLoading) {
-    return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.spinner}></div>
-        <p>Carregando suas simulações...</p>
-      </div>
-    );
   }
 
   return (
+    
     <>
-      <Navbar />
-      <div className={styles.page}>
-        <header className={styles.header}>
-          <a href="/lesson/1" className={styles.link}>
-            <h1 className={styles.title}>Simulador de <span className={styles.corTitulo}>Investimentos</span></h1>
-          </a>
-        </header>
+    < Navbar />
+    <div className={styles.page}>
+      <header className={styles.header}>
+      <a href="/lesson/1" className={styles.link}>
+        <h1 className={styles.title}>Simulador de <span className={styles.corTitulo }>Investimentos</span></h1>
+      </a>
+      </header>
 
-        <main className={styles.main}>
-          <div className={styles.formAndChartContainer}>
-            <div className={styles.formContainer}>
-              <form onSubmit={handleSimulation} className={styles.simulatorForm}>
+      <main className={styles.main}>
+        <div className={styles.formAndChartContainer}>
+          <div className={styles.formContainer}>
+            <form onSubmit={handleSimulation} className={styles.simulatorForm}>
+              <label>
+                Tipo de Investimento:
+                <br />
+                <select value={investmentType} onChange={(e) => setInvestmentType(e.target.value)}>
+                  <option value="selic">Selic</option>
+                  <option value="poupanca">Poupança</option>
+                  <option value="tesouro">Tesouro Direto</option>
+                  <option value="fii">Fundo Imobiliário (FII)</option>
+                  <option value="acoes">Ações</option>
+                  <option value="crypto">Criptomoeda</option>
+                </select>
+              </label>
+
+              {investmentType === 'crypto' && (
                 <label>
-                  Tipo de Investimento:
+                  Criptomoeda:
                   <br />
-                  <select value={investmentType} onChange={(e) => setInvestmentType(e.target.value)}>
-                    <option value="selic">Selic</option>
-                    <option value="poupanca">Poupança</option>
-                    <option value="tesouro">Tesouro Direto</option>
-                    <option value="fii">Fundo Imobiliário (FII)</option>
-                    <option value="acoes">Ações</option>
-                    <option value="crypto">Criptomoeda</option>
+                  <select value={cryptoType} onChange={(e) => setCryptoType(e.target.value)}>
+                    <option value="bitcoin">Bitcoin (BTC)</option>
+                    <option value="ethereum">Ethereum (ETH)</option>
+                    <option value="solana">Solana (SOL)</option>
+                    <option value="ripple">XRP (Ripple)</option>
+                    <option value="cardano">Cardano (ADA)</option>
                   </select>
                 </label>
-
-                {investmentType === 'crypto' && (
-                  <label>
-                    Criptomoeda:
-                    <br />
-                    <select value={cryptoType} onChange={(e) => setCryptoType(e.target.value)}>
-                      <option value="bitcoin">Bitcoin (BTC)</option>
-                      <option value="ethereum">Ethereum (ETH)</option>
-                      <option value="solana">Solana (SOL)</option>
-                      <option value="ripple">XRP (Ripple)</option>
-                      <option value="cardano">Cardano (ADA)</option>
-                    </select>
-                  </label>
-                )}
-
-                <label>
-                  Valor Inicial:
-                  <input
-                    type="number"
-                    value={initialInvestment}
-                    onChange={(e) => setInitialInvestment(e.target.value)}
-                    required
-                  />
-                </label>
-                <label>
-                  Aporte Mensal:
-                  <input
-                    type="number"
-                    value={monthlyContribution}
-                    onChange={(e) => setMonthlyContribution(e.target.value)}
-                    required
-                  />
-                </label>
-                <label>
-                  Tempo (anos):
-                  <input
-                    type="number"
-                    value={years}
-                    onChange={(e) => setYears(e.target.value)}
-                    required
-                  />
-                </label>
-                <button id="simulate-button" type="submit">Simular</button>
-              </form>
-
-              {finalAmount && (
-                <div className={styles.simulationResult}>
-                  Valor Futuro Estimado: <strong>R$ {finalAmount}</strong>
-                </div>
               )}
 
-              {/* Seção de simulações salvas */}
-              {savedSimulations.length > 0 && (
-                <div className={styles.savedSimulations}>
-                  <h3>Suas simulações salvas</h3>
-                  <ul>
-                    {savedSimulations.map((sim, index) => (
-                      <li key={index} onClick={() => loadSimulation(sim)}>
-                        <span>{sim.tipoInvestimento}</span>
-                        <span>R$ {sim.valorFinal.toFixed(2)}</span>
-                        <span>{new Date(sim.dataSimulacao).toLocaleDateString()}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+              <label>
+                Valor Inicial:
+                <input
+                  type="number"
+                  value={initialInvestment}
+                  onChange={(e) => setInitialInvestment(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Aporte Mensal:
+                <input
+                  type="number"
+                  value={monthlyContribution}
+                  onChange={(e) => setMonthlyContribution(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Tempo (anos):
+                <input
+                  type="number"
+                  value={years}
+                  onChange={(e) => setYears(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit">Simular</button>
+            </form>
 
-            <div className={styles.chartContainer}>
-              {rate !== null ? (
-                <>
-                  <p className={styles.selicText}>
-                    Taxa Atual Estimada: <strong>{rate}% a.a.</strong>
-                  </p>
-                  <p className={styles.riskText}>
-                    Nível de Risco: <strong>{riskLevel}</strong>
-                  </p>
-                </>
-              ) : (
-                <p className={styles.selicText}>Carregando informações...</p>
-              )}
-
-              {chartData && <Line data={chartData} />}
-            </div>
+            {finalAmount && (
+              <div className={styles.simulationResult}>
+                Valor Futuro Estimado: <strong>R$ {finalAmount}</strong>
+              </div>
+            )}
           </div>
-        </main>
-      </div>
-      <Footer />
+
+          <div className={styles.chartContainer}>
+            {rate !== null ? (
+              <>
+                <p className={styles.selicText}>
+                  Taxa Atual Estimada: <strong>{rate}% a.a.</strong>
+                </p>
+                <p className={styles.riskText}>
+                  Nível de Risco: <strong>{riskLevel}</strong>
+                </p>
+              </>
+            ) : (
+              <p className={styles.selicText}>Carregando informações...</p>
+            )}
+
+            {chartData && <Line data={chartData} />}
+          </div>
+        </div>
+      </main>
+    </div>
+    <Footer />
     </>
   );
 }
