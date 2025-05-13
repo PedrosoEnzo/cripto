@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CoursePage.module.css";
-import ProgressBar from "./ProgressBar";
-import ModuleSection from "./ModuleSection";
+import ProgressBar from "../components/ProgressBar";
+import ModuleSection from "../components/ModuleSection";
 import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
@@ -157,6 +157,7 @@ export default function CoursePage() {
             lessons={mod.lessons}
             completed={completedLessons}
             onLessonClick={handleLessonClick}
+            onComplete={completedLessons}
           />
         ))}
 
