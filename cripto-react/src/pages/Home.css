@@ -6,14 +6,15 @@
 }
 
 /* Body */
-
-body {
+html, body {
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   background-image: linear-gradient(135deg, #000000, #1f1133, #000000);
   background-size: 200% 200%;
   background-repeat: no-repeat;
   animation: bgShift 10s ease infinite;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 @keyframes bgShift {
@@ -21,14 +22,27 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* Container central */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Seção Moeda + Navbar */
 .navbar-img-moeda {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8%;
+  padding: 0 5%; /* reduzido para evitar corte lateral */
   animation: fadeInUp 1.2s ease forwards;
   opacity: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @keyframes fadeInUp {
@@ -42,38 +56,29 @@ body {
   }
 }
 
-.content {
-  margin: 0;
-}
-
 .content h1 {
   font-size: 80px;
   color: #e4dfdfeb;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .content p {
-  display: flex;
-  text-align: start;
   font-size: 40px;
   color: #fff;
-  margin-top: 0;
+  text-align: center;
 }
 
 .moeda-image {
-  width: 400px;
+  max-width: 100%;
   height: auto;
   animation: girar 10s linear infinite;
   transform-style: preserve-3d;
 }
 
 @keyframes girar {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
 }
 
 /* Frase Inspiradora */
@@ -95,28 +100,23 @@ body {
 .frase p {
   font-family: 'Inconsolata', sans-serif;
   font-size: 45px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
   color: #ebebeb;
 }
 
 /* Plataforma de Cursos */
 .plataformaCursos {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
   margin-top: 98px;
   color: #fff;
+  text-align: center;
 }
 
 .plataformaCursos h2 {
-  font-weight: 500;
   font-size: 40px;
   margin: 70px 0;
-  text-align: center;
 }
 
 .plataformaCursos .highlight {
@@ -127,7 +127,6 @@ body {
 .plataformaCursosContent {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 40px;
   padding-top: 30px;
@@ -169,18 +168,25 @@ body {
   font-size: 16px;
   color: #e0e0e0;
   line-height: 1.5;
-  margin: 0 auto;
 }
 
 /* Simulador */
 .simulador {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 20px;
-  margin: 200px 0 90px 28px;
+  margin: 200px 0 90px 0;
+  gap: 40px;
   color: #fff;
+  text-align: center;
+}
+
+.simuladorImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px;
 }
 
 .simuladorTexto {
@@ -201,7 +207,6 @@ body {
 
 .simulador p {
   font-size: 30px;
-  margin: 10px;
   color: #b2b2b2;
 }
 
@@ -215,15 +220,54 @@ body {
   border-radius: 20px;
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   padding: 10px 20px;
-  margin-left: 36%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.simuladorImage {
-  width: 500px;
-  margin-right: 50px;
-  margin-bottom: 90px;
+/* Responsividade para notebooks e tablets */
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 48px;
+  }
+
+  .content p {
+    font-size: 24px;
+  }
+
+  .frase h2 {
+    font-size: 36px;
+  }
+
+  .frase p {
+    font-size: 28px;
+  }
+
+  .simulador h2 {
+    font-size: 48px;
+  }
+
+  .simulador p {
+    font-size: 20px;
+  }
+
+  .plataformaCursos h2,
+  .plataformaCursos .highlight {
+    font-size: 32px;
+  }
+
+  .navbar-img-moeda {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .simulador {
+    flex-direction: column;
+  }
+
+  .simulador h2 {
+    text-align: center;
+  }
 }
-
-
