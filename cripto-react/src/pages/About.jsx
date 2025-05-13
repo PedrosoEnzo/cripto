@@ -79,7 +79,7 @@ function About() {
 const developers = [
   {
     name: 'Ana Clara',
-    role: 'Front-End',
+    role: 'Full-Stack',
     img: anaPerfil,
     instagram: 'https://www.instagram.com/ana_brito2707/',
     github: 'https://github.com/Aninha-3',
@@ -107,14 +107,14 @@ const developers = [
   },
   {
     name: 'Mariana',
-    role: 'Back-End',
+    role: 'Full-Stack',
     img: marianaPerfil,
     instagram: 'https://www.instagram.com/mah_freitas19/',
     github: 'https://github.com/Mari1916',
   },
   {
     name: 'Enzo',
-    role: 'Back-End',
+    role: 'Full-Stack',
     img: enzoPerfil,
     instagram: 'https://www.instagram.com/pedroso.4m/',
     github: 'https://github.com/PedrosoEnzo',
