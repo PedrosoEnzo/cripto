@@ -6,130 +6,138 @@ import ModuleSection from "./ModuleSection";
 import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
-import axios from "axios";
 
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
-  const [completedLessons, setCompletedLessons] = useState<number[]>([]);
+  const [completedLessons, setCompletedLessons] = useState([]);
   const [visibleAd, setVisibleAd] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const totalLessons = 11;
 
   const courseData = [
-    // ... (seus dados de curso existentes)
+    {
+      title: "Básico I",
+      lessons: [
+         {
+          id: 1,
+          title: "Aula 1: Introdução",
+          description: "Conheça os conceitos fundamentais de investimentos...",
+        },
+        {
+          id: 2,
+          title: "Aula 2: Planejamento",
+          description: "Aprenda a avaliar sua situação financeira...",
+        },
+        {
+          id: 3,
+          title: "Aula 3: Fundos de Investimento",
+          description: "Descubra como funcionam os fundos de investimento...",
+        },
+        {
+          id: 4,
+          title: "Aula 4: Renda Fixa",
+          description: "Explore opções de investimentos em renda fixa...",
+        },
+      ],
+    },
+    {
+      title: "Básico II",
+      lessons: [
+        {
+          id: 5,
+          title: "Aula 1: Análise Técnica",
+          description: "Aprenda sobre análise técnica de ações...",
+        },
+        {
+          id: 6,
+          title: "Aula 2: Análise Fundamentalista",
+          description: "Estude a análise fundamentalista de empresas...",
+        },
+        {
+          id: 7,
+          title: "Aula 3: Derivativos e Alavancagem",
+          description: "Descubra o mundo dos derivativos...",
+        },
+        {
+          id: 8,
+          title: "Aula 4: Investimentos Internacionais",
+          description: "Aprenda sobre investimentos no exterior...",
+        },
+      ],
+    },
+    {
+      title: "Intermediário",
+      lessons: [
+        {
+          id: 9,
+          title: "Aula 1: Criptomoedas",
+          description:
+            "Entenda o funcionamento e as oportunidades das criptomoedas...",
+        },
+        {
+          id: 10,
+          title: "Aula 2: Gestão de Riscos",
+          description: "Aprenda como gerenciar riscos em seus investimentos...",
+        },
+      ],
+    },
+    {
+      title: "Avançado",
+      lessons: [
+         {
+          id: 11,
+          title: "Aula 1: Estratégias de Investimento",
+          description:
+            "Explore estratégias avançadas para maximizar seus lucros...",
+        },
+      ],
+    },
   ];
 
-  // Verifica autenticação ao carregar a página
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-
-    const fetchUserProgress = async () => {
-      try {
-        // Verifica token e busca progresso do usuário
-        const response = await axios.get("http://localhost:5000/progresso", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-
-        const userProgress = response.data.progresso || [];
-        setCompletedLessons(userProgress);
-        setProgress((userProgress.length / totalLessons) * 100);
-        
-        // Carrega progresso local como fallback
-        const localProgress = localStorage.getItem("chainx-progress");
-        if (localProgress && JSON.parse(localProgress).length > userProgress.length) {
-          setCompletedLessons(JSON.parse(localProgress));
-        }
-
-      } catch (err) {
-        console.error("Erro ao buscar progresso:", err);
-        // Fallback para progresso local
-        const storedProgress = localStorage.getItem("chainx-progress");
-        const parsed = storedProgress ? JSON.parse(storedProgress) : [];
-        setCompletedLessons(parsed);
-        setProgress((parsed.length / totalLessons) * 100);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchUserProgress();
-
-    // Timer para o anúncio
-    const timer = setTimeout(() => setVisibleAd(true), 3000);
+    const timer = setTimeout(() => {
+      setVisibleAd(true);
+    }, 3000);
     return () => clearTimeout(timer);
-  }, [navigate, totalLessons]);
+  }, []);
 
-  const handleLessonClick = (lessonId: number) => {
-    if (isLessonLocked(lessonId)) {
-      alert("Complete a aula anterior primeiro!");
-      return;
-    }
+  useEffect(() => {
+    const storedProgress = localStorage.getItem("chainx-progress");
+    const parsed = storedProgress ? JSON.parse(storedProgress) : []; // Aula 1 desbloqueada
+    setCompletedLessons(parsed);
+    setProgress((parsed.length / totalLessons) * 100);
+  }, []);
+
+  function handleLessonClick(lessonId) {
     navigate(`/lesson/${lessonId}`);
-  };
-
-  const isLessonLocked = (lessonId: number) => {
-    if (lessonId === 1) return false;
-    return !completedLessons.includes(lessonId - 1);
-  };
-
-  // Função para marcar aula como completa
-  const handleCompleteLesson = async (lessonId: number) => {
-    try {
-      const token = sessionStorage.getItem("token");
-      if (!token) throw new Error("Não autenticado");
-
-      // Atualiza no backend
-      await axios.post(
-        "http://localhost:5000/aulas/completar",
-        { aulaId: lessonId },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-
-      // Atualiza localmente
-      const newCompleted = [...new Set([...completedLessons, lessonId])];
-      setCompletedLessons(newCompleted);
-      setProgress((newCompleted.length / totalLessons) * 100);
-      localStorage.setItem("chainx-progress", JSON.stringify(newCompleted));
-
-    } catch (err) {
-      console.error("Erro ao completar aula:", err);
-      // Fallback local se a API falhar
-      const newCompleted = [...new Set([...completedLessons, lessonId])];
-      setCompletedLessons(newCompleted);
-      localStorage.setItem("chainx-progress", JSON.stringify(newCompleted));
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.spinner}></div>
-        <p>Carregando seu progresso...</p>
-      </div>
-    );
   }
 
-  const courseDataWithLocks = courseData.map((mod) => ({
-    ...mod,
-    lessons: mod.lessons.map((lesson) => ({
-      ...lesson,
-      isLocked: isLessonLocked(lesson.id),
-      isUnlocked: completedLessons.includes(lesson.id)
-    }))
-  }));
+  const getCourseDataWithLocks = () => {
+    const allLessons = courseData.flatMap((mod) => mod.lessons);
+
+    return courseData.map((mod) => ({
+      ...mod,
+       lessons: mod.lessons.map((lesson) => {
+        const index = allLessons.findIndex((l) => l.id === lesson.id);
+        const isUnlocked = completedLessons.includes(lesson.id);
+
+        const isLocked =
+         lesson.id === 1 ? false : !completedLessons.includes(lesson.id - 1);
+
+        return {
+          ...lesson,
+          isLocked,
+          isUnlocked,
+        };
+      }),
+    }));
+  };
+
+  const courseDataWithLocks = getCourseDataWithLocks();
 
   return (
-    <>
+     <>
       <div className={styles.container}>
         <div className={styles.header}>
           <FaArrowLeft
@@ -140,21 +148,19 @@ export default function CoursePage() {
             ChainX <span>Educ</span>
           </h1>
         </div>
+   <ProgressBar progress={progress} />
 
-        <ProgressBar progress={progress} />
-
-        {courseDataWithLocks.map((mod, idx) => (
+    {courseDataWithLocks.map((mod, idx) => (
           <ModuleSection
             key={idx}
             title={mod.title}
             lessons={mod.lessons}
             completed={completedLessons}
             onLessonClick={handleLessonClick}
-            onComplete={handleCompleteLesson}
           />
         ))}
 
-        {visibleAd && (
+ {visibleAd && (
           <div className={styles.floatingAd}>
             <button
               className={styles.closeButton}
