@@ -3,13 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login'; 
 import Cadastro from './pages/Cadastro'; 
-import CoursePage from './components/CoursePage'
-import LessonPage from './components/LessonPage';
-import Simulador from './components/SimulatorPage';
-import ProfilePage from './components/ProfilePage';
+import CoursePage from './pages/CoursePage'
+import LessonPage from './pages/LessonPage';
+import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
-import QuizPage from './components/QuizPage';
-import SimulatorPage from './components/SimulatorPage';
+import QuizPage from './pages/QuizPage';
+import SimulatorPage from './pages/SimulatorPage';
 
 
 
