@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login'; 
@@ -9,8 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
 import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
-
-
+import { ForgotPassword } from '/src/pages/ForgotPassword.jsx';
 
 
 function App() {
@@ -27,7 +25,7 @@ function App() {
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
-    
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
       </Routes>
     </div>
   );
