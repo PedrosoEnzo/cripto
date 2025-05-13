@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import logo from "../assets/logo.png"; // Certifique-se de ter a imagem correta e no diretório certo
+import logo from "../assets/logo.png"; // Certifique-se de que esse caminho está certo
 
 const Navbar = () => {
   return (
@@ -10,11 +10,11 @@ const Navbar = () => {
           src={logo}
           alt="logo"
           className={styles.logo}
-          height="70px"
-          width="110px"
+          height="70"
+          width="110"
         />
       </a>
-      <nav>
+      <nav className={styles.navLinks}>
         <a href="/curso" className={styles.nav}>
           ChainXEducation
         </a>
