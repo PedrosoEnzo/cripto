@@ -119,11 +119,12 @@ export default function CoursePage() {
     return courseData.map((mod) => ({
       ...mod,
        lessons: mod.lessons.map((lesson) => {
+        
         const index = allLessons.findIndex((l) => l.id === lesson.id);
-        const isUnlocked = completedLessons.includes(lesson.id);
+        const isUnlocked = completedLessons.includes( lesson.id as never);
 
         const isLocked =
-         lesson.id === 1 ? false : !completedLessons.includes(lesson.id - 1);
+         lesson.id === 1 ? false : !completedLessons.includes((lesson.id - 1) as never);
 
         return {
           ...lesson,
