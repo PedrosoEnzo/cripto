@@ -145,3 +145,6 @@ app.get('/simulador', verificarToken, (req, res) => {
 app.listen(5000, () => {
   console.log('Servidor rodando na porta 5000');
 });
+
+// Assistente ChainX
+

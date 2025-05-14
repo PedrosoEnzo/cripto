@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import anexo1 from '../assets/pdf/anexo-introducao.pdf';
 
 import styles from './LessonPage.module.css';
 
@@ -40,9 +41,9 @@ export default function LessonPage() {
           <div className={styles.pdfContainer}>
             <h3>Materiais Complementares</h3>
             <ul>
-            <li><a href="../assets/pdf/anexo1.pdf" target="_blank" rel="noopener noreferrer">Anexo 1 - Introdução ao Investimento</a></li>
-              <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">Anexo 2 - Renda Fixa</a></li>
-              <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">Anexo 3 - Fundos de Investimento</a></li>
+            <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
+              <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
+              <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">E-book Tipos de taxas</a></li>
             </ul>
           </div>
         </div>

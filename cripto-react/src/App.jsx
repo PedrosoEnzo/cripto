@@ -10,6 +10,7 @@ import ProfilePage from './components/ProfilePage';
 import About from './pages/About';
 import QuizPage from './components/QuizPage';
 import SimulatorPage from './components/SimulatorPage';
+import Assistent from './components/Assistent';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/assistent" element={<Assistent/>} />
     
       </Routes>
     </div>

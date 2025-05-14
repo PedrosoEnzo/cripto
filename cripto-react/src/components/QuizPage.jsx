@@ -145,7 +145,7 @@ export default function QuizPage() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h2 className={styles.title}>Quiz da Aula</h2>
+        <h2 className={styles.title}>Poupar vs. Investir</h2>
 
         {questions.map((question, qIdx) => (
           <div key={qIdx} className={styles.questionBlock}>
