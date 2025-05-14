@@ -6,10 +6,11 @@ import CoursePage from './pages/CoursePage'
 import LessonPage from './pages/LessonPage';
 import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
-<<<<<<< HEAD
-import QuizPage from './components/QuizPage';
-import SimulatorPage from './components/SimulatorPage';
-import Assistent from './components/Assistent';
+import QuizPage from './pages/QuizPage';
+import SimulatorPage from './pages/SimulatorPage';
+import Assistant from './components/Assistent';
+import { ForgotPassword } from './pages/ForgotPassword';
+
 
 function App() {
   return (
@@ -22,15 +23,10 @@ function App() {
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/simulador" element={<SimulatorPage />} />
-        <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
-<<<<<<< HEAD
-        <Route path="/assistent" element={<Assistent/>} />
-    
-=======
+        <Route path="/assistente" element={<Assistant />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
->>>>>>> 8f288df7da8bc82780c5398ef1c43e282aa7c6fd
       </Routes>
     </div>
   );
