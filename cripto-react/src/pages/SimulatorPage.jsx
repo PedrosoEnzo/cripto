@@ -103,6 +103,7 @@ export default function SimulatorPage() {
   }
 
   return (
+    
     <>
     < Navbar />
     <div className={styles.page}>
@@ -203,4 +204,3 @@ export default function SimulatorPage() {
     </>
   );
 }
-

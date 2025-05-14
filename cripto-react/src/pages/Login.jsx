@@ -91,6 +91,10 @@ const Login = () => {
               disabled={isLoading}
             />
           </div>
+
+          <p>
+            Esqueceu a senha? <a href="/forgotPassword">Redefinir</a>
+          </p>
           
           <button 
             id="button" 

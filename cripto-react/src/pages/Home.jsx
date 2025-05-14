@@ -13,7 +13,9 @@ import Navbar from '../components/Navbar';
 export default function Home() {
   return (
     <>
-    < Navbar />
+      <Navbar />
+
+      {/* Seção Moeda e Título */}
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
@@ -22,59 +24,72 @@ export default function Home() {
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
       </div>
 
+      {/* Frase Inspiradora */}
       <div className="frase">
-        <h2>" O verdadeiro investidor não é aquele<br /> que tenta prever o futuro, mas aquele<br /> que se prepara para ele. "</h2>
+        <h2>
+          " O verdadeiro investidor não é aquele<br />
+          que tenta prever o futuro, mas aquele<br />
+          que se prepara para ele. "
+        </h2>
         <p>- Benjamin Graham -</p>
       </div>
 
-      <div className='plataformaCursos'>
-        <h2>A ChainX é uma plataforma de
-          <span className='highlight'> educação <br />
-            financeira </span>onde você tem acesso a:</h2>
-        <div className='plataformaCursosContent'>
-          <div className='plataformaCursosCard'>
-            <div className='plataformaCursosCardIcon'>
-              <img src={cursos1} alt="cursos" />
-              <br />
+      {/* Seção Plataforma de Cursos */}
+      <div className="plataformaCursos">
+        <h2>
+          A ChainX é uma plataforma de
+          <span className="highlight"> educação <br /> financeira </span>
+          onde você tem acesso a:
+        </h2>
+
+        <div className="plataformaCursosContent">
+          {/* Card 1 */}
+          <div className="plataformaCursosCard">
+            <div className="plataformaCursosCardIcon">
+              <img src={cursos1} alt="Simulador de Investimentos" />
               <h3>Simulador de Investimentos</h3>
               <p>Aprenda a investir com segurança e confiança.</p>
             </div>
           </div>
-          <div className='plataformaCursosCard'>
-            <div className='plataformaCursosCardIcon'>
-              <img src={cursos} alt="cursos" />
-              <h3>Conteúdo Exclusivo</h3><br />
+
+          {/* Card 2 */}
+          <div className="plataformaCursosCard">
+            <div className="plataformaCursosCardIcon">
+              <img src={cursos} alt="Conteúdo Exclusivo" />
+              <h3>Conteúdo Exclusivo</h3>
               <p>Acesse cursos e materiais de alta qualidade.</p>
             </div>
           </div>
-          <div className='plataformaCursosCard'>
-            <div className='plataformaCursosCardIcon'>
-              <img src={cursos2} alt="cursos" />
+
+          {/* Card 3 */}
+          <div className="plataformaCursosCard">
+            <div className="plataformaCursosCardIcon">
+              <img src={cursos2} alt="Comunidade Ativa" />
               <h3>Comunidade Ativa</h3>
-              <br />
               <p>Participe de discussões e trocas de experiências.</p>
             </div>
           </div>
         </div>
       </div>
+      
 
-      <div className='simulador'>
-        <img src={simulador2} alt="simulador" className='simuladorImage' />
-
+      {/* Seção Simulador */}
+      <div className="simulador">
+        <img src={simulador2} alt="Simulador" className="simuladorImage" />
         <div className="simuladorTexto">
           <h2>
             Simulador de <br />
-            <span className='hightLight'>Investimentos</span>
+            <span className="hightLight">Investimentos</span>
           </h2>
           <p>Aprenda a investir com segurança e confiança.</p>
           <a href="/simulador">
-            <button className='simuladorButton'>Acessar</button>
+            <button className="simuladorButton">Acessar</button>
           </a>
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+
+      {/* Rodapé */}
+      <Footer />
     </>
   );
 }

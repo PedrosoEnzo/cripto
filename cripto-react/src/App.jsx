@@ -1,19 +1,15 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login'; 
 import Cadastro from './pages/Cadastro'; 
-import CoursePage from './components/CoursePage'
-import LessonPage from './components/LessonPage';
-import Simulador from './components/SimulatorPage';
-import ProfilePage from './components/ProfilePage';
+import CoursePage from './pages/CoursePage'
+import LessonPage from './pages/LessonPage';
+import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
+<<<<<<< HEAD
 import QuizPage from './components/QuizPage';
 import SimulatorPage from './components/SimulatorPage';
 import Assistent from './components/Assistent';
-
-
-
 
 function App() {
   return (
@@ -29,8 +25,12 @@ function App() {
         <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
+<<<<<<< HEAD
         <Route path="/assistent" element={<Assistent/>} />
     
+=======
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+>>>>>>> 8f288df7da8bc82780c5398ef1c43e282aa7c6fd
       </Routes>
     </div>
   );

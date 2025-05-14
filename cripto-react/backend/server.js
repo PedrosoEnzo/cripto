@@ -4,11 +4,15 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'; // Adicionado
 import cors from 'cors';
 
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 const app = express();
 
-// Middleware
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
+
 
 // Conexão com o banco de dados MySQL
 const db = mysql.createConnection({
