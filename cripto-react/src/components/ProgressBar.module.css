@@ -40,8 +40,17 @@
   
   .progressText {
     position: absolute;
-    right: 20px;
+    right: 50%;
     top: 50%;
     transform: translateY(-50%);
     color: rgb(194, 193, 193);
   }
+
+  .progressImage {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+  width: 30px;
+  height: auto;
+}

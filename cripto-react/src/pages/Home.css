@@ -138,7 +138,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
-  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+  background: linear-gradient(#1a1a1aa2, #1a1a1aa2) padding-box,
               linear-gradient(135deg, #3f025b, #320d2a) border-box;
   border: 3px solid transparent;
   transition: transform 0.3s ease;
