@@ -29,14 +29,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: auto;
-    /* Ajuste a largura conforme necessário */
     position: absolute;
-    /* Adicionado: Remove do fluxo normal do documento, permitindo sobreposição. */
     top: 100%;
-    /* Adicionado: Posiciona a parte superior do dropdown abaixo da parte inferior do container pai. */
     right: 0;
-    /* Adicionado: Alinha a borda direita do dropdown com a borda direita do container pai. Você pode usar 'left: 0;' se preferir alinhar à esquerda. */
-    z-index: 10; /* Adicionado: Garante que o dropdown fique acima de outros elementos. */
+    z-index: 10;
 }
 
 
