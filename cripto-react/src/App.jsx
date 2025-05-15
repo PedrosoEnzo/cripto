@@ -10,7 +10,7 @@ import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
 import Assistant from './components/Assistent';
 import { ForgotPassword } from './pages/ForgotPassword';
-
+import { ResetPassword } from './pages/ResetPassword';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/assistente" element={<Assistant />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
       </Routes>
     </div>
   );
