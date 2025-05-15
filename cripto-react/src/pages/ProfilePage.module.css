@@ -1,10 +1,25 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container principal centralizado */
 .container {
     padding: 20px;
     position: relative;
-    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
+/* Container do perfil */
 .profileContainer {
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,26 +28,22 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: auto;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 10;
-}
-p {
-  color: #000;
-  font-size: 18px;
-  font-weight: bold;
 }
 
-
+/* Título */
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #3f025b;
-    text-align: center;
+    color: #b12092;
     margin-bottom: 1.5rem;
 }
 
+/* Texto dos parágrafos */
+p {
+    color: #fff;
+}
+
+/* Nome e Bio */
 .name {
     font-size: 1.5rem;
     margin: 0.5rem 0;
@@ -46,6 +57,7 @@ p {
     margin-top: 10px;
 }
 
+/* Seção do nível */
 .levelSection {
     margin-top: 1rem;
 }
@@ -56,38 +68,45 @@ p {
     margin: 0;
 }
 
-.button {
+/* Agrupamento dos botões e link */
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilização compartilhada para botão e link */
+.button,
+.link {
+    text-decoration: none;
     background: linear-gradient(90deg, #3f025b, #b12092);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.button:hover {
-    background: linear-gradient(90deg, #5e0289, #d131a8);
+/* Hover para botão e link */
+.button:hover,
+.link:hover {
+    background: linear-gradient(90deg, #b12092, #3f025b);
 }
 
+/* Caso queira um estilo diferenciado para o botão de cancelar */
 .cancelButton {
     background: #ccc;
     color: black;
 }
 
-.link {
-    color: #3f025b;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-.link:hover {
-    color: #b12092;
-}
-
+/* Formulário */
 .form {
     display: flex;
     flex-direction: column;
@@ -100,6 +119,7 @@ p {
     align-items: flex-start;
 }
 
+/* Inputs */
 .input, .textarea {
     width: 100%;
     padding: 10px;
@@ -110,3 +130,4 @@ p {
 .textarea {
     resize: vertical;
 }
+

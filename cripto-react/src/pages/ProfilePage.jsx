@@ -64,10 +64,10 @@ function Perfil() {
           <p><strong>Email:</strong> {perfil.email}</p>
           <p><strong>Bio:</strong> {perfil.bio}</p>
           <p><strong>Nível de Usuário:</strong> {perfil.userLevel}</p>
-          <button className={styles.button} onClick={handleEditar}>Editar Perfil</button>
-          <a className={styles.link} href="/ForgotPassword" onClick={handleTrocarSenha}>
-            Trocar Senha
-          </a>
+          <div className={styles.buttonGroup}>
+            <button className={styles.button} onClick={handleEditar}>Editar Perfil</button>
+            <a className={styles.link} href="/ForgotPassword" onClick={handleTrocarSenha}>Trocar Senha </a>
+          </div>
         </div>
       ) : (
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
