@@ -8,8 +8,8 @@ import dotenv from 'dotenv';
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'random',        // seu usuário MySQL criado
-  password: 'senhaRandom',    // a senha correta
+  user: 'root',        // seu usuário MySQL criado
+  password: 'admin',    // a senha correta
   database: 'cripto'
 });
 
