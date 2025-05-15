@@ -4,18 +4,11 @@
 }
 
 .toggleDropdown {
-  background-color: transparent; /* Define um fundo transparente */
-  color: inherit; /* Herda a cor do texto do pai, ou você pode definir uma cor específica */
   border: none; /* Remove a borda padrão do botão */
   padding: 0; /* Remove o padding padrão do botão */
-  font: inherit; /* Herda a fonte do pai */
   cursor: pointer;
-  outline: none; /* Remove a linha de foco ao clicar */
   display: flex; /* Para alinhar a imagem */
-  align-items: center;
-  justify-content: center; /* Centraliza o conteúdo (a imagem) */
-  width: auto; /* Largura automática para se ajustar ao conteúdo */
-  height: auto; /* Altura automática para se ajustar ao conteúdo */
+  width: 0; /* Largura automática para se ajustar ao conteúdo */;
 }
 
 .dropdownHeader .toggleh2 {
