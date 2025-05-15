@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './Home.css';
-import logo from '../assets/logo.png';
 import moeda from '../assets/imgMoeda.png';
 import cursos from '../assets/cursos.png';
 import cursos1 from '../assets/cursos1.png';
