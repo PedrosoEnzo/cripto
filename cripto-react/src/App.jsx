@@ -10,9 +10,7 @@ import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
 import Assistent from './components/Assistent'; // Corrigido o nome do import (veja se está correto)
 import { ForgotPassword } from './pages/ForgotPassword';
-
 import { ResetPassword } from './pages/ResetPassword';
-
 
 function App() {
   return (
