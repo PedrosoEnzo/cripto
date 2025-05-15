@@ -92,9 +92,9 @@
   color: white;
   cursor: pointer;
   font-size: 1.2rem;
-  margin-left: 10px;
+  margin-left: 160px;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 100%;
   transition: transform 0.2s ease;
 }
 

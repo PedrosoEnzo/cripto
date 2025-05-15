@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './ProfilePage.module.css'; // Corrigindo a importação
 
 function Perfil() {
   const LOCAL_STORAGE_KEY = 'perfilUsuario';
@@ -17,7 +18,7 @@ function Perfil() {
   const [formData, setFormData] = useState({
     nome: perfil.nome,
     email: perfil.email,
-    bio: perfil.bio // Removendo userLevel do formData inicial
+    bio: perfil.bio
   });
 
   useEffect(() => {
@@ -31,7 +32,6 @@ function Perfil() {
 
   const handleEditar = () => {
     setEditando(true);
-    // Garante que o formData esteja atualizado com os valores atuais do perfil ao editar
     setFormData({
       nome: perfil.nome,
       email: perfil.email,
@@ -41,7 +41,7 @@ function Perfil() {
 
   const handleSalvar = () => {
     const { nome, email, bio } = formData;
-    setPerfil({ ...perfil, nome, email, bio }); // Mantém o userLevel original
+    setPerfil({ ...perfil, nome, email, bio });
     setEditando(false);
     alert('Perfil atualizado com sucesso!');
   };
@@ -52,27 +52,26 @@ function Perfil() {
 
   const handleTrocarSenha = () => {
     alert('Funcionalidade de troca de senha ainda não implementada.');
-    // Aqui você implementaria a lógica para redirecionar para a página de troca de senha
   };
 
   return (
-    <div>
-      <h1>Página de Perfil</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Perfil de Usuário</h1>
 
       {!editando ? (
-        <div>
+        <div className={styles.perfilContainer}>
           <p><strong>Nome:</strong> {perfil.nome}</p>
           <p><strong>Email:</strong> {perfil.email}</p>
           <p><strong>Bio:</strong> {perfil.bio}</p>
           <p><strong>Nível de Usuário:</strong> {perfil.userLevel}</p>
-          <button onClick={handleEditar}>Editar Perfil</button>
-          <a href="/ForgotPassword" onClick={handleTrocarSenha}>
+          <button className={styles.button} onClick={handleEditar}>Editar Perfil</button>
+          <a className={styles.link} href="/ForgotPassword" onClick={handleTrocarSenha}>
             Trocar Senha
           </a>
         </div>
       ) : (
-        <form onSubmit={(e) => e.preventDefault()}>
-          <div>
+        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <div className={styles.formGroup}>
             <label htmlFor="nome">Nome:</label>
             <input
               type="text"
@@ -80,9 +79,10 @@ function Perfil() {
               name="nome"
               value={formData.nome}
               onChange={handleChange}
+              className={styles.input}
             />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -90,21 +90,22 @@ function Perfil() {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              className={styles.input}
             />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="bio">Bio:</label>
             <textarea
               id="bio"
               name="bio"
               value={formData.bio}
               onChange={handleChange}
+              className={styles.textarea}
             />
           </div>
-          {/* O userLevel não é mais um campo de edição */}
           <p><strong>Nível de Usuário:</strong> {perfil.userLevel}</p>
-          <button type="button" onClick={handleSalvar}>Salvar</button>
-          <button type="button" onClick={handleCancelar}>Cancelar</button>
+          <button type="button" className={styles.button} onClick={handleSalvar}>Salvar</button>
+          <button type="button" className={`${styles.button} ${styles.cancelButton}`} onClick={handleCancelar}>Cancelar</button>
         </form>
       )}
     </div>
