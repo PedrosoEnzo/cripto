@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'random',        // seu usuário MySQL criado
-  password: 'random',    // a senha correta
+  password: 'senhaRandom',    // a senha correta
   database: 'cripto'
 });
 
