@@ -1,0 +1,30 @@
+.chatButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #6C3BD1;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.AssitentImg {
+    width: 200px;
+}
+
+.assistantWindow {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 600px;
+  height: 400px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: fl
+}

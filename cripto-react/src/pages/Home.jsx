@@ -9,6 +9,7 @@ import cursos2 from '../assets/cursos2.png';
 import simulador2 from '../assets/mascote/ZynxSimulador.png';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import Navbar2 from '../components/Navbar2';
 
 export default function Home() {
   return (

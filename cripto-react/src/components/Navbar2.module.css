@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: rgba(10, 0, 19, 0.7);
+  background-color: #000 opacity 0.8;
   position: sticky;
   top: 0;
   z-index: 1000;

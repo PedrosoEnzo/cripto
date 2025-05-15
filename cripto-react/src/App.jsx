@@ -8,7 +8,8 @@ import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
 import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
-import { ForgotPassword } from '/src/pages/ForgotPassword.jsx';
+import Assistant from './components/Assistent';
+import { ForgotPassword } from './pages/ForgotPassword';
 
 
 function App() {
@@ -22,9 +23,9 @@ function App() {
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/simulador" element={<SimulatorPage />} />
-        <Route path="/curso" element={<CoursePage />} />
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/assistente" element={<Assistant />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
       </Routes>
     </div>

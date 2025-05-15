@@ -1,29 +1,28 @@
 import express from 'express';
 import mysql from 'mysql2';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken'; // Adicionado
+import jwt from 'jsonwebtoken';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
+dotenv.config(); // Carrega as variáveis de ambiente
+
 const app = express();
 
+// Configurações do middleware
 app.use(cors());
 app.use(express.json());
 
-
-
 // Conexão com o banco de dados MySQL
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'cripto'
+  host: process.env.DB_HOST, // Usando variáveis de ambiente
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
-// Chave secreta para JWT (em produção, use uma variável de ambiente)
-const JWT_SECRET = 'divandoComAsDivasSupremas!';
+// Chave secreta para JWT (agora usa variável de ambiente)
+const JWT_SECRET = process.env.JWT_SECRET || 'divandoComAsDivasSupremas!';
 
 // Middleware para verificar token JWT
 const verificarToken = (req, res, next) => {
@@ -42,7 +41,7 @@ const verificarToken = (req, res, next) => {
   });
 };
 
-// Rota de Cadastro (mantida igual)
+// Rota de Cadastro
 app.post('/cadastro', (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -73,7 +72,7 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
-// Rota de Login (atualizada com JWT)
+// Rota de Login
 app.post('/login', (req, res) => {
   const { email, senha } = req.body;
 
@@ -118,9 +117,8 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Rota protegida de exemplo
+// Rota protegida de perfil
 app.get('/perfil', verificarToken, (req, res) => {
-  // Acesso apenas com token válido
   db.query('SELECT id, nome, email FROM usuarios WHERE id = ?', [req.user.id], (err, results) => {
     if (err) {
       return res.status(500).json({ alert: 'Erro ao buscar usuário' });
@@ -145,7 +143,10 @@ app.get('/simulador', verificarToken, (req, res) => {
   });
 });
 
-// Iniciar o servidor
-app.listen(5000, () => {
-  console.log('Servidor rodando na porta 5000');
+// Iniciar o servidor na porta configurada
+const PORT = process.env.PORT || 5000; // Usando PORT do ambiente ou 5000 por padrão
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
