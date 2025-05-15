@@ -5,6 +5,22 @@ import jwt from 'jsonwebtoken';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'random',        // seu usuário MySQL criado
+  password: 'random',    // a senha correta
+  database: 'cripto'
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Erro na conexão:', err);
+    return;
+  }
+  console.log('Conectado ao banco de dados!');
+});
+
 dotenv.config(); // Carrega as variáveis de ambiente
 
 const app = express();
@@ -13,13 +29,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Conexão com o banco de dados MySQL
-const db = mysql.createConnection({
-  host: process.env.DB_HOST, // Usando variáveis de ambiente
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
 
 // Chave secreta para JWT (agora usa variável de ambiente)
 const JWT_SECRET = process.env.JWT_SECRET || 'divandoComAsDivasSupremas!';
