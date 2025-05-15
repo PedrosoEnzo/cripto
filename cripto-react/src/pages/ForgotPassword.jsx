@@ -26,7 +26,7 @@ export function ForgotPassword() {
 
     try {
       const verificationCode = generateRandomCode();
-      
+      console.log(222)
       // Envia o e-mail usando EmailJS
       await emailjs.send(
         'service_980ulrf', // ID do serviço no EmailJS
