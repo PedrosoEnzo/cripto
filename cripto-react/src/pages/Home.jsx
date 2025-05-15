@@ -13,7 +13,7 @@ import Navbar2 from '../components/Navbar2';
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar2 />
 
       {/* Seção Moeda e Título */}
       <div className="navbar-img-moeda">

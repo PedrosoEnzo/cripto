@@ -66,7 +66,7 @@ function Perfil() {
           <p><strong>Nível de Usuário:</strong> {perfil.userLevel}</p>
           <div className={styles.buttonGroup}>
             <button className={styles.button} onClick={handleEditar}>Editar Perfil</button>
-            <a className={styles.link} href="/ForgotPassword" onClick={handleTrocarSenha}>Trocar Senha </a>
+            <a className={styles.link} href="/ForgotPassword" onClick={handleTrocarSenha}>Trocar Senha</a>
           </div>
         </div>
       ) : (

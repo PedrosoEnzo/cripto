@@ -28,7 +28,7 @@ const ProfileMenu = () => {
           <div className={styles.levelSection}>
             <h3 className={styles.levelTitle}>Nível: {userLevel}</h3>
             <br />
-            <button classname={styles.btnEdit}>editar</button>
+            <a classname={styles.btnEdit} href={"/perfil"}>editar</a>
           </div>
         </div>
       )}
