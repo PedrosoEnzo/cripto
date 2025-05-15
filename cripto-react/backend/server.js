@@ -143,8 +143,8 @@ app.get('/simulador', verificarToken, (req, res) => {
   });
 });
 
-// Iniciar o servidor na porta configurada
-const PORT = process.env.PORT || 5000; // Usando PORT do ambiente ou 5000 por padrão
+// Iniciar o servidor na porta configurada render
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });

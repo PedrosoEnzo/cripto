@@ -10,6 +10,10 @@ import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
 import Assistent from './components/Assistent'; // Corrigido o nome do import (veja se está correto)
 import { ForgotPassword } from './pages/ForgotPassword';
+<<<<<<< HEAD
+=======
+import { ResetPassword } from './pages/ResetPassword';
+>>>>>>> ee0898fb0f7faf34180e1bca27645231d08c2db0
 
 function App() {
   return (
@@ -25,6 +29,7 @@ function App() {
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
       </Routes>
 
       {/* Assistente fora do Routes, mas dentro do container principal */}

@@ -4,8 +4,11 @@
 }
 
 .toggleDropdown {
-    padding: 0.5rem 1rem;
-    /* Adicionado: Um pouco de padding para o botão ficar mais fácil de clicar. */
+  border: none; /* Remove a borda padrão do botão */
+  padding: 0; /* Remove o padding padrão do botão */
+  cursor: pointer;
+  display: flex; /* Para alinhar a imagem */
+  width: 0; /* Largura automática para se ajustar ao conteúdo */;
 }
 
 .dropdownHeader .toggleh2 {

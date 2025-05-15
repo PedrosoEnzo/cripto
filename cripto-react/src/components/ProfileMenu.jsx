@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ProfileMenu.module.css';
+import perfil from "../assets/icons/user.png";
 
 const ProfileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,15 @@ const ProfileMenu = () => {
 
   return (
     <div className={styles.container}>
-      <button onClick={handleClick} className={styles.toggleDropdown}>Perfil</button>
+      <button onClick={handleClick} className={styles.toggleDropdown}>
+        <img
+          src={perfil}
+          alt="icon perfil"
+          className={styles.perfil}
+          height="45"
+          width="45"
+        />
+      </button>
       {isOpen && (
         <div className={styles.profileContainer}>
           <h2 className={styles.name}>Cassia Pedrosa</h2>
