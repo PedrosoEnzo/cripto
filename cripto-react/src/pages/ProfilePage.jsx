@@ -1,32 +1,25 @@
 import React, { useState } from 'react';
 import styles from './ProfilePage.module.css';
 
-const ProfilePage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+function ProfilePage ()  {
+  const userName = "Cassia Pedrosa";
+  const userBio = "Apaixonado por tecnologia e investimentos.";
+  const userEmail = "pedrosaCassia@gmail.com";
   const userLevel = "Intermediário";
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <div className={styles.container}>
-      <div className={styles.dropdownHeader} onClick={toggleDropdown}>
-        <h2 className={styles.toggleh2}>Perfil</h2>
-        <span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
-      </div>
-
-      {isOpen && (
-        <div className={styles.profileContainer}>
-          <h2 className={styles.name}>Cassia Pedrosa</h2>
-          <p className={styles.bio}>Apaixonado por tecnologia e investimentos.</p>
-          <div className={styles.levelSection}>
-            <h3 className={styles.levelTitle}>Nível: {userLevel}</h3>
-            <br />
-            <button classname={styles.btnEdit}>editar</button>
-          </div>
+      <h2 className={styles.toggleh2}>Perfil</h2>
+      <div className={styles.profileContainer}>
+        <h2 className={styles.name}>{userName}</h2>
+        <br/>
+        <h3 className={styles.name}>{userEmail}</h3>
+        <p className={styles.bio}>{userBio}</p>
+        <div className={styles.levelSection}>
+          <h3 className={styles.levelTitle}>Nível: {userLevel}</h3>
+          <br />
+          <button classname={styles.btnEdit}>editar</button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
