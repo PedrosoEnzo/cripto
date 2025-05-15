@@ -23,12 +23,10 @@ const Navbar2 = () => {
         <a href="/about" className={styles.nav}>
           Sobre
         </a>
-        <a className={styles.nav}>
-          <ProfileMenu/>
-        </a>
+        <ProfileMenu />
       </nav>
     </header>
-  );
+  )
 };
 
 export default Navbar2;
