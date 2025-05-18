@@ -27,27 +27,36 @@ const Assistent = ({ apiKey }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [...messages, userMessage],
-          temperature: 0.7
-        })
-      });
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [{ text: input }]
+              }
+            ]
+          })
+        }
+      );
 
       const data = await response.json();
-      setMessages(prev => [...prev, data.choices[0].message]);
+      console.log(data);
+      const reply =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        'Desculpe, não consegui entender.';
+
+      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
     } catch (error) {
-      console.error('Erro na API:', error);
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: 'Erro ao conectar com o assistente. Tente novamente.' 
-      }]);
+      console.error('Erro ao conectar à API Gemini:', error);
+      setMessages(prev => [
+        ...prev,
+        { role: 'assistant', content: 'Erro ao conectar com o assistente. Tente novamente.' }
+      ]);
     } finally {
       setIsLoading(false);
     }

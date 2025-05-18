@@ -8,7 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import About from './pages/About';
 import QuizPage from './pages/QuizPage';
 import SimulatorPage from './pages/SimulatorPage';
-import Assistent from './components/Assistent'; // Corrigido o nome do import (veja se está correto)
+import Assistent from './components/Assistent'; 
 import { ForgotPassword } from './pages/ForgotPassword';
 import { ResetPassword } from './pages/ResetPassword';
 
@@ -27,10 +27,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
-      </Routes>
 
-      {/* Assistente fora do Routes, mas dentro do container principal */}
-      <Assistent apiKey={import.meta.env.VITE_OPENAI_API_KEY} />
+      </Routes>
+     
+             <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />
 
     </div>
   );
