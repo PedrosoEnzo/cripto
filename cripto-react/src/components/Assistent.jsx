@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { FaTimes, FaPaperPlane } from 'react-icons/fa';
+import Zynx from '../assets/mascote/Assistent.png';
 import styles from './Assistent.module.css';
 
 const Assistent = ({ apiKey }) => {
@@ -45,7 +46,7 @@ const Assistent = ({ apiKey }) => {
       );
 
       const data = await response.json();
-      console.log(data);
+     
       const reply =
         data?.candidates?.[0]?.content?.parts?.[0]?.text ||
         'Desculpe, não consegui entender.';
@@ -65,7 +66,7 @@ const Assistent = ({ apiKey }) => {
   return (
     <div className={styles.container}>
       <button className={styles.button} onClick={toggleChat}>
-        <FaRobot size={24} />
+        <img src={Zynx} alt="Imagem do mascote Zynx"  className={styles.iconImage}/>
       </button>
 
       {isOpen && (
