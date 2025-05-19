@@ -48,9 +48,9 @@
 
   .progressImage {
   position: absolute;
-  left: 0;
   transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
+   transform: translateY(-50%);
+     transition: left 0.7s ease;
   width: 30px;
   height: auto;
 }

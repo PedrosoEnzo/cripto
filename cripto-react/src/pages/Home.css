@@ -144,10 +144,6 @@ html, body {
   transition: transform 0.3s ease;
 }
 
-.plataformaCursosCard:hover {
-  transform: scale(1.03);
-}
-
 .plataformaCursosCardIcon img {
   width: 200px;
   height: 150px;
@@ -164,6 +160,25 @@ html, body {
   color: #e0e0e0;
   line-height: 1.5;
 }
+
+/* Aplica o efeito a todos os cards quando mouse está sobre o container */
+.plataformaCursosContent:hover .plataformaCursosCard {
+  filter: blur(4px);
+  transform: scale(0.95);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Remove o efeito do card que está com hover */
+.plataformaCursosContent:hover .plataformaCursosCard:hover {
+  filter: none;
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 10px 20px #33024a;
+}
+
+
 
 /* Simulador */
 .simulador {
