@@ -80,11 +80,11 @@ html, body {
 .frase {
   text-align: center;
   padding: 40px 20px;
-  color: #fff;
+  color: #ffffffbe;
 }
 
 .frase h2 {
-  font-family: 'Inconsolata', sans-serif;
+  font-family:  sans-serif;
   font-weight: 500;
   font-size: 60px;
   margin: 70px 0;
@@ -95,7 +95,7 @@ html, body {
 .frase p {
   font-family: 'Inconsolata', sans-serif;
   font-size: 45px;
-  color: #ebebeb;
+  color: #ffffffbe;
 }
 
 /* Plataforma de Cursos */

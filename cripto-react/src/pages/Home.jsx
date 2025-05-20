@@ -16,6 +16,7 @@ export default function Home() {
       <Navbar2 />
 
       {/* Seção Moeda e Título */}
+    
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
@@ -23,8 +24,9 @@ export default function Home() {
         </div>
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
       </div>
-
+    
       {/* Frase Inspiradora */}
+    
       <div className="frase">
         <h2>
           " O verdadeiro investidor não é aquele<br />
@@ -33,7 +35,6 @@ export default function Home() {
         </h2>
         <p>- Benjamin Graham -</p>
       </div>
-
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
         <h2>
