@@ -1,6 +1,6 @@
 /* Footer */
   .footer {
-    background-color: #1b1919;
+    background-color: #1b19195c;
     color: #fff;
   }
   
@@ -10,7 +10,17 @@
   }
   
   .footerInfo .logo {
-    margin-left: 912px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .termos a{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
   }
 
   .detalhes {

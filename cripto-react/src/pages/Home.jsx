@@ -16,6 +16,7 @@ export default function Home() {
       <Navbar />
 
       {/* Seção Moeda e Título */}
+    
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
@@ -23,8 +24,9 @@ export default function Home() {
         </div>
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
       </div>
-
+    
       {/* Frase Inspiradora */}
+    
       <div className="frase">
         <h2>
           " O verdadeiro investidor não é aquele<br />
@@ -33,13 +35,12 @@ export default function Home() {
         </h2>
         <p>- Benjamin Graham -</p>
       </div>
-
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
         <h2>
           A ChainX é uma plataforma de
-          <span className="highlight"> educação <br /> financeira </span>
-          onde você tem acesso a:
+          <span className="highlight"> Educação <br /> Financeira </span>
+          onde você tem acesso:
         </h2>
 
         <div className="plataformaCursosContent">
@@ -71,22 +72,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
-
-      {/* Seção Simulador */}
-      <div className="simulador">
-        <img src={simulador2} alt="Simulador" className="simuladorImage" />
-        <div className="simuladorTexto">
-          <h2>
-            Simulador de <br />
-            <span className="hightLight">Investimentos</span>
-          </h2>
-          <p>Aprenda a investir com segurança e confiança.</p>
-          <a href="/simulador">
-            <button className="simuladorButton">Acessar</button>
-          </a>
-        </div>
-      </div>
+    
 
       {/* Rodapé */}
       <Footer />

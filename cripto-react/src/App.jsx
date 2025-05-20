@@ -11,6 +11,7 @@ import SimulatorPage from './pages/SimulatorPage';
 import Assistent from './components/Assistent'; 
 import { ForgotPassword } from './pages/ForgotPassword';
 import { ResetPassword } from './pages/ResetPassword';
+import Privacidade from './components/privacidade'
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
-
+        <Route path="/privacidade" element={<Privacidade />} />
       </Routes>
      
              <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />

@@ -21,6 +21,10 @@ export default function Footer() {
 
           <hr />
 
+          <div className="termos">
+            <a href="/Privacidade">&copy; Termos e condições de politica de privacidade</a>
+          </div>
+
           <div className="redesSociais">
             <a href="#">
               <img src={instagram} alt="Instagram" width={30} />
