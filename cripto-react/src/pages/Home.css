@@ -159,6 +159,8 @@ html, body {
   font-size: 16px;
   color: #e0e0e0;
   line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Aplica o efeito a todos os cards quando mouse está sobre o container */
