@@ -120,14 +120,24 @@ app.post('/login', async (req, res) => {
 });
 
 // Rota protegida de perfil
-app.get('/perfil', verificarToken, async (req, res) => {
-  try {
-    const [results] = await db.query('SELECT id, nome, email FROM usuarios WHERE id = ?', [req.user.id]);
-    res.json({ user: results[0] });
-  } catch (err) {
-    res.status(500).json({ alert: 'Erro ao buscar usuário', error: err.message });
-  }
+app.get("/perfil", (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).json({ erro: "Token não fornecido" });
+    }
+
+    const token = authHeader.split(" ")[1]; // Extraindo o token
+    const usuario = verificarToken(token); // Função fictícia para validar o token
+    
+    if (!usuario) {
+        return res.status(401).json({ erro: "Token inválido ou expirado" });
+    }
+
+    res.json(usuario);
 });
+
+
+
 
 // Rota protegida de curso
 app.get('/curso', verificarToken, (req, res) => {

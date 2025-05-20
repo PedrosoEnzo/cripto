@@ -122,6 +122,15 @@
   animation: messageFadeIn 0.3s ease;
 }
 
+.message p {
+ margin: unset;
+ text-align: left;
+}
+
+.message li {
+margin-left: 10px;
+}
+
 @keyframes messageFadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }

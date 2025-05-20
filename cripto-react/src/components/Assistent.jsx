@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { FaTimes, FaPaperPlane } from 'react-icons/fa';
 import Zynx from '../assets/mascote/Assistent.png';
 import styles from './Assistent.module.css';
+import ReactMarkdown from 'react-markdown';
+
 
 const Assistent = ({ apiKey }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,7 +83,7 @@ const Assistent = ({ apiKey }) => {
           <div className={styles.messages}>
             {messages.map((msg, index) => (
               <div key={index} className={`${styles.message} ${styles[msg.role]}`}>
-                {msg.content}
+                <ReactMarkdown>{msg.content}</ReactMarkdown>
               </div>
             ))}
             {isLoading && (

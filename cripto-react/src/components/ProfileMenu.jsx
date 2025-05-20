@@ -3,6 +3,7 @@ import styles from './ProfileMenu.module.css';
 import perfil from "../assets/icons/user.png";
 
 const ProfileMenu = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
   const userLevel = "Intermediário";
 
