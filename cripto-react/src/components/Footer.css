@@ -10,7 +10,9 @@
   }
   
   .footerInfo .logo {
-    margin-left: 912px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .detalhes {
