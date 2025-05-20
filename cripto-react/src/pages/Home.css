@@ -159,7 +159,8 @@ html, body {
   font-size: 16px;
   color: #e0e0e0;
   line-height: 1.5;
-  margin-left: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -220,6 +221,10 @@ html, body {
   font-size: 30px;
   color: #b2b2b2;
   margin-left: 0;
+}
+
+.simulador a {
+  text-decoration: none;
 }
 
 .simuladorButton {
