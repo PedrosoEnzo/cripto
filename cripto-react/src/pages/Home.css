@@ -159,9 +159,10 @@ html, body {
   font-size: 16px;
   color: #e0e0e0;
   line-height: 1.5;
+  margin-left: 0;
 }
 
-/* Aplica o efeito a todos os cards quando mouse está sobre o container */
+
 .plataformaCursosContent:hover .plataformaCursosCard {
   filter: blur(4px);
   transform: scale(0.95);
@@ -218,6 +219,7 @@ html, body {
 .simulador p {
   font-size: 30px;
   color: #b2b2b2;
+  margin-left: 0;
 }
 
 .simuladorButton {
