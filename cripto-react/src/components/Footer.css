@@ -15,6 +15,14 @@
     margin-right: auto;
   }
 
+  .termos a{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
   .detalhes {
     display: flex;
     justify-content: center;
