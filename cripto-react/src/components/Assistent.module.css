@@ -137,11 +137,12 @@ margin-left: 10px;
 }
 
 .message.user {
-  background-color: #6b46c1;
-  color: white;
+  background-color:#5c4697;
+  color: rgb(255, 249, 249);
   margin-left: auto;
   border-bottom-right-radius: 5px;
 }
+
 
 .message.assistant {
   background-color: #e5e7eb;
