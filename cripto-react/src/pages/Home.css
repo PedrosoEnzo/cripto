@@ -98,6 +98,8 @@ html, body {
   color: #ffffffbe;
 }
 
+
+
 /* Plataforma de Cursos */
 .plataformaCursos {
   display: flex;
@@ -182,8 +184,7 @@ html, body {
 }
 
 
-<<<<<<< HEAD
-=======
+
 
 /* Simulador */
 .simulador {
@@ -247,7 +248,6 @@ html, body {
   display: block;
 }
 
->>>>>>> c58147ffc9a1d8f5543a535bb41405731f02d3ef
 /* Responsividade para notebooks e tablets */
 @media (max-width: 1080px) {
   .content h1 {
