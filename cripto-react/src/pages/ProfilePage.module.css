@@ -19,12 +19,16 @@
 /* Cartão do perfil */
 .profileContainer {
   background-color: #fff;
-  padding: 3rem;
+  padding: 3rem 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(63, 2, 91, 0.25);
   text-align: center;
   max-width: 400px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem; /* espaçamento entre os elementos */
 }
 
 /* Título */
@@ -34,38 +38,59 @@
   margin-bottom: 1.5rem;
 }
 
-/* Nome */
-.name {
-  font-size: 1.4rem;
+/* Nome e Email */
+.name,
+.bio {
+  font-size: 1.2rem;
   color: #3f025b;
-  margin-bottom: 0.8rem;
   font-weight: 600;
+  width: 100%;
+  text-align: left;
+  word-wrap: break-word;
 }
 
-/* Bio (email) */
+/* Bio (email) um pouco mais leve */
 .bio {
-  font-size: 1rem;
+  font-weight: 400;
   color: #555;
   margin-bottom: 2rem;
 }
 
-/* Grupo de botões */
 .buttonGroup {
   display: flex;
   justify-content: center;
+  width: 100%;
+  gap: 1rem;
 }
 
-/* Botões */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
 .button {
-  text-decoration: none;
-  padding: 12px 24px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 12px 20px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #3f025b, #b12092);
-  color: #fff;
   font-weight: 600;
+  font-size: 1rem;
   border: none;
-  transition: all 0.3s ease;
   cursor: pointer;
+  user-select: none;
+  text-align: center;
+  display: inline-flex; /* inline-flex para alinhar texto */
+  align-items: center; /* vertical align */
+  justify-content: center; /* horizontal align */
+  transition: all 0.3s ease;
+  text-decoration: none; /* importante para <a> */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: white; /* padrão */
+  background: linear-gradient(90deg, #3f025b, #b12092);
 }
 
 .button:hover {
@@ -73,18 +98,20 @@
   transform: scale(1.05);
 }
 
-/* Botão de cancelar */
+/* Botão cancelar com cor diferente */
 .cancelButton {
-  background: #ccc;
-  color: #000;
+  background: #ccc !important; /* use !important se necessário */
+  color: #000 !important;
 }
 
 .cancelButton:hover {
-  background: #aaa;
+  background: #aaa !important;
+  transform: scale(1.05);
 }
 
 /* Texto de carregando ou erro */
 p {
   color: #333;
   font-size: 1rem;
+  
 }
