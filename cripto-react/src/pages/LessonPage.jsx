@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import anexo1 from '../assets/pdf/anexo-introducao.pdf';
+import logo from '../assets/icons/logo.png';
 
 import styles from './LessonPage.module.css';
 
@@ -12,11 +13,15 @@ export default function LessonPage() {
   }
 
   return (
+
     <div className={styles.page}>
       <header className={styles.header}>
+        <div className={styles.voltarHome}>
+          <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+        </div>
         <h1 className={styles.title}>
           <a href="/curso" className={styles.link}>
-          ChainX <span className={styles.highlight}>Educ</span>
+            ChainX <span className={styles.highlight}>Education</span>
           </a>
         </h1>
       </header>
@@ -41,7 +46,7 @@ export default function LessonPage() {
           <div className={styles.pdfContainer}>
             <h3>Materiais Complementares</h3>
             <ul>
-            <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
+              <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
               <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
               <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">E-book Tipos de taxas</a></li>
             </ul>

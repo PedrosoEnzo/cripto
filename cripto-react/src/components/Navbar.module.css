@@ -7,14 +7,14 @@
   padding: 4px 40px;
   background-color: rgba(10, 0, 19, 0.185);
   position: sticky;
-  background-color: rgba(38, 10, 42, 0.063); /* Melhorar contraste */
-  backdrop-filter: blur(3px); /* Efeito de vidro opcional */
-  position: fixed; /* <-- Torna a navbar fixa no topo */
+  background-color: rgba(38, 10, 42, 0.063);
+  backdrop-filter: blur(3px);
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  border-radius: 0 0 24px 24px; /* Arredonda apenas a parte de baixo */
+  border-radius: 0 0 24px 24px; 
 }
 
 
