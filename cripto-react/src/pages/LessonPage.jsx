@@ -1,24 +1,26 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from "react-icons/fa";
 import anexo1 from '../assets/pdf/anexo-introducao.pdf';
-import logo from '../assets/icons/logo.png';
-
+import anexo2 from '../assets/pdf/perfil.pdf';
 import styles from './LessonPage.module.css';
 
 export default function LessonPage() {
   const { id } = useParams();
+  const navigate = useNavigate(); // Correção: Declarar useNavigate dentro do componente
 
   if (!id) {
     return <div className={styles.error}>Erro: ID da aula não encontrado!</div>;
   }
 
   return (
-
     <div className={styles.page}>
       <header className={styles.header}>
-        <div className={styles.voltarHome}>
-          <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
-        </div>
+
+          <FaArrowLeft
+            className={styles.backArrow}
+            onClick={() => navigate("/curso")} // Agora navigate funciona corretamente
+          />
         <h1 className={styles.title}>
           <a href="/curso" className={styles.link}>
             ChainX <span className={styles.highlight}>Education</span>
@@ -47,8 +49,7 @@ export default function LessonPage() {
             <h3>Materiais Complementares</h3>
             <ul>
               <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
-              <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
-              <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">E-book Tipos de taxas</a></li>
+              <li><a href={anexo2} target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
             </ul>
           </div>
         </div>
