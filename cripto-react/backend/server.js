@@ -95,7 +95,6 @@ app.post('/login', async (req, res) => {
     const userData = { id: user.id, nome: user.nome, email: user.email };
 
     res.status(200).json({
-      alert: 'Login bem-sucedido',
       token,
       user: userData
     });

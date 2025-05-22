@@ -60,11 +60,11 @@ function Perfil() {
       .then((data) => {
         setUsuario(data);
         setEditMode(false);
-        alert("Perfil atualizado com sucesso!");
+        
       })
       .catch((error) => {
         console.error(error);
-        alert("Erro ao atualizar perfil.");
+        
       });
   };
 
