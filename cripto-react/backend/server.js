@@ -130,6 +130,21 @@ app.get('/simulador', verificarToken, (req, res) => {
   res.json({ message: 'Acesso autorizado ao simulador', user: req.user });
 });
 
+app.put('/atualizarperfil', verificarToken, async (req, res) => {
+  const userId = req.user.id;
+  const { nome, email } = req.body;
+
+  try {
+    await db.query('UPDATE usuarios SET nome = ?, email = ? WHERE id = ?', [nome, email, userId]);
+    const [updatedUser] = await db.query('SELECT id, nome, email FROM usuarios WHERE id = ?', [userId]);
+
+    res.json(updatedUser[0]);
+  } catch (err) {
+    console.error('Erro ao atualizar perfil:', err);
+    res.status(500).json({ erro: 'Erro ao atualizar perfil' });
+  }
+});
+
 // 🚀 Encerrar conexão ao fechar
 process.on('SIGINT', async () => {
   await db.end();
