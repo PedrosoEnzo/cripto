@@ -17,7 +17,7 @@ import Footer from '../components/Footer';
 function About() {
   return (
     <>
-      < Navbar />
+    
       <section className="intro">
         <div className="textoEsquerdo">
           <h2>Bem vindo ao Chain-x</h2>
