@@ -50,7 +50,6 @@
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,3 +60,4 @@
   box-shadow: 0 0 10px #110e1d;
   transform: scale(1.05);
 }
+ 
