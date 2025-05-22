@@ -10,14 +10,13 @@ import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
 import marianaPerfil from '../assets/marianaPerfil.jpeg';
 import instagram from '../assets/instagram.png';
 import github from '../assets/github.png';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 
 function About() {
   return (
     <>
-      < Navbar />
+    
       <section className="intro">
         <div className="textoEsquerdo">
           <h2>Bem vindo ao Chain-x</h2>

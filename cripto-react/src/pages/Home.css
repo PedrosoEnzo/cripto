@@ -84,7 +84,7 @@ html, body {
 }
 
 .frase h2 {
-  font-family:  sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-weight: 500;
   font-size: 60px;
   margin: 70px 0;
@@ -96,6 +96,8 @@ html, body {
   font-family: 'Inconsolata', sans-serif;
   font-size: 45px;
   color: #ffffffbe;
+    animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
 }
 
 
@@ -118,7 +120,7 @@ html, body {
 }
 
 .plataformaCursos .highlight {
-  color: #b12092;
+  color: #861888;
   font-size: 56px;
 }
 
