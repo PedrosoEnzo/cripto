@@ -29,11 +29,11 @@ const Cadastro = () => {
   };
 
   return (
-        
+
     <div className="tudo">
-           <div className="voltarHome">
-                <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
-          </div>
+      <div className="voltarHome">
+        <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+      </div>
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="paragrafo">
