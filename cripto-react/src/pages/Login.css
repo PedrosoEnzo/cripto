@@ -20,7 +20,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-right: 250px;
 }
 
 .paragrafo {
@@ -46,7 +45,6 @@
     max-width: 1200px;
     width: 100%;
     text-align: center;
-    margin-right: 40px;
 }
 
 /* Inputs */
