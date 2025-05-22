@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './Home.css';
+import './Home.css'
 import moeda from '../assets/imgMoeda.png';
 import cursos from '../assets/cursos.png';
 import cursos1 from '../assets/cursos1.png';
