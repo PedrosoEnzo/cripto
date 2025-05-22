@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Home.css';
 import moeda from '../assets/imgMoeda.png';
 import cursos from '../assets/cursos.png';
@@ -7,16 +5,20 @@ import cursos1 from '../assets/cursos1.png';
 import cursos2 from '../assets/cursos2.png';
 //import simulador2 from '../assets/mascote/ZynxSimulador.png';
 import Footer from '../components/Footer';
+<<<<<<< HEAD
 import Navbar from '../components/Navbar';
 //import Navbar2 from '../components/Navbar2';
+=======
+// import Navbar from '../components/Navbar'; // Remover esta linha
+// import Navbar2 from '../components/Navbar2'; // Remover esta linha
+>>>>>>> 6b163605628ba502e26b83c29c6627c41581d080
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* Navbar foi removida daqui */}
 
       {/* Seção Moeda e Título */}
-    
       <div className="navbar-img-moeda">
         <div className="content">
           <h1 className="text">Simule, Aprenda, <br />Invista no seu futuro!</h1>
@@ -24,9 +26,8 @@ export default function Home() {
         </div>
         <img src={moeda} alt="imgmoeda" className="moeda-image" />
       </div>
-    
+
       {/* Frase Inspiradora */}
-    
       <div className="frase">
         <h2>
           " O verdadeiro investidor não é aquele<br />
@@ -35,6 +36,7 @@ export default function Home() {
         </h2>
         <p>- Benjamin Graham -</p>
       </div>
+
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
         <h2>
@@ -72,7 +74,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    
 
       {/* Rodapé */}
       <Footer />
