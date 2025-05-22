@@ -1,17 +1,16 @@
-/* Nova paleta de cores */
+/* Cores modernas */
 :root {
-  --primary: #6C1ED9;
-  --primary-dark: #790FA6;
-  --primary-light: #8B36E6;
-  --secondary: #D9B3FF;
-  --text-dark: #0D0D0D;
-  --text-light: #4A4A4A;
-  --bg-light: #F5F5F5;
-  --bg-dark: #1A1A1A;
-  --user-bubble: #6C1ED9;
-  --bot-bubble: #FFFFFF;
-  --error: #FF4D4D;
-  --border: #E0E0E0;
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --primary-light: #8b5cf6;
+  --secondary: #f0abfc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --bg-dark: #1e293b;
+  --user-bubble: #7c3aed;
+  --bot-bubble: #f1f5f9;
+  --error: #ef4444;
 }
 
 /* Reset e estilos base */
@@ -20,8 +19,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .container {
@@ -36,11 +33,11 @@
   position: relative;
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(108, 30, 217, 0.3);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
@@ -50,7 +47,7 @@
 
 .floatingButton:hover {
   transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 8px 25px rgba(108, 30, 217, 0.4);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
 }
 
 .floatingButton:active {
@@ -103,7 +100,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.3s ease-out forwards;
-  border: 1px solid var(--border);
+  border: 1px solid #e2e8f0;
 }
 
 @keyframes fadeInUp {
@@ -197,7 +194,7 @@
   text-align: center;
   margin-bottom: 16px;
   padding: 12px;
-  background-color: rgba(108, 30, 217, 0.1);
+  background-color: rgba(124, 58, 237, 0.1);
   border-radius: 12px;
   color: var(--primary-dark);
   font-size: 14px;
@@ -212,9 +209,8 @@
 .message {
   display: flex;
   gap: 10px;
-  max-width: 100%;
+  max-width: 85%;
   animation: messageFadeIn 0.3s ease;
-  word-break: break-word;
 }
 
 @keyframes messageFadeIn {
@@ -226,9 +222,9 @@
   padding: 12px 16px;
   border-radius: 18px;
   line-height: 1.5;
+  word-wrap: break-word;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   position: relative;
-  min-width: 0; /* Permite que o texto quebre corretamente */
 }
 
 .messageTime {
@@ -237,7 +233,6 @@
   opacity: 0.6;
   margin-top: 4px;
   text-align: right;
-  white-space: nowrap;
 }
 
 .botIcon {
@@ -245,7 +240,6 @@
   align-items: flex-start;
   padding-top: 12px;
   color: var(--primary);
-  flex-shrink: 0;
 }
 
 /* Mensagem do usuário */
@@ -273,7 +267,6 @@
   background-color: var(--bot-bubble);
   color: var(--text-dark);
   border-bottom-left-radius: 4px;
-  border: 1px solid var(--border);
 }
 
 .message.assistant .messageTime {
@@ -288,7 +281,6 @@
   background-color: var(--bot-bubble);
   border-radius: 18px;
   gap: 6px;
-  border: 1px solid var(--border);
 }
 
 .typingIndicator span {
@@ -318,7 +310,7 @@
   display: flex;
   padding: 12px;
   background-color: white;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #e2e8f0;
   gap: 8px;
   align-items: center;
 }
@@ -326,7 +318,7 @@
 .inputForm input {
   flex: 1;
   padding: 12px 16px;
-  border: 1px solid var(--border);
+  border: 1px solid #e2e8f0;
   border-radius: 24px;
   outline: none;
   font-size: 14px;
@@ -336,7 +328,7 @@
 
 .inputForm input:focus {
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(108, 30, 217, 0.1);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 .inputForm button {
@@ -406,4 +398,16 @@
     width: 56px;
     height: 56px;
   }
+}
+
+/* Efeitos de marca d'água (opcional) */
+.chatWindow::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.03;
+  font-size: 120px;
+  font-weight: bold;
+  pointer-events: none;
 }
