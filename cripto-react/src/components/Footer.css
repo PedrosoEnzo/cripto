@@ -1,6 +1,6 @@
 /* Footer */
   .footer {
-    background-color: #1b19195c;
+    background-color: #1b191948;
     color: #fff;
   }
   
@@ -14,14 +14,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  .termos a{
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: #fff;
-  }
+  
 
   .detalhes {
     display: flex;
@@ -39,18 +32,29 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    gap: 12px;
   }
 
   .redesSociais a {
     padding: 5px;
   }
-
-  .copy {
-    text-align: center;
+.copy {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 60px; 
     margin-top: 20px;
     margin-right: 60px;
     font-size: 14px;
-  } 
-  .copyT{
+}
+
+.copyT {
     color: #fff;
-  }
+    margin: 0;
+}
+
+.copy a { 
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap; 
+}

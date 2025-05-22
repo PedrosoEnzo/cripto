@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import logo from '../assets/icons/logo.png';
 import robo from '../assets/mascote/ZynxOla.png';
 import anaPerfil from '../assets/anaPerfil.jpeg';
 import nicolePerfil from '../assets/nicolePerfil.jpeg';
@@ -17,6 +18,9 @@ function About() {
   return (
     <>
     
+        <div className="voltarHome">
+          <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+        </div>
       <section className="intro">
         <div className="textoEsquerdo">
           <h2>Bem vindo ao Chain-x</h2>
