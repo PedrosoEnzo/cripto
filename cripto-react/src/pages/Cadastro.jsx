@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
+import logo from '../assets/icons/logo.png';
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -28,7 +29,11 @@ const Cadastro = () => {
   };
 
   return (
+        
     <div className="tudo">
+           <div className="voltarHome">
+                <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+          </div>
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="paragrafo">

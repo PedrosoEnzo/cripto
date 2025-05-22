@@ -14,6 +14,17 @@
     text-align: center; /* Centraliza textos internos */
 }
 
+.voltarHome{
+    cursor: pointer;
+  }
+
+  .voltarHome img {
+    margin-top: 20px;
+    margin-left: 25px ;
+    width: 110px;
+    height: 70px;
+  }
+  
 /* Box (se necessário, pode ser removido se não usado) */
 .box {
     max-width: 100%;
