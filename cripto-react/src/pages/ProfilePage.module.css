@@ -1,137 +1,90 @@
-/* Reset global */
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Container principal centralizado */
+/* Container principal */
 .container {
-    padding: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3f025b, #460a38);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container do perfil */
+/* Cartão do perfil */
 .profileContainer {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: auto;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(63, 2, 91, 0.25);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
 }
 
 /* Título */
 .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #b12092;
-    margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #b12092;
+  margin-bottom: 1.5rem;
 }
 
-/* Texto dos parágrafos */
-p {
-    color: #fff;
-}
-
-/* Nome e Bio */
+/* Nome */
 .name {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+  font-size: 1.4rem;
+  color: #3f025b;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
 }
 
+/* Bio (email) */
 .bio {
-    font-size: 1rem;
-    color: #3f025b;
-    text-align: center;
-    margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
-/* Seção do nível */
-.levelSection {
-    margin-top: 1rem;
-}
-
-.levelTitle {
-    font-size: 1.2rem;
-    color: #3f025b;
-    margin: 0;
-}
-
-/* Agrupamento dos botões e link */
+/* Grupo de botões */
 .buttonGroup {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-/* Estilização compartilhada para botão e link */
-.button,
-.link {
-    text-decoration: none;
-    background: linear-gradient(90deg, #3f025b, #b12092);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease-in-out;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Botões */
+.button {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #3f025b, #b12092);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Hover para botão e link */
-.button:hover,
-.link:hover {
-    background: linear-gradient(90deg, #b12092, #3f025b);
+.button:hover {
+  background: linear-gradient(90deg, #b12092, #3f025b);
+  transform: scale(1.05);
 }
 
-/* Caso queira um estilo diferenciado para o botão de cancelar */
+/* Botão de cancelar */
 .cancelButton {
-    background: #ccc;
-    color: black;
+  background: #ccc;
+  color: #000;
 }
 
-/* Formulário */
-.form {
-    background-color: rgba(255, 254, 255, 0.3);
-    /* Cor de fundo escura para o formulário */
-    padding: 20px;
-    /* Adicione um pouco de padding para o conteúdo não ficar grudado nas bordas */
-    border-radius: 8px;
-    /* Opcional: arredonda as bordas do formulário */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.cancelButton:hover {
+  background: #aaa;
 }
 
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-/* Inputs */
-.input,
-.textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.textarea {
-    resize: vertical;
+/* Texto de carregando ou erro */
+p {
+  color: #333;
+  font-size: 1rem;
 }

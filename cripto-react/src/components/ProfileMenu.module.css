@@ -1,66 +1,105 @@
 .container {
-    padding: 20px;
-    position: relative;
+  padding: 20px;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .toggleDropdown {
-  border: none; /* Remove a borda padrão do botão */
-  padding: 0; /* Remove o padding padrão do botão */
+  border: none;
+  padding: 0;
   cursor: pointer;
-  display: flex; /* Para alinhar a imagem */
-  width: 0; /* Largura automática para se ajustar ao conteúdo */;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: transform 0.2s ease;
+  margin: 5px;
 }
 
-.dropdownHeader .toggleh2 {
-    color: #fff;
-}
-
-.dropdownHeader {
-    margin-right: 30px;
+.toggleDropdown:hover {
+  transform: scale(1.1);
 }
 
 .profileContainer {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: auto;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 10;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(63, 2, 91, 0.15);
+  text-align: center;
+  width: 280px;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  z-index: 100;
+  animation: fadeInDrop 0.3s ease forwards;
 }
 
+@keyframes fadeInDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .name {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-    color: #000;
+  font-size: 1.6rem;
+  margin: 0.3rem 0;
+  color: #3f025b;
+  font-weight: 700;
 }
 
 .bio {
-    font-size: 1rem;
-    color: #666;
-    text-align: center;
-    margin-left: 0;
-    margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 8px;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 .levelSection {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .levelTitle {
-    font-size: 1.2rem;
-    color: #3f025b;
-    margin: 0;
+  font-size: 1.25rem;
+  color: #b12092;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .btnEdit {
-    background: linear-gradient(90deg, #3f025b, #b12092);
-    color: white; /* Adicionado: Cor do texto para melhor contraste. */
+  display: inline-block;
+  padding: 8px 18px;
+  background: linear-gradient(90deg, #3f025b, #b12092);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(177, 32, 146, 0.4);
+}
+
+.btnEdit:hover {
+  background: linear-gradient(90deg, #b12092, #3f025b);
+  box-shadow: 0 6px 14px rgba(63, 2, 91, 0.6);
+}
+
+/* Estilo para o ícone do perfil */
+
+.perfil {
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(63, 2, 91, 0.3);
+  transition: box-shadow 0.3s ease;
+  
+}
+
+.perfil:hover {
+  box-shadow: 0 4px 14px rgba(177, 32, 146, 0.7);
 }
