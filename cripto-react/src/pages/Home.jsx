@@ -44,7 +44,7 @@ export default function Home() {
           que se prepara para ele. "
         </h2>
         <p className="scroll-animation">- Benjamin Graham -</p>
-      </div>
+      </div> <br /><br /><br /><br /><br /><br />
 
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
