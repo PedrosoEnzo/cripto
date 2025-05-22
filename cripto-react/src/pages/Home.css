@@ -60,7 +60,7 @@ html, body {
 
 .content p {
   font-size: 40px;
-  color: #fff;
+  color: #e4dfdfeb;
   text-align: center;
 }
 
@@ -110,7 +110,7 @@ html, body {
   padding: 20px;
   margin-top: 98px;
   margin-bottom: 80px;
-  color: #fff;
+  color: #e4dfdfeb;
   text-align: center;
 }
 
@@ -137,7 +137,7 @@ html, body {
   height: 320px;
   padding: 20px;
   text-align: center;
-  color: white;
+  color: #e4dfdfeb;
   box-shadow: 0 0 12px #3f025b;
   display: flex;
   flex-direction: column;
