@@ -149,7 +149,6 @@ const Assistent = ({ apiKey }) => {
           aria-label="Abrir chat"
         >
           <img src={Zynx} alt="Assistente Zynx" className={styles.buttonImage} />
-          <span className={styles.notificationBadge}>1</span>
         </button>
       )}
     </div>
