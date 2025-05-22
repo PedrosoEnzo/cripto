@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import anexo1 from '../assets/pdf/anexo-introducao.pdf';
-
+import anexo2 from '../assets/pdf/perfil.pdf';
 import styles from './LessonPage.module.css';
 
 export default function LessonPage() {
@@ -42,7 +42,7 @@ export default function LessonPage() {
             <h3>Materiais Complementares</h3>
             <ul>
             <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
-              <li><a href="/pdf/anexo2.pdf" target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
+              <li><a href={ anexo2 } target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
               <li><a href="/pdf/anexo3.pdf" target="_blank" rel="noopener noreferrer">E-book Tipos de taxas</a></li>
             </ul>
           </div>
