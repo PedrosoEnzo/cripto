@@ -5,13 +5,13 @@ import cursos1 from '../assets/cursos1.png';
 import cursos2 from '../assets/cursos2.png';
 //import simulador2 from '../assets/mascote/ZynxSimulador.png';
 import Footer from '../components/Footer';
-<<<<<<< HEAD
+
 import Navbar from '../components/Navbar';
 //import Navbar2 from '../components/Navbar2';
-=======
+
 // import Navbar from '../components/Navbar'; // Remover esta linha
 // import Navbar2 from '../components/Navbar2'; // Remover esta linha
->>>>>>> 6b163605628ba502e26b83c29c6627c41581d080
+
 
 export default function Home() {
   return (
