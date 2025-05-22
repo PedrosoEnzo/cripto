@@ -11,7 +11,24 @@
     align-items: center;
     height: 100vh;
     background-color: #ffffff;
-    text-align: center; /* Centraliza textos internos */
+    text-align: center;
+    /* Centraliza textos internos */
+}
+
+.voltarHome {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    /* Coloca o botão acima de outros elementos */
+}
+
+.voltarHome img {
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 110px;
+    height: 70px;
 }
 
 /* Box (se necessário, pode ser removido se não usado) */
@@ -25,7 +42,8 @@
 
 .paragrafo {
     color: grey;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
 }
 
 .paragrafo h2 {
@@ -40,13 +58,15 @@
 /* Formulário centralizado */
 form {
     background: rgba(255, 255, 255, 0.9);
-    padding: 60px; 
+    padding: 60px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto; /* Centraliza o formulário */
-    text-align: center; /* Alinha conteúdo interno ao centro */
+    margin: 0 auto;
+    /* Centraliza o formulário */
+    text-align: center;
+    /* Alinha conteúdo interno ao centro */
 }
 
 /* Inputs centralizados */
@@ -58,8 +78,10 @@ input {
     border-radius: 5px;
     background: #f5f5f5;
     outline: none;
-    margin: 0 auto 1rem; /* Centraliza inputs */
-    display: block; /* Necessário para margin:auto funcionar */
+    margin: 0 auto 1rem;
+    /* Centraliza inputs */
+    display: block;
+    /* Necessário para margin:auto funcionar */
 }
 
 input:focus {
@@ -68,7 +90,8 @@ input:focus {
 }
 
 #button {
-    width: 400px; /* Largura fixa igual aos inputs */
+    width: 400px;
+    /* Largura fixa igual aos inputs */
     height: 40px;
     border: none;
     border-radius: 15px;
@@ -78,8 +101,10 @@ input:focus {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 0 auto; /* Centraliza o botão */
-    display: block; /* Necessário para margin:auto funcionar */
+    margin: 0 auto;
+    /* Centraliza o botão */
+    display: block;
+    /* Necessário para margin:auto funcionar */
 }
 
 #button:hover {
@@ -92,12 +117,13 @@ p {
     text-align: center;
     color: rgb(47, 44, 44);
     font-size: 16px;
-    margin: 5px auto; /* Centraliza e ajusta espaçamento */
+    margin: 5px auto;
+    /* Centraliza e ajusta espaçamento */
 }
 
 /* Responsividade para telas grandes (opcional) */
 @media (min-width: 1920px) {
     body {
-        background: linear-gradient(to bottom, #000000, #272042, #000000) !important; 
+        background: linear-gradient(to bottom, #000000, #272042, #000000) !important;
     }
 }
