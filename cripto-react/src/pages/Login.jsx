@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
 
       // Navega para a página do curso após meio segundo
       setTimeout(() => {
-        navigate("/curso");
+        navigate("/");
       }, 500);
     } catch (error) {
       let errorMessage = "Erro ao fazer login";

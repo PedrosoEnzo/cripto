@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
+import PrivateRoute from "./components/PrivateRoute";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -31,7 +32,7 @@ function App() {
     setIsLoggedIn(false);
   };
 
-  // Mostrar Navbar apenas na página Home
+  // Navbar aparece apenas na Home
   const showNavbar = location.pathname === "/";
 
   return (
@@ -42,11 +43,36 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/curso" element={<CoursePage />} />
+
+        {/* 🔒 Rotas protegidas */}
+        <Route
+          path="/curso"
+          element={
+            <PrivateRoute>
+              <CoursePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/simulador"
+          element={
+            <PrivateRoute>
+              <SimulatorPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          }
+        />
+
+        {/* 🎓 Acesso livre */}
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
-        <Route path="/simulador" element={<SimulatorPage />} />
-        <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
