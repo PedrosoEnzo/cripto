@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import logo from '../assets/icons/logo.png';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -55,7 +56,12 @@ const Login = ({ onLogin }) => {
   };
 
   return (
+    
     <div className="tudo">
+      
+              <div className="voltarHome">
+                <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+              </div>
       <div className="box">
         <form onSubmit={handleSubmit} className="form">
           <div className="paragrafo">

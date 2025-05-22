@@ -16,6 +16,17 @@
     padding: 2rem;
 }
 
+.voltarHome{
+    cursor: pointer;
+  }
+
+  .voltarHome img {
+    margin-top: 20px;
+    margin-left: 25px ;
+    width: 110px;
+    height: 70px;
+  }
+
 .box {
     width: 100%;
     display: flex;
