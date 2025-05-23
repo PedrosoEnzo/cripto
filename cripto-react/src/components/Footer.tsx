@@ -1,44 +1,37 @@
 import React from "react";
-
 import "./Footer.css";
 import instagram from "../assets/icons/instagram.png";
 import facebook from "../assets/icons/facebook.png";
 import twitter from "../assets/icons/twitter.png";
-import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <>
-      <div className="footer">
-        <div className="footerInfo">
-          <img className="logo" src={logo} alt="Logo" width={90}></img>
-          <div className="detalhes">
-            <a href="/about">Sobre</a>
-            <a href="/perfil">Perfil</a>
-            <a href="/simulador">Simulador</a>
-            <a href="/curso">ChainX Education</a>
-          </div>
-
-          <hr />
-
-          <div className="redesSociais">
-            <a href="#">
-              <img src={instagram} alt="Instagram" width={30} />
-            </a>
-            <a href="#">
-              <img src={facebook} alt="Facebook" width={30} />
-            </a>
-            <a href="#">
-              <img src={twitter} alt="Twitter" width={30} />
-            </a>
+    <footer className="footer">
+      <div className="footerContent">
+        <div className="footerBrand">
+          <h2>ChainX</h2>
+          <p className="tagline">Educação financeira acessível e descomplicada para todos.</p>
+          <div className="contact">
+            <p><strong>Email:</strong> contato@chainxeduc.com</p>
+            <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
+            <p><strong>CNPJ:</strong> 45.678.912/0001-34</p>
           </div>
         </div>
 
-        <div className="copy">
-          <p className="copyT">&copy; Todos os direitos reservados a ChainX 2025</p>
-          <a className="copyT" href="/Privacidade"> Termos e condições de politica de privacidade</a>
+        <div className="footerSocial">
+          <h3>Redes Sociais</h3>
+          <div className="socialIcons">
+            <a href="#"><img src={instagram} alt="Instagram" /></a>
+            <a href="#"><img src={facebook} alt="Facebook" /></a>
+            <a href="#"><img src={twitter} alt="Twitter" /></a>
+          </div>
         </div>
       </div>
-    </>
+
+      <div className="footerBottom">
+        <p>&copy; 2025 ChainX. Todos os direitos reservados.</p>
+        <a href="/Privacidade">Termos e Política de Privacidade</a>
+      </div>
+    </footer>
   );
 }

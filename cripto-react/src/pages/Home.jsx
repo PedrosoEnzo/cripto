@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import './Home.css'
-import moeda from '../assets/imgMoeda.png';
+import './Home.css';
+import corrente from '../assets/chain-fundo.png';
 import cursos from '../assets/cursos.png';
 import cursos1 from '../assets/cursos1.png';
 import cursos2 from '../assets/cursos2.png';
 import Footer from '../components/Footer';
 
 export default function Home() {
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -27,13 +26,16 @@ export default function Home() {
 
   return (
     <>
-      {/*  Título e Imagem da Moeda */}
+      {/* Efeito de fundo neon */}
+      <div className="background-blur-effect" />
+
+      {/* Título e Imagem da Moeda */}
       <div className="navbar-img-moeda">
         <div className="content">
           <h1>Simule, Aprenda, <br />Invista no seu futuro!</h1>
           <p>Se prepare para o futuro agora!</p>
         </div>
-        <img src={moeda} alt="Moeda" className="moeda-image" />
+        <img src={corrente} alt="corrente" className="corrente-image" />
       </div>
 
       {/* Frase Inspiradora */}
@@ -44,7 +46,7 @@ export default function Home() {
           que se prepara para ele. "
         </h2>
         <p className="scroll-animation">- Benjamin Graham -</p>
-      </div> <br /><br /><br /><br /><br /><br />
+      </div><br /><br /><br /><br /><br /><br />
 
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
@@ -55,7 +57,6 @@ export default function Home() {
         </h2>
 
         <div className="plataformaCursosContent">
-
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
               <img src={cursos1} alt="Simulador de Investimentos" />

@@ -10,6 +10,7 @@ html, body {
   color: #fff;
   position: relative;
   scroll-behavior: smooth;
+  
 }
 
 @keyframes bgShift {
@@ -78,20 +79,28 @@ html, body {
   text-align: center;
 }
 
-.moeda-image {
-  max-width: 100%;
-  width: 620px; /* ou até mais se quiser, teste 850px, 900px */
-  height: auto;
-  animation: girar 10s linear infinite;
-  transform-style: preserve-3d;
-  flex-shrink: 0;
+.corrente-image {
+  animation: wave 4s ease-in-out infinite;
 }
 
-
-@keyframes girar {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(360deg); }
+@keyframes wave {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -10px);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+  75% {
+    transform: translate(-5px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
+
 
 /* Frase Inspiradora */
 .frase {
@@ -146,19 +155,13 @@ html, body {
 
 .plataformaCursosCard {
   width: 300px;
-  height: 320px;
   padding: 20px;
-  text-align: center;
-  color: #e4dfdfeb;
-  box-shadow: 0 0 12px #3f025b;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
-  background: linear-gradient(#1a1a1aa2, #1a1a1aa2) padding-box,
-              linear-gradient(135deg, #3f025b, #320d2a) border-box;
-  border: 3px solid transparent;
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.023);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.137);
+  color: #fff;
+  border: 1px solid #3f025088;
 }
 
 .plataformaCursosCardIcon img {
@@ -189,7 +192,7 @@ html, body {
   transform: scale(1.1);
   opacity: 1;
   z-index: 2;
-  box-shadow: 0 10px 20px #33024a;
+  box-shadow: 0 10px 20px #ff00ff55;
 }
 
 /* Responsividade */
@@ -219,4 +222,23 @@ html, body {
     flex-direction: column;
     padding: 0 20px;
   }
+}
+
+
+
+/*FUndo*/
+
+.background-blur-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
+              radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
+              radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
+  filter: blur(120px);
+  opacity: 0.8;
+  pointer-events: none;
 }
