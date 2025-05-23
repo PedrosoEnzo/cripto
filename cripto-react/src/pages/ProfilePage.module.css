@@ -111,7 +111,10 @@
 
 /* Texto de carregando ou erro */
 p {
-  color: #333;
+  color: #fff;
   font-size: 1rem;
   
+}
+a {
+  color: #9a0ddb;
 }

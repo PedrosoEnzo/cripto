@@ -31,6 +31,7 @@ const Cadastro = () => {
   return (
 
     <div className="tudo">
+      <div className="background-blur-effect" />
       <div className="voltarHome">
         <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
       </div>

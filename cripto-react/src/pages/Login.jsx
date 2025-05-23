@@ -55,13 +55,9 @@ const Login = ({ onLogin }) => {
     }
   };
 
-  return (
-
+ return (
     <div className="tudo">
-      <div className="voltarHome">
-        <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
-      </div>
-
+      <div className="background-blur-effect" />
       <div className="voltarHome">
         <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
       </div>
@@ -97,26 +93,25 @@ const Login = ({ onLogin }) => {
             />
           </div>
 
-          <p>
-            Esqueceu a senha? <a href="/forgotPassword">Redefinir</a>
-          </p>
+          <p>Esqueceu a senha? <a href="/forgotPassword">Redefinir</a></p>
 
           <button id="button" type="submit" disabled={isLoading}>
             {isLoading ? "Carregando..." : "Entrar"}
           </button>
-        </form>
 
-        {message.text && (
-          <p
-            style={{
-              color: message.type === "error" ? "red" : "green",
-              textAlign: "center",
-              marginTop: "15px",
-            }}
-          >
-            {message.text}
-          </p>
-        )}
+          <p>Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+
+          {message.text && (
+            <p
+              style={{
+                color: message.type === "error" ? "red" : "green",
+                marginTop: "15px",
+              }}
+            >
+              {message.text}
+            </p>
+          )}
+        </form>
       </div>
     </div>
   );
