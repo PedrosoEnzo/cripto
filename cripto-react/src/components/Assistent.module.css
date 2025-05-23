@@ -10,7 +10,7 @@
   --bg-dark: #1e293b;
   --user-bubble: #7c3aed;
   --bot-bubble: #f1f5f9;
-  --error: #ef4444;
+  --error: #bc4141;
 }
 
 * {
@@ -28,45 +28,45 @@
 }
 
 .floatingButton {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  border: none;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
-  transition: 0.3s ease;
+  border: 1px solid #8b5cf6;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 12px rgba(101, 58, 140, 0.8), 0 0 10px rgba(91, 33, 182, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .floatingButton:hover {
-  transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 0 10px #966cc0, 0 0 10px #7c3aed;
 }
 
 .buttonImage {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .notificationBadge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -6px;
+  right: -6px;
   background: var(--error);
   color: white;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
   animation: pulse 2s infinite;
 }
 
@@ -74,6 +74,7 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+
 
 .chatWindow {
   width: 380px;
@@ -128,6 +129,7 @@
 
 
 .header h3 {
+  color: --bot-bubble;
   font-size: 18px;
   font-weight: 600;
 }
@@ -196,6 +198,10 @@
 @keyframes messageFadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.botIcon{
+  color: var(--primmary-lighter);
 }
 
 .messageContent {

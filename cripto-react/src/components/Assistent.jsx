@@ -1,18 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
+import { FaTimes, FaRobot } from 'react-icons/fa';
 import { IoSend } from 'react-icons/io5';
 import Zynx from '../assets/mascote/Assistent.png';
+import BotaoChat from '../assets/ButtonAss.jpeg';
 import styles from './Assistent.module.css';
 import ReactMarkdown from 'react-markdown';
 
 const Assistent = ({ apiKey }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { 
-      role: '', 
-      content: '',
-    }
-  ]);
+  const [messages, setMessages] = useState([{ role: '', content: '' }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
@@ -28,7 +24,7 @@ const Assistent = ({ apiKey }) => {
     if (!input.trim() || isLoading) return;
 
     const userMessage = { role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
 
@@ -37,34 +33,26 @@ const Assistent = ({ apiKey }) => {
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [{ text: input }]
-              }
-            ]
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: [{ parts: [{ text: input }] }] }),
         }
       );
 
       const data = await response.json();
-     
       const reply =
         data?.candidates?.[0]?.content?.parts?.[0]?.text ||
         'Desculpe, não consegui entender. Poderia reformular sua pergunta?';
 
-      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
+      setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch (error) {
       console.error('Erro ao conectar à API Gemini:', error);
-      setMessages(prev => [
+      setMessages((prev) => [
         ...prev,
-        { 
-          role: 'assistant', 
-          content: '⚠️ Ocorreu um erro ao conectar com o servidor. Por favor, tente novamente mais tarde.' 
-        }
+        {
+          role: 'assistant',
+          content:
+            '⚠️ Ocorreu um erro ao conectar com o servidor. Por favor, tente novamente mais tarde.',
+        },
       ]);
     } finally {
       setIsLoading(false);
@@ -93,7 +81,7 @@ const Assistent = ({ apiKey }) => {
               <p>Olá! Eu sou o Zynx 👋 </p>
               <p>Estou aqui para te ajudar com qualquer dúvida!</p>
             </div>
-            
+
             {messages.map((msg, index) => (
               <div key={index} className={`${styles.message} ${styles[msg.role]}`}>
                 {msg.role === 'assistant' && (
@@ -148,7 +136,7 @@ const Assistent = ({ apiKey }) => {
           onClick={toggleChat}
           aria-label="Abrir chat"
         >
-          <img src={Zynx} alt="Assistente Zynx" className={styles.buttonImage} />
+          <img src={BotaoChat} alt="Abrir chat" className={styles.buttonImage} />
           <span className={styles.notificationBadge}>1</span>
         </button>
       )}
