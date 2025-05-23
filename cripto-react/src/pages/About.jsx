@@ -17,10 +17,11 @@ import Footer from '../components/Footer';
 function About() {
   return (
     <>
-    
-        <div className="voltarHome">
-          <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
-        </div>
+      <div className="background-blur-effect" />
+
+      <div className="voltarHome">
+        <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+      </div>
       <section className="intro">
         <div className="textoEsquerdo">
           <h2>Bem vindo ao Chain-x</h2>
@@ -52,8 +53,8 @@ function About() {
 
 
       <section className="desenvolvedores">
-      <span className="highligh">
-        <h2>Desenvolvedores:</h2>
+        <span className="highligh">
+          <h2>Desenvolvedores:</h2>
         </span>
         <div className="row">
           {developers.map((dev) => (

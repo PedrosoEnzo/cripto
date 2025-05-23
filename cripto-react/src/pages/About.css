@@ -17,6 +17,21 @@ body {
     animation: bgShift 10s ease infinite;
     pointer-events: none; 
   }
+
+  .background-blur-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 15%),
+              radial-gradient(circle at 70% 60%, #7a00ff88, transparent 15%),
+              radial-gradient(circle at 50% 90%, #ff00ff55, transparent 15%);
+  filter: blur(120px);
+  opacity: 0.8;
+  pointer-events: none;
+}
   
   @keyframes bgShift {
     0% { background-position: 0% 50%; }
