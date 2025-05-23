@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import './Home.css';
 import corrente from '../assets/chain-fundo.png';
-import cursos from '../assets/cursos.png';
-import cursos1 from '../assets/cursos1.png';
-import cursos2 from '../assets/cursos2.png';
+import cursos from '../assets/curso2.png';
+import cursos1 from '../assets/curso1.png';
+import cursos2 from '../assets/curso3.png';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="plataformaCursosContent">
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img src={cursos1} alt="Simulador de Investimentos" />
+              <img className="iconCurso"  src={cursos1} alt="Simulador de Investimentos" />
               <h3>Simulador de Investimentos</h3>
               <p>Aprenda a investir com segurança e confiança.</p>
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img src={cursos} alt="Conteúdo Exclusivo" />
+              <img  className="iconCurso" src={cursos} alt="Conteúdo Exclusivo" />
               <h3>Conteúdo Exclusivo</h3>
               <p>Acesse cursos e materiais de alta qualidade.</p>
             </div>
@@ -75,7 +75,7 @@ export default function Home() {
 
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img src={cursos2} alt="Comunidade Ativa" />
+              <img className="iconCurso"  src={cursos2} alt="Comunidade Ativa" />
               <h3>Comunidade Ativa</h3>
               <p>Participe de discussões e trocas de experiências.</p>
             </div>
