@@ -1,8 +1,8 @@
-/* Cores modernas */
 :root {
   --primary: #7c3aed;
-  --primary-dark: #6d28d9;
+  --primary-dark: #7747c5;
   --primary-light: #8b5cf6;
+  --primmary-lighter: #59397b;
   --secondary: #f0abfc;
   --text-dark: #1e293b;
   --text-light: #64748b;
@@ -13,12 +13,11 @@
   --error: #ef4444;
 }
 
-/* Reset e estilos base */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -28,9 +27,7 @@
   z-index: 1000;
 }
 
-/* Botão flutuante */
 .floatingButton {
-  position: relative;
   width: 64px;
   height: 64px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -38,20 +35,15 @@
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
 }
 
 .floatingButton:hover {
   transform: scale(1.1) translateY(-5px);
   box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
-}
-
-.floatingButton:active {
-  transform: scale(0.95);
 }
 
 .buttonImage {
@@ -65,7 +57,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: var(--error);
+  background: var(--error);
   color: white;
   border-radius: 50%;
   width: 24px;
@@ -79,16 +71,14 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
+  0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }
 
-/* Janela do chat */
 .chatWindow {
   width: 380px;
   height: 600px;
-  background-color: white;
+  background: white;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -99,7 +89,7 @@
   right: 0;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.3s ease-out forwards;
+  animation: fadeInUp 0.3s forwards;
   border: 1px solid #e2e8f0;
 }
 
@@ -108,18 +98,27 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cabeçalho */
 .header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-dark), var(--primmary-lighter));
   color: white;
   padding: 16px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
+  align-items: center;
 }
+
+.headerAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  object-position: center; 
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: block; 
+}
+
+
 
 .headerContent {
   display: flex;
@@ -127,16 +126,8 @@
   gap: 12px;
 }
 
-.headerAvatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
 
 .header h3 {
-  margin: 0;
   font-size: 18px;
   font-weight: 600;
 }
@@ -151,26 +142,25 @@
 
 .status::before {
   content: '';
-  display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #4ade80;
+  background: #4ade80;
   border-radius: 50%;
+  display: inline-block;
 }
 
-/* Botão de fechar */
 .closeButton {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  cursor: pointer;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .closeButton:hover {
@@ -178,37 +168,27 @@
   transform: rotate(90deg);
 }
 
-/* Mensagens */
 .messages {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
-  background-color: var(--bg-light);
+  background: var(--bg-light);
   display: flex;
   flex-direction: column;
   gap: 12px;
-  scroll-behavior: smooth;
 }
 
 .welcomeMessage {
   text-align: center;
-  margin-bottom: 16px;
   padding: 12px;
-  background-color: rgba(124, 58, 237, 0.1);
+  background: rgba(124, 58, 237, 0.1);
   border-radius: 12px;
   color: var(--primary-dark);
   font-size: 14px;
 }
 
-.welcomeMessage p:first-child {
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-/* Estilos das mensagens */
 .message {
   display: flex;
-  gap: 10px;
   max-width: 85%;
   animation: messageFadeIn 0.3s ease;
 }
@@ -221,50 +201,46 @@
 .messageContent {
   padding: 12px 16px;
   border-radius: 18px;
-  line-height: 1.5;
+  line-height: 1.6;
   word-wrap: break-word;
+  white-space: pre-wrap; /* <-- Preserva quebras de linha */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  position: relative;
+  font-size: 14px;
 }
 
 .messageTime {
-  display: block;
   font-size: 10px;
   opacity: 0.6;
   margin-top: 4px;
   text-align: right;
 }
 
-.botIcon {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 12px;
-  color: var(--primary);
-}
-
-/* Mensagem do usuário */
 .message.user {
   margin-left: auto;
   flex-direction: row-reverse;
 }
 
 .message.user .messageContent {
-  background-color: var(--user-bubble);
-  color: white;
+  background: var(--user-bubble);
+  color: #f1f5f9;
   border-bottom-right-radius: 4px;
+}
+
+.message.user  p {
+  color: #f1f5f9;
+  
 }
 
 .message.user .messageTime {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Mensagem do bot */
 .message.assistant {
   margin-right: auto;
 }
 
 .message.assistant .messageContent {
-  background-color: var(--bot-bubble);
+  background: var(--bot-bubble);
   color: var(--text-dark);
   border-bottom-left-radius: 4px;
 }
@@ -273,43 +249,36 @@
   color: var(--text-light);
 }
 
-/* Indicador de digitação */
 .typingIndicator {
   display: flex;
   align-items: center;
-  padding: 12px 16px;
-  background-color: var(--bot-bubble);
-  border-radius: 18px;
   gap: 6px;
+  padding: 12px 16px;
+  background: var(--bot-bubble);
+  border-radius: 18px;
 }
 
 .typingIndicator span {
   width: 8px;
   height: 8px;
-  background-color: var(--primary);
+  background: var(--primary);
   border-radius: 50%;
   opacity: 0.4;
-  animation: typingAnimation 1.2s infinite ease-in-out;
+  animation: typingAnimation 1.2s infinite;
 }
 
-.typingIndicator span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.typingIndicator span:nth-child(3) {
-  animation-delay: 0.4s;
-}
+.typingIndicator span:nth-child(2) { animation-delay: 0.2s; }
+.typingIndicator span:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes typingAnimation {
   0%, 100% { opacity: 0.4; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-3px); }
 }
 
-/* Área de input */
 .inputForm {
   display: flex;
   padding: 12px;
-  background-color: white;
+  background: white;
   border-top: 1px solid #e2e8f0;
   gap: 8px;
   align-items: center;
@@ -320,10 +289,10 @@
   padding: 12px 16px;
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  outline: none;
   font-size: 14px;
-  transition: all 0.3s;
-  background-color: var(--bg-light);
+  background: var(--bg-light);
+  outline: none;
+  transition: 0.3s;
 }
 
 .inputForm input:focus {
@@ -332,7 +301,7 @@
 }
 
 .inputForm button {
-  background-color: var(--primary);
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 50%;
@@ -342,32 +311,25 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: 0.3s;
 }
 
 .inputForm button:hover {
-  background-color: var(--primary-dark);
+  background: var(--primary-dark);
   transform: translateY(-2px);
 }
 
 .inputForm button:disabled {
-  background-color: #cbd5e1;
+  background: #cbd5e1;
   cursor: not-allowed;
-  transform: none;
 }
 
 .sendIcon {
   font-size: 18px;
 }
 
-/* Barra de rolagem personalizada */
 .messages::-webkit-scrollbar {
   width: 6px;
-}
-
-.messages::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
 }
 
 .messages::-webkit-scrollbar-thumb {
@@ -379,13 +341,11 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade */
 @media (max-width: 480px) {
   .container {
     right: 16px;
     bottom: 16px;
   }
-  
   .chatWindow {
     width: calc(100vw - 32px);
     height: 70vh;
@@ -393,21 +353,19 @@
     right: 16px;
     border-radius: 12px;
   }
-  
   .floatingButton {
     width: 56px;
     height: 56px;
   }
 }
 
-/* Efeitos de marca d'água (opcional) */
 .chatWindow::after {
   content: '';
   position: absolute;
   bottom: 20px;
   right: 20px;
-  opacity: 0.03;
   font-size: 120px;
   font-weight: bold;
+  opacity: 0.03;
   pointer-events: none;
 }

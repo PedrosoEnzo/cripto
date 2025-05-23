@@ -9,8 +9,8 @@ const Assistent = ({ apiKey }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { 
-      role: 'assistant', 
-      content: 'Olá! 👋 Sou o Zynx, seu assistente virtual. Como posso te ajudar hoje?' 
+      role: '', 
+      content: '',
     }
   ]);
   const [input, setInput] = useState('');
@@ -90,7 +90,7 @@ const Assistent = ({ apiKey }) => {
 
           <div className={styles.messages}>
             <div className={styles.welcomeMessage}>
-              <p>Olá! Eu sou o Zynx 🤖</p>
+              <p>Olá! Eu sou o Zynx 👋 </p>
               <p>Estou aqui para te ajudar com qualquer dúvida!</p>
             </div>
             
