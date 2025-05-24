@@ -51,7 +51,9 @@ export function ResetPassword() {
 
   return (
 
-      <div className="reset-password-box">
+    <div className="reset-password-container">
+
+<div className="reset-password-box">
         <div className="reset-password-header">
           <h1>Redefinir Senha</h1>
           <p>Insira o código enviado para seu e-mail e sua nova senha.</p>
@@ -118,5 +120,7 @@ export function ResetPassword() {
           </button>
         </form>
       </div>
+    </div>
+      
   );
 }
