@@ -94,6 +94,7 @@ const Login = ({ onLogin }) => {
           </div>
 
           <p>Esqueceu a senha? <a href="/forgotPassword">Redefinir</a></p>
+          <br />
 
           <button id="button" type="submit" disabled={isLoading}>
             {isLoading ? "Carregando..." : "Entrar"}
