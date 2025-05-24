@@ -55,7 +55,7 @@ const Login = ({ onLogin }) => {
     }
   };
 
- return (
+  return (
     <div className="tudo">
       <div className="background-blur-effect" />
       <div className="voltarHome">
@@ -93,14 +93,14 @@ const Login = ({ onLogin }) => {
             />
           </div>
 
-          <p>Esqueceu a senha? <a href="/forgotPassword">Redefinir</a></p>
-          <br />
+            <p>Esqueceu a senha? <a href="/forgotPassword">Redefinir</a></p>
+            <br />
 
-          <button id="button" type="submit" disabled={isLoading}>
-            {isLoading ? "Carregando..." : "Entrar"}
-          </button>
+            <button id="button" type="submit" disabled={isLoading}>
+              {isLoading ? "Carregando..." : "Entrar"}
+            </button>
 
-          <p>Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+            <p>Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
 
           {message.text && (
             <p

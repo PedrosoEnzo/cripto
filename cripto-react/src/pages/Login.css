@@ -97,10 +97,9 @@
  }
 
  #button {
-     background: linear-gradient(135deg, #3f025b, #b12092);
      color: #fff;
      font-size: 18px;
-     padding: 12px 24px;
+
      border: none;
      border-radius: 20px;
      cursor: pointer;
@@ -115,5 +114,5 @@
  p {
      color: #fff;
      font-size: 16px;
-     margin-top: 10px;
  }
+
