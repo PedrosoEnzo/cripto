@@ -4,7 +4,7 @@
     margin: 2rem auto;
     padding: 2rem;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #ffffff0c;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   }
@@ -14,18 +14,18 @@
     text-align: center;
     margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid #2980b9;
+    border-bottom: 2px solid #fff;
   }
   
   .chaix-privacy-title {
-    color: #2c3e50;
+    color: #c800ff;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
   
   .chaix-privacy-subtitle {
-    color: #7f8c8d;
+    color: #fff;
     font-size: 1.1rem;
     font-weight: 400;
   }
@@ -40,29 +40,29 @@
   }
   
   .chaix-privacy-section-title {
-    color: #2980b9;
+    color: #c800ff;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     padding-left: 0.8rem;
-    border-left: 4px solid #2980b9;
+    border-left: 4px solid #c800ff88;
   }
   
   .chaix-privacy-subsection-title {
-    color: #34495e;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
     margin: 1.5rem 0 1rem 0;
   }
   
   .chaix-privacy-text {
-    color: #2c3e50;
+    color: #fff;
     font-size: 1rem;
     margin-bottom: 1rem;
   }
   
   .chaix-privacy-highlight {
-    color: #2980b9;
+    color: #c800ffae;
     font-weight: 500;
   }
   
@@ -73,7 +73,7 @@
   }
   
   .chaix-privacy-list-item {
-    color: #2c3e50;
+    color: #fff;
     margin-bottom: 0.8rem;
     line-height: 1.6;
   }
@@ -104,13 +104,12 @@
   }
   
   .chaix-privacy-accept-button:hover {
-    background-color: #1a6ca8;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .chaix-privacy-version {
-    color: #95a5a6;
+    color: #fff;
     font-size: 0.9rem;
     margin-top: 1.5rem;
     margin-left: auto;

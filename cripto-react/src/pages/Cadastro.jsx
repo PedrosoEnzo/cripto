@@ -80,6 +80,7 @@ const Cadastro = () => {
           <p>
             Já possui uma conta? <a href="/login">Entrar</a>
           </p>
+          <br />
           <button id="button" type="submit">
             Cadastrar
           </button>
