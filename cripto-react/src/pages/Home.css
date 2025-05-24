@@ -5,18 +5,27 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   position: relative;
   scroll-behavior: smooth;
-  
+
 }
 
 @keyframes bgShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes fadeInUp {
@@ -24,6 +33,7 @@ html, body {
     transform: translateY(50px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -87,15 +97,19 @@ html, body {
   0% {
     transform: translate(0, 0);
   }
+
   25% {
     transform: translate(5px, -10px);
   }
+
   50% {
     transform: translate(0, -20px);
   }
+
   75% {
     transform: translate(-5px, -10px);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -151,6 +165,19 @@ html, body {
   flex-wrap: wrap;
   gap: 40px;
   padding-top: 30px;
+  animation: slideInLeft 10.6s forwards;
+}
+
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .plataformaCursosCard {
@@ -231,38 +258,38 @@ html, body {
 @keyframes moveLights {
   0% {
     background: radial-gradient(circle at 20% 30%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 25% 30%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 30% 24%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 25% 30%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 30% 24%, #ff00ff55, transparent 15%);
   }
 
   20% {
     background: radial-gradient(circle at 30% 40%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 65% 55%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 55% 85%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 65% 55%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 55% 85%, #ff00ff55, transparent 15%);
   }
 
   40% {
     background: radial-gradient(circle at 40% 50%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 60% 50%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 60% 80%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 60% 50%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 60% 80%, #ff00ff55, transparent 15%);
   }
 
   60% {
     background: radial-gradient(circle at 50% 60%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 55% 45%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 65% 75%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 55% 45%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 65% 75%, #ff00ff55, transparent 15%);
   }
 
   80% {
     background: radial-gradient(circle at 60% 70%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 50% 40%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 70% 70%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 50% 40%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 70% 70%, #ff00ff55, transparent 15%);
   }
 
   100% {
     background: radial-gradient(circle at 20% 30%, #c800ff88, transparent 15%),
-                radial-gradient(circle at 70% 60%, #7a00ff88, transparent 15%),
-                radial-gradient(circle at 50% 90%, #ff00ff55, transparent 15%);
+      radial-gradient(circle at 70% 60%, #7a00ff88, transparent 15%),
+      radial-gradient(circle at 50% 90%, #ff00ff55, transparent 15%);
   }
 }
 
@@ -275,8 +302,8 @@ html, body {
   height: 100vh;
   z-index: -1;
   background: radial-gradient(circle at 20% 25%, #c800ff88, transparent 25%),
-              radial-gradient(circle at 20% 25%, #7a00ff88, transparent 25%),
-              radial-gradient(circle at 20% 25%, #ff00ff55, transparent 25%);
+    radial-gradient(circle at 20% 25%, #7a00ff88, transparent 25%),
+    radial-gradient(circle at 20% 25%, #ff00ff55, transparent 25%);
   filter: blur(520px);
   opacity: 0.8;
   pointer-events: none;
