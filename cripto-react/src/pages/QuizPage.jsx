@@ -103,7 +103,7 @@ const questions = [
     ],
     correctAnswer: 2,
   },
-  
+
 ];
 
 export default function QuizPage() {
@@ -144,6 +144,7 @@ export default function QuizPage() {
 
   return (
     <div className={styles.container}>
+      <div className="background-blur-effect" />
       <div className={styles.card}>
         <h2 className={styles.title}>Poupar vs. Investir</h2>
 

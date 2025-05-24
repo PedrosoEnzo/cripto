@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Efeito de fundo neon */}
+
       <div className="background-blur-effect" />
 
       {/* Título e Imagem da Moeda */}

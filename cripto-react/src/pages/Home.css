@@ -63,7 +63,7 @@ html, body {
   box-sizing: border-box;
   overflow: hidden;
   opacity: 1;
-  margin-top: 190px;
+  margin-top: 90px;
 }
 
 .content h1 {
@@ -159,7 +159,7 @@ html, body {
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.023);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.137);
+  box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.137);
   color: #fff;
   border: 1px solid #3f025088;
 }
@@ -228,6 +228,45 @@ html, body {
 
 /*FUndo*/
 
+@keyframes moveLights {
+  0% {
+    background: radial-gradient(circle at 20% 30%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 25% 30%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 30% 24%, #ff00ff55, transparent 15%);
+  }
+
+  20% {
+    background: radial-gradient(circle at 30% 40%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 65% 55%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 55% 85%, #ff00ff55, transparent 15%);
+  }
+
+  40% {
+    background: radial-gradient(circle at 40% 50%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 60% 50%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 60% 80%, #ff00ff55, transparent 15%);
+  }
+
+  60% {
+    background: radial-gradient(circle at 50% 60%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 55% 45%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 65% 75%, #ff00ff55, transparent 15%);
+  }
+
+  80% {
+    background: radial-gradient(circle at 60% 70%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 50% 40%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 70% 70%, #ff00ff55, transparent 15%);
+  }
+
+  100% {
+    background: radial-gradient(circle at 20% 30%, #c800ff88, transparent 15%),
+                radial-gradient(circle at 70% 60%, #7a00ff88, transparent 15%),
+                radial-gradient(circle at 50% 90%, #ff00ff55, transparent 15%);
+  }
+}
+
+
 .background-blur-effect {
   position: fixed;
   top: 0;
@@ -235,10 +274,11 @@ html, body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
-              radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
-              radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
-  filter: blur(120px);
+  background: radial-gradient(circle at 20% 25%, #c800ff88, transparent 25%),
+              radial-gradient(circle at 20% 25%, #7a00ff88, transparent 25%),
+              radial-gradient(circle at 20% 25%, #ff00ff55, transparent 25%);
+  filter: blur(520px);
   opacity: 0.8;
   pointer-events: none;
+  animation: moveLights 10s linear infinite;
 }

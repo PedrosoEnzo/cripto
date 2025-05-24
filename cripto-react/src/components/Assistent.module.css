@@ -71,8 +71,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 
@@ -95,8 +102,15 @@
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header {
@@ -114,9 +128,9 @@
   border-radius: 50%;
   margin-right: 12px;
   object-fit: cover;
-  object-position: center; 
+  object-position: center;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  display: block; 
+  display: block;
 }
 
 
@@ -183,7 +197,7 @@
 .welcomeMessage {
   text-align: center;
   padding: 12px;
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(124, 58, 237, 0.607);
   border-radius: 12px;
   color: var(--primary-dark);
   font-size: 14px;
@@ -196,11 +210,18 @@
 }
 
 @keyframes messageFadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.botIcon{
+.botIcon {
   color: var(--primmary-lighter);
 }
 
@@ -209,7 +230,8 @@
   border-radius: 18px;
   line-height: 1.6;
   word-wrap: break-word;
-  white-space: pre-wrap; /* <-- Preserva quebras de linha */
+  white-space: pre-wrap;
+  /* <-- Preserva quebras de linha */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   font-size: 14px;
 }
@@ -232,9 +254,9 @@
   border-bottom-right-radius: 4px;
 }
 
-.message.user  p {
+.message.user p {
   color: #f1f5f9;
-  
+
 }
 
 .message.user .messageTime {
@@ -273,12 +295,26 @@
   animation: typingAnimation 1.2s infinite;
 }
 
-.typingIndicator span:nth-child(2) { animation-delay: 0.2s; }
-.typingIndicator span:nth-child(3) { animation-delay: 0.4s; }
+.typingIndicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingIndicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes typingAnimation {
-  0%, 100% { opacity: 0.4; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(-3px); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
 }
 
 .inputForm {
@@ -352,6 +388,7 @@
     right: 16px;
     bottom: 16px;
   }
+
   .chatWindow {
     width: calc(100vw - 32px);
     height: 70vh;
@@ -359,6 +396,7 @@
     right: 16px;
     border-radius: 12px;
   }
+
   .floatingButton {
     width: 56px;
     height: 56px;
