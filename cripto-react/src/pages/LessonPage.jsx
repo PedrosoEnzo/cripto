@@ -7,7 +7,7 @@ import styles from './LessonPage.module.css';
 
 export default function LessonPage() {
   const { id } = useParams();
-  const navigate = useNavigate(); // Correção: Declarar useNavigate dentro do componente
+  const navigate = useNavigate();
 
   if (!id) {
     return <div className={styles.error}>Erro: ID da aula não encontrado!</div>;
@@ -16,11 +16,10 @@ export default function LessonPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-
-          <FaArrowLeft
-            className={styles.backArrow}
-            onClick={() => navigate("/curso")} // Agora navigate funciona corretamente
-          />
+        <FaArrowLeft
+          className={styles.backArrow}
+          onClick={() => navigate("/curso")}
+        />
         <h1 className={styles.title}>
           <a href="/curso" className={styles.link}>
             ChainX <span className={styles.highlight}>Education</span>
@@ -67,3 +66,4 @@ export default function LessonPage() {
     </div>
   );
 }
+
