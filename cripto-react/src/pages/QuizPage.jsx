@@ -103,19 +103,31 @@ const questions = [
     ],
     correctAnswer: 2,
   },
-
 ];
 
 export default function QuizPage() {
   const navigate = useNavigate();
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
 
-  const handleOptionChange = (questionIndex, optionIndex) => {
+  const handleOptionChange = (optionIndex) => {
     const newAnswers = [...answers];
-    newAnswers[questionIndex] = optionIndex;
+    newAnswers[currentQuestion] = optionIndex;
     setAnswers(newAnswers);
+  };
+
+  const handleNext = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+    }
   };
 
   const handleSubmit = () => {
@@ -130,7 +142,7 @@ export default function QuizPage() {
     if (percentage >= 70) {
       alert('Parabéns! Você acertou mais de 70% e a próxima aula foi liberada.');
 
-      // Marcar apenas a Aula 1 como concluída
+      // Atualiza progresso no localStorage
       const stored = localStorage.getItem('chainx-progress');
       const completed = stored ? JSON.parse(stored) : [];
       const updated = completed.includes(1) ? completed : [...completed, 1];
@@ -142,40 +154,80 @@ export default function QuizPage() {
     }
   };
 
+  if (submitted) {
+    return (
+      <div className={styles.container3}>
+        <div className={styles.container2}>
+          <h2>Você acertou {score}%</h2>
+          <button
+            onClick={() => {
+              setCurrentQuestion(0);
+              setAnswers(Array(questions.length).fill(null));
+              setSubmitted(false);
+              setScore(0);
+            }}
+            className={styles.button}
+          >
+            Refazer Quiz
+          </button>
+        </div>
+      </div>
+
+    );
+  }
+
+  const question = questions[currentQuestion];
+  const selectedAnswer = answers[currentQuestion];
+
   return (
     <div className={styles.container}>
-      <div className="background-blur-effect" />
-      <div className={styles.card}>
-        <h2 className={styles.title}>Poupar vs. Investir</h2>
+      <h2 className={styles.title}>Poupar vs. Investir</h2>
 
-        {questions.map((question, qIdx) => (
-          <div key={qIdx} className={styles.questionBlock}>
-            <p className={styles.questionText}>
-              <strong>{qIdx + 1}. {question.question}</strong>
-            </p>
-            {question.options.map((option, oIdx) => (
-              <label key={oIdx} className={styles.optionLabel}>
-                <span>{option}</span>
-                <input
-                  type="radio"
-                  name={`question-${qIdx}`}
-                  value={oIdx}
-                  checked={answers[qIdx] === oIdx}
-                  onChange={() => handleOptionChange(qIdx, oIdx)}
-                  disabled={submitted}
-                  className={styles.radio}
-                />
-              </label>
-            ))}
-          </div>
+      <div className={styles.questionBlock}>
+        <p className={styles.questionText}>
+          <strong>{currentQuestion + 1}. {question.question}</strong>
+        </p>
+        {question.options.map((option, idx) => (
+          <label key={idx} className={styles.optionLabel}>
+            <input
+              type="radio"
+              name={`question-${currentQuestion}`}
+              value={idx}
+              checked={selectedAnswer === idx}
+              onChange={() => handleOptionChange(idx)}
+              disabled={submitted}
+              className={styles.radio}
+            />
+            <span>{option}</span>
+          </label>
         ))}
+      </div>
 
-        {!submitted ? (
-          <button onClick={handleSubmit} className={styles.button}>
-            Enviar Respostas
+      <div className={styles.navigationButtons}>
+        <button
+          onClick={handlePrev}
+          disabled={currentQuestion === 0}
+          className={styles.button}
+        >
+          Anterior
+        </button>
+
+        {currentQuestion < questions.length - 1 ? (
+          <button
+            onClick={handleNext}
+            disabled={selectedAnswer === null}
+            className={styles.button}
+          >
+            Próxima
           </button>
         ) : (
-          <p className={styles.resultText}><strong>Você acertou {score}%</strong></p>
+          <button
+            onClick={handleSubmit}
+            disabled={selectedAnswer === null}
+            className={styles.button}
+          >
+            Enviar Respostas
+          </button>
         )}
       </div>
     </div>
