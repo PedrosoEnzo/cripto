@@ -50,6 +50,7 @@ export default function LessonPage() {
             <ul>
               <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
               <li><a href={anexo2} target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
+              <li><a href="/perfilQuiz">Quiz para descobrir seu perfil de investidor</a></li>
             </ul>
           </div>
         </div>

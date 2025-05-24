@@ -1,0 +1,53 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  margin-top: 8%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.result {
+  text-align: center;
+}
+
+.result h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.botao {
+  background-color: #fff;
+  width: 60%;
+  height: 60px;
+  font-size: 15px;
+}
+
+.opcao {
+  padding: 10px;
+}
+
+.botao:hover {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 8px #80789a;
+}
+
+.refazer {
+  width: 40%;
+  height: 40px;
+  font-size: 15px;
+}
