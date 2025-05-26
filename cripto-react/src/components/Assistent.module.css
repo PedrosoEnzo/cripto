@@ -5,7 +5,7 @@
   --primmary-lighter: #59397b;
   --secondary: #f0abfc;
   --text-dark: #1e293b;
-  --text-light: #64748b;
+  --text-light: #acadaf;
   --bg-light: #f8fafc;
   --bg-dark: #1e293b;
   --user-bubble: #7c3aed;
@@ -188,7 +188,7 @@
   flex: 1;
   padding: 16px;
   overflow-y: auto;
-  background: var(--bg-light);
+  background: linear-gradient(135deg, var(--bg-light),  var(--text-light));
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -231,7 +231,6 @@
   line-height: 1.6;
   word-wrap: break-word;
   white-space: pre-wrap;
-  /* <-- Preserva quebras de linha */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   font-size: 14px;
 }
@@ -264,12 +263,13 @@
 }
 
 .message.assistant {
+  color: #000;
   margin-right: auto;
 }
 
 .message.assistant .messageContent {
   background: var(--bot-bubble);
-  color: var(--text-dark);
+  color: #000 !important;
   border-bottom-left-radius: 4px;
 }
 
@@ -412,4 +412,10 @@
   font-weight: bold;
   opacity: 0.03;
   pointer-events: none;
+}
+
+/* Para fazer com que todas as mensagens do assistente sejam pretas */
+.message.assistant .messageContent * {
+  
+  color: #000 !important;
 }
