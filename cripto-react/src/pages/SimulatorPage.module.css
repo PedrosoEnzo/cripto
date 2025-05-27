@@ -1,7 +1,7 @@
 .page {
   padding: 20px;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom, #000, #272042, #000);
+  background: linear-gradient(to bottom, #0000002f, #27204238, #0000002c);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 }
 
 .corTitulo{
-  color: #b12092;
+  color: #b120b1;
 
 }
 
@@ -61,8 +61,8 @@
   border: 4px solid transparent;
   border-radius: 30px;
   background:
-  linear-gradient(#000000d8, #000000d8) padding-box,
-  linear-gradient(to right, #b12092, #3f025b, #b12092) border-box;
+  linear-gradient(#00000018, #00000021) padding-box,
+  linear-gradient(to right, #b120921e, #3f025b15, #b120921a) border-box;
 }
 
 .simulatorForm label {
@@ -76,7 +76,7 @@
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #555;
-  background-color: #000;
+  background-color: #00000017;
   color: #fff;
 }
 
@@ -103,7 +103,7 @@
   padding: 12px;
   height: 50px;
   color: #fff;
-  background: linear-gradient(to right, #3f025b, #b12092);
+  background: linear-gradient(to right, #3f025b27, #b120922a);
   border: none;
   border-radius: 50px;
   font-size: 1.2em;
@@ -113,7 +113,7 @@
 }
 
 .simulatorForm button:hover {
-  background: linear-gradient(to right, #3f025b, #b12092);
+  background: linear-gradient(to right, #3f025b27, #b1209228);
 }
 
 .simulationResult {
@@ -139,8 +139,8 @@
   border: 4px solid transparent;
   border-radius: 30px;
   background:
-  linear-gradient(#000000d8, #000000d8) padding-box,
-  linear-gradient(to right, #b12092, #3f025b) border-box;
+  linear-gradient(#0000002a, #000000d8) padding-box,
+  linear-gradient(to right, #b1209227, #3f025b83) border-box;
 }
 
 .chartContainer svg .chart-line {
@@ -151,7 +151,7 @@
   font-size: 1.2em;
   font-weight: 600;
   margin-right: 66px;
-  color: #b12092;
+  color: #b120b1;
   margin-bottom: 20px;
   text-align: center;
   text-transform: uppercase;
