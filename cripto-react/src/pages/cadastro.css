@@ -89,6 +89,22 @@ input {
     outline: none;
     margin-bottom: 1rem;
 }
+ 
+/*Estilizando mensagem de sucesso*/
+
+.mensagem-sucesso p {
+    position: fixed; /* ou 'absolute' se preferir */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    margin-left: 0; /* Remove o margin-left anterior */
+    max-width: 160px;
+    border-radius: 8px;
+    padding: 8px 12px; /* Aumentei um pouco o padding para melhor aparência */
+    background-color: #fff;
+    color: #000000;
+    box-shadow: 0 3px 6px rgba(182, 179, 179, 0.651); /* Adicionei sombra para melhor visibilidade */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
 
 input:focus {
     border-color: #8e44ad;

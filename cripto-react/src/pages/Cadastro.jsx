@@ -85,7 +85,9 @@ const Cadastro = () => {
             Cadastrar
           </button>
         </form>
-        {message && <p>{message}</p>}
+        <div className="mensagem-sucesso"> 
+             {message && <p>{message}</p>}
+        </div>
       </div>
     </div>
   );
