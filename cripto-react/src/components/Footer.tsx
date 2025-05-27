@@ -12,7 +12,7 @@ export default function Footer() {
           <h2>ChainX</h2>
           <p className="tagline">Educação financeira acessível e descomplicada para todos.</p>
           <div className="contact">
-            <p><strong>Email:</strong> contato@chainxeduc.com</p>
+            <p><strong>Email:</strong> chainx.suporte@gmail.com</p>
             <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
             <p><strong>CNPJ:</strong> 45.678.912/0001-34</p>
           </div>
@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="footerSocial">
           <h3>Redes Sociais</h3>
           <div className="socialIcons">
-            <a href="#"><img src={instagram} alt="Instagram" /></a>
+            <a href="https://www.instagram.com/direct/t/100932788088526/"><img src={instagram} alt="Instagram" /></a>
             <a href="#"><img src={facebook} alt="Facebook" /></a>
             <a href="#"><img src={twitter} alt="Twitter" /></a>
           </div>
