@@ -32,8 +32,8 @@ export default function Home() {
       {/* Título e Imagem da Moeda */}
       <div className="navbar-img-moeda">
         <div className="content">
-          <h1>Simule, Aprenda, <br />Invista no seu futuro!</h1>
-          <p>Se prepare para o futuro agora!</p>
+           <h1>Você está pronto <br />para o futuro das finanças?</h1>
+           <p>Simule, aprenda e invista!</p>
         </div>
         <img src={corrente} alt="corrente" className="corrente-image" />
       </div>
