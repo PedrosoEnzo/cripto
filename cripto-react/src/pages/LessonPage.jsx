@@ -4,6 +4,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import anexo1 from '../assets/pdf/anexo-introducao.pdf';
 import anexo2 from '../assets/pdf/perfil.pdf';
 import styles from './LessonPage.module.css';
+import aulaVideo from '../assets/aula.mp4';
+
+
 
 export default function LessonPage() {
   const { id } = useParams();
@@ -31,18 +34,13 @@ export default function LessonPage() {
         <h2 className={styles.subtitle}>Aula {id}</h2>
 
         <div className={styles.content}>
-          <div className={styles.videoContainer}>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/eMDgWLWOX84?si=UOAgTUenDlhC_qlH"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+         <div className={styles.videoContainer}>
+  <video width="100%" height="auto" controls>
+    <source src={aulaVideo} type="video/mp4" />
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+</div>
+
 
           <div className={styles.pdfContainer}>
             <h3>Materiais Complementares</h3>
