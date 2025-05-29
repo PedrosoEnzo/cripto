@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./ProfilePage.module.css";
+import NavBar2 from "../components/Navbar2"
 
 function Perfil() {
   const [usuario, setUsuario] = useState(null);
@@ -75,6 +76,8 @@ function Perfil() {
 
   return (
     <div className={styles.container}>
+      <NavBar2 />
+      <div className="background-blur-effect" />
       <div className={styles.profileContainer}>
         <h1 className={styles.title}>Perfil do Usuário</h1>
         {usuario ? (

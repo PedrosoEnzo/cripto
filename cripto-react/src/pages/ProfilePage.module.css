@@ -11,9 +11,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #3f025b, #460a38);
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background-blur-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
+        radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
+        radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
+    filter: blur(120px);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 /* Cartão do perfil */

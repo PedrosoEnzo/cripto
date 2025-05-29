@@ -148,6 +148,7 @@ export default function CoursePage() {
           <h1 className={styles.title}>
             ChainX <span>Educ</span>
           </h1>
+          
         </div>
    <ProgressBar progress={progress} />
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./cadastro.css";
-import logo from '../assets/icons/logo.png';
+import logo from "../assets/icons/logo.png";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -29,11 +29,12 @@ const Cadastro = () => {
   };
 
   return (
-
     <div className="tudo">
       <div className="background-blur-effect" />
       <div className="voltarHome">
-        <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
+        <a href="/">
+          <img src={logo} alt="Logo Chain-X" />
+        </a>
       </div>
       <div className="box">
         <form onSubmit={handleSubmit}>
@@ -85,9 +86,7 @@ const Cadastro = () => {
             Cadastrar
           </button>
         </form>
-        <div className="mensagem-sucesso"> 
-             {message && <p>{message}</p>}
-        </div>
+        <div className="mensagem-sucesso">{message && <p>{message}</p>}</div>
       </div>
     </div>
   );
