@@ -51,7 +51,7 @@ export default function LessonPage() {
             </ul>
             <br />
             <ul className={styles.comunidadeLink}>
-              <li><a href="https://discord.gg/3zwXfQYj" target="_blank">Acessar comunidade</a></li>
+              <li><a href="https://discord.gg/taXQXJSS" target="_blank">Acessar comunidade</a></li>
             </ul>
           </div>
         </div>
