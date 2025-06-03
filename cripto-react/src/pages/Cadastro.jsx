@@ -11,10 +11,20 @@ const Cadastro = () => {
   const [confirmsenha, setConfirmsenha] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Verifica se as senhas coincidem
+    if (senha !== confirmsenha) {
+      setError("As senhas não coincidem!");
+      return;
+    }
+
+    // Limpa mensagem de erro se as senhas coincidirem
+    setError("");
 
     try {
       const response = await axios.post("http://localhost:5000/cadastro", {
@@ -69,7 +79,7 @@ const Cadastro = () => {
           <div>
             <input
               placeholder="Senha:"
-              type={showPassword ? "text" : "password"} // Alterna entre oculto e visível
+              type={showPassword ? "text" : "password"}
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
@@ -78,17 +88,18 @@ const Cadastro = () => {
           <div>
             <input
               placeholder="Confirmar Senha:"
-              type={showPassword ? "text" : "password"} // Alterna entre oculto e visí
+              type={showPassword ? "text" : "password"}
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
             />
           </div>
+          {error && <div className="error-message">{error}</div>}
           <p>
             Já possui uma conta? <a href="/login">Entrar</a>
           </p>
           <br />
-          <button id="button" type="submit" href="/login">
+          <button id="button" type="submit">
             Cadastrar
           </button>
         </form>
