@@ -19,7 +19,7 @@ export function ResetPassword() {
     // Verifica se o código digitado é igual ao armazenado
     if (code === storedCode) {
       // Código correto → redireciona para /perfil
-      navigate('/perfil');
+      navigate('/newPassword');
     } else {
       // Código errado → mostra erro
       setError('Código inválido!');
