@@ -19,6 +19,7 @@ import { ForgotPassword } from "./pages/ForgotPassword";
 import { ResetPassword } from "./pages/ResetPassword";
 import Privacidade from "./components/privacidade";
 import PerfilQuiz from "./pages/perfilQuiz";
+import NewPassword from "./pages/NewPassword";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem("token"));
@@ -79,9 +80,10 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/privacidade" element={<Privacidade />} />
         <Route path="/perfilQuiz" element={<PerfilQuiz />} />
+        <Route path="/newPassword" element={<NewPassword/>}/>
       </Routes>
 
-      <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />
+      {isLoggedIn && <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />}
     </div>
   );
 }

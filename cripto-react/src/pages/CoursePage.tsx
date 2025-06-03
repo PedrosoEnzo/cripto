@@ -6,6 +6,7 @@ import ModuleSection from "../components/ModuleSection";
 import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
+import ProfileMenu from "../components/ProfileMenu";
 
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
@@ -145,10 +146,12 @@ export default function CoursePage() {
             className={styles.backArrow}
             onClick={() => navigate("/")}
           />
+          <div className={styles.perfil}>
+        <ProfileMenu />
+        </div>
           <h1 className={styles.title}>
             ChainX <span>Educ</span>
           </h1>
-          
         </div>
    <ProgressBar progress={progress} />
 

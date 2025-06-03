@@ -274,24 +274,24 @@ body {
 }
 
 .comunidadeButton {
-  background: linear-gradient(145deg, #4a0a72, #45105a);
-  color: #000;
+  background: linear-gradient(145deg, #4a0a72, #ff00ff55);
+  color: #e4dede;
   border: none;
-  padding: 16px 40px;
+  padding: 2px 40px;
   font-size: 18px;
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   border-radius: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px #00ffcc50;
+  box-shadow: 0 0 30px #59397b;
   height: 50px;
 }
 
 .comunidadeButton:hover {
   transform: scale(1.05);
-  background: linear-gradient(145deg, #00e6b8, #66ffcc);
-  box-shadow: 0 0 30px #00ffc040;
+  background: linear-gradient(145deg, #430c4e, #ff00ff55);
+  box-shadow: 0 0 30px #59397b;
 }
 
 /* Responsividade */

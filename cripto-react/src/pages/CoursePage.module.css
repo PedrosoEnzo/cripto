@@ -11,7 +11,7 @@
   }
   
   header {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -25,6 +25,11 @@
     color: #ffffff;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+  }
+
+  .perfil{
+    display: flex;
+    justify-content: end;
   }
   
   .title {
