@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./cadastro.css";
 import logo from "../assets/icons/logo.png";
 
@@ -10,6 +11,7 @@ const Cadastro = () => {
   const [confirmsenha, setConfirmsenha] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,8 +23,12 @@ const Cadastro = () => {
         senha,
         confirmsenha,
       });
-
+      
       setMessage(response.data.message);
+      // Redireciona para a tela de login após 2 segundos
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
       setMessage("Erro ao cadastrar usuário");
     }
@@ -82,7 +88,7 @@ const Cadastro = () => {
             Já possui uma conta? <a href="/login">Entrar</a>
           </p>
           <br />
-          <button id="button" type="submit">
+          <button id="button" type="submit" href="/login">
             Cadastrar
           </button>
         </form>
