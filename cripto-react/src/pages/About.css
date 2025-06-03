@@ -80,7 +80,7 @@ body::before {
     font-weight: 200;
     font-size: 38px;
     margin-bottom: 20px;
-    background: linear-gradient(45deg,#e4dfdfeb, #939394);
+    background: linear-gradient(45deg, #e4dfdfeb, #939394);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -152,7 +152,7 @@ body::before {
 
 .highligh {
     font-size: 38px;
-    background: linear-gradient(45deg,#e4dfdfeb, #939394);
+    background: linear-gradient(45deg, #e4dfdfeb, #939394);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -160,7 +160,7 @@ body::before {
 
 .highligh h2 {
     font-size: 23px;
-    background: linear-gradient(45deg,#e4dfdfeb, #939394);
+    background: linear-gradient(45deg, #e4dfdfeb, #939394);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -283,6 +283,7 @@ body::before {
 .social-link2 img {
     width: 28px;
     height: 28px;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -293,6 +294,7 @@ body::before {
 
 .slider-container {
     display: flex;
+    object-fit: cover;
     justify-content: center;
 }
 
