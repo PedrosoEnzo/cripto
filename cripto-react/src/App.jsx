@@ -83,7 +83,7 @@ function App() {
         <Route path="/newPassword" element={<NewPassword/>}/>
       </Routes>
 
-      <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />
+      {isLoggedIn && <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />}
     </div>
   );
 }
