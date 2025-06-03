@@ -40,7 +40,7 @@ const Cadastro = () => {
         <form onSubmit={handleSubmit}>
           <div className="paragrafo">
             <h2>Bem-vindo!</h2>
-            <h4>Crie sua conta. Cadastre-se.</h4>
+            <h4>Crie sua conta.</h4>
           </div>
           <div className="inputs">
             <input

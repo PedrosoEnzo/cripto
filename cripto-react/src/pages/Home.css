@@ -80,23 +80,14 @@ body {
   font-size: 75px;
   font-weight: 700;
   line-height: 1.2;
-    color: #e4dfdfeb;
-  margin-bottom: 30px;
-  /*
-  font-size: 75px;
   color: #e4dfdfeb;
-  margin-bottom: 40px;
-  text-align: center;*/
+  margin-bottom: 30px;
 }
 
 .content p {
   font-size: 35px;
   color: #d0d0d0;
   margin-bottom: 40px;
-  /*
-  font-size: 40px;
-  color: #e4dfdfeb;
-  text-align: center;*/
 }
 
 .corrente-image {
@@ -105,13 +96,17 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
+
 /*
 @keyframes wave {
   0% {
@@ -266,7 +261,7 @@ body {
 .comunidadeSection h2 {
   font-size: 60px;
   font-weight: 600;
-  color: #e4dfdfeb ;
+  color: #e4dfdfeb;
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
