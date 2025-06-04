@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -34,6 +37,7 @@ export default function SimulatorPage() {
   const [years, setYears] = useState("");
   const [finalAmount, setFinalAmount] = useState(null);
   const [chartData, setChartData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchRate(investmentType);
@@ -99,11 +103,21 @@ export default function SimulatorPage() {
       return;
     }
 
+    if (P <= 0 || PMT < 0) {
+      setFinalAmount("O investimento inicial deve ser positivo e o aporte mensal não pode ser negativo.");
+      return;
+    }
+
+    if (parseInt(years) < 1 || parseInt(years) > 100) {
+      setFinalAmount("O período de investimento deve ser entre 1 e 100 anos.");
+      return;
+    }
+
     const values = [];
     let accumulatedValue = P;
     for (let i = 0; i < n; i++) {
       accumulatedValue = accumulatedValue * (1 + r) + PMT;
-      values.push(accumulatedValue.toFixed(2));
+      values.push(accumulatedValue);  // Salva como número, não string
     }
 
     setFinalAmount(values[n - 1]);
@@ -125,6 +139,10 @@ export default function SimulatorPage() {
     <>
       <div className={styles.page}>
         <header className={styles.header}>
+          <FaArrowLeft
+            className={styles.backArrow}
+            onClick={() => navigate("/lesson/1")}
+          />
           <a href="/lesson/1" className={styles.link}>
             <h1 className={styles.title}>
               Simulador de{" "}
@@ -136,10 +154,7 @@ export default function SimulatorPage() {
         <main className={styles.main}>
           <div className={styles.formAndChartContainer}>
             <div className={styles.formContainer}>
-              <form
-                onSubmit={handleSimulation}
-                className={styles.simulatorForm}
-              >
+              <form onSubmit={handleSimulation} className={styles.simulatorForm}>
                 <label>
                   Tipo de Investimento:
                   <br />
@@ -179,33 +194,54 @@ export default function SimulatorPage() {
                     type="number"
                     value={initialInvestment}
                     onChange={(e) => setInitialInvestment(e.target.value)}
+                    min="0.01"
+                    step="0.01"
                     required
                   />
                 </label>
+
                 <label>
                   Aporte Mensal:
                   <input
                     type="number"
                     value={monthlyContribution}
                     onChange={(e) => setMonthlyContribution(e.target.value)}
+                    min="0.00"
+                    step="0.01"
                     required
                   />
                 </label>
+
                 <label>
                   Tempo (anos):
                   <input
                     type="number"
                     value={years}
                     onChange={(e) => setYears(e.target.value)}
+                    min="1"
+                    max="100"
                     required
                   />
                 </label>
+
                 <button type="submit">Simular</button>
               </form>
 
               {finalAmount && (
                 <div className={styles.simulationResult}>
-                  Valor Futuro Estimado: <strong>R$ {finalAmount}</strong>
+                  {isNaN(finalAmount) || typeof finalAmount === "string" ? (
+                    <span style={{ color: "red" }}>{finalAmount}</span>
+                  ) : (
+                    <>
+                      Valor Futuro Estimado:{" "}
+                      <strong>
+                        {finalAmount.toLocaleString("pt-BR", {
+                          style: "currency",
+                          currency: "BRL",
+                        })}
+                      </strong>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -224,7 +260,58 @@ export default function SimulatorPage() {
                 <p className={styles.selicText}>Carregando informações...</p>
               )}
 
-              {chartData && <Line data={chartData} />}
+              {chartData && (
+                <Line
+                  data={chartData}
+                  options={{
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        display: true,
+                        position: "top",
+                        labels: {
+                          color: "#fff",
+                        },
+                      },
+                      tooltip: {
+                        callbacks: {
+                          label: (context) =>
+                            `R$ ${context.raw.toLocaleString("pt-BR", {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}`,
+                        },
+                      },
+                    },
+                    scales: {
+                      x: {
+                        title: {
+                          display: true,
+                          text: "Meses",
+                          color: "#fff",
+                        },
+                        ticks: {
+                          color: "#fff",
+                        },
+                      },
+                      y: {
+                        title: {
+                          display: true,
+                          text: "Valor Acumulado (R$)",
+                          color: "#fff",
+                        },
+                        ticks: {
+                          color: "#fff",
+                          callback: (value) =>
+                            `R$ ${value.toLocaleString("pt-BR", {
+                              minimumFractionDigits: 0,
+                            })}`,
+                        },
+                      },
+                    },
+                  }}
+                />
+              )}
             </div>
           </div>
         </main>
