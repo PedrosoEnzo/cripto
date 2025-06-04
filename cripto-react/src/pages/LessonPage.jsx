@@ -20,8 +20,17 @@ export default function LessonPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <FaArrowLeft
-          className={styles.backArrow}
-          onClick={() => navigate("/curso")}
+          className="backArrow"
+          onClick={() => navigate(-1)}
+          style={{ cursor: "pointer", fontSize: 24, margin: "1rem" }}
+          aria-label="Voltar"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              navigate(-1);
+            }
+          }}
         />
         <h1 className={styles.title}>
           <a href="/curso" className={styles.link}>
