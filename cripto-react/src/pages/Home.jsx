@@ -5,6 +5,8 @@ import cursos from '../assets/curso2.png';
 import cursos1 from '../assets/curso1.png';
 import cursos2 from '../assets/curso3.png';
 import Footer from '../components/Footer';
+import CookieBanner from '../components/CookieBanner';
+
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +28,7 @@ export default function Home() {
 
   return (
     <>
+      <CookieBanner />
 
       <div className="background-blur-effect" />
 
