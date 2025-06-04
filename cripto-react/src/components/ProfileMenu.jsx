@@ -7,7 +7,7 @@ const ProfileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [userData, setUserData] = useState(null); // Estado para armazenar os dados do usuário
   const [usuario, setUsuario] = useState(null);
-  const userLevel = "Intermediário"; // Você pode deixar fixo ou gerar baseado em algum dado depois
+  const userLevel = "Básico I"; // Você pode deixar fixo ou gerar baseado em algum dado depois
 
   useEffect(() => {
     // Buscar os dados do usuário do backend ao montar o componente
