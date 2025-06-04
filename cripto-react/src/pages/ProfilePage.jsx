@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import styles from "./ProfilePage.module.css";
 import NavBar2 from "../components/Navbar2"
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 function Perfil() {
   const [usuario, setUsuario] = useState(null);
+  const navigate = useNavigate();
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -61,11 +65,11 @@ function Perfil() {
       .then((data) => {
         setUsuario(data);
         setEditMode(false);
-        
+
       })
       .catch((error) => {
         console.error(error);
-        
+
       });
   };
 
@@ -76,6 +80,10 @@ function Perfil() {
 
   return (
     <div className={styles.container}>
+      <FaArrowLeft
+        className={styles.backArrow}
+        onClick={() => navigate(-1)}
+      />
       <NavBar2 />
       <div className="background-blur-effect" />
       <div className={styles.profileContainer}>

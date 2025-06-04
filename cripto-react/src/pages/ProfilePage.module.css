@@ -14,6 +14,15 @@
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+  .backArrow {
+    position: absolute;
+    left: 50px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    top: 15%;
+  }
 
 .background-blur-effect {
     position: fixed;
@@ -32,7 +41,8 @@
 
 /* Cartão do perfil */
 .profileContainer {
-  background-color: #fff;
+     backdrop-filter: blur(20px);
+     background: rgba(255, 255, 255, 0.06);
   padding: 3rem 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(63, 2, 91, 0.25);
@@ -48,7 +58,7 @@
 /* Título */
 .title {
   font-size: 2rem;
-  color: #b12092;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 

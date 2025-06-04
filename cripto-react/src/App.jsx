@@ -20,6 +20,7 @@ import { ResetPassword } from "./pages/ResetPassword";
 import Privacidade from "./components/privacidade";
 import PerfilQuiz from "./pages/perfilQuiz";
 import NewPassword from "./pages/NewPassword";
+import Perfil from "./pages/ProfilePage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem("token"));
@@ -47,6 +48,15 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
 
         {/* 🔒 Rotas protegidas */}
+
+        <Route
+          path="/perfil"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/curso"
           element={
@@ -64,14 +74,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/perfil"
-          element={
-            <PrivateRoute>
-              <ProfilePage />
-            </PrivateRoute>
-          }
-        />
+
 
         {/* 🎓 Acesso livre */}
         <Route path="/lesson/:id" element={<LessonPage />} />
