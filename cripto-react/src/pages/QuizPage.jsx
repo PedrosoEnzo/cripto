@@ -24,24 +24,14 @@ const questions = [
     correctAnswer: 3,
   },
   {
-    question: "Qual das opções representa um exemplo de investimento em renda fixa?",
-    options: [
-      "A) Ações",
-      "B) Fundos Imobiliários",
-      "C) Tesouro Direto",
-      "D) Criptomoedas"
-    ],
-    correctAnswer: 2,
-  },
-  {
     question: "Qual é a principal diferença entre poupar e investir?",
     options: [
       "A) Poupar dá mais lucro",
-      "B) Investir é ilegal",
-      "C) Poupar é guardar dinheiro, investir é fazê-lo crescer",
+      "B) Poupar é guardar dinheiro, investir é fazê-lo crescer",
+      "C) Investir é ilegal",
       "D) Investir é só para bancos"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
   },
   {
     question: "Quem pode começar a investir, segundo a aula?",
@@ -54,54 +44,14 @@ const questions = [
     correctAnswer: 2,
   },
   {
-    question: "Investir é como jogar na loteria?",
-    options: [
-      "A) Sim, porque depende de sorte",
-      "B) Não, porque depende de conhecimento e estratégia",
-      "C) Sim, ambos envolvem risco igual",
-      "D) Não, porque não há riscos em investir"
-    ],
-    correctAnswer: 1,
-  },
-  {
     question: "Qual das opções abaixo representa um perfil conservador de investidor?",
     options: [
       "A) Aceita correr mais riscos em busca de lucros",
-      "B) Gosta de segurança e estabilidade",
+      "B) Sempre investe em ações",
       "C) Investe apenas em criptomoedas",
-      "D) Sempre investe em ações"
+      "D) Gosta de segurança e estabilidade"
     ],
-    correctAnswer: 1,
-  },
-  {
-    question: "O que você precisa ter para começar a investir na prática?",
-    options: [
-      "A) Apenas vontade de aprender",
-      "B) Uma conta bancária e CPF, além de abrir conta em uma corretora",
-      "C) Diploma em economia ou contabilidade",
-      "D) Um salário alto e estabilidade financeira"
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "Qual das alternativas é uma característica da renda variável?",
-    options: [
-      "A) Rendimento garantido",
-      "B) Baixo risco e retorno previsível",
-      "C) Pode subir ou cair, mas tem potencial de maiores lucros",
-      "D) Isento de qualquer risco"
-    ],
-    correctAnswer: 2,
-  },
-  {
-    question: "Qual é a metáfora usada na aula para explicar a diferença entre poupar e investir?",
-    options: [
-      "A) Poupar é como correr, investir é como caminhar",
-      "B) Poupar é deixar no cofre, investir é gastar",
-      "C) Poupar é estacionar o carro, investir é pegar a estrada",
-      "D) Poupar é como estudar, investir é como trabalhar"
-    ],
-    correctAnswer: 2,
+    correctAnswer: 3,
   },
 ];
 
@@ -140,17 +90,11 @@ export default function QuizPage() {
     setSubmitted(true);
 
     if (percentage >= 70) {
-      alert('Parabéns! Você acertou mais de 70% e a próxima aula foi liberada.');
-
       // Atualiza progresso no localStorage
       const stored = localStorage.getItem('chainx-progress');
       const completed = stored ? JSON.parse(stored) : [];
       const updated = completed.includes(1) ? completed : [...completed, 1];
       localStorage.setItem('chainx-progress', JSON.stringify(updated));
-
-      navigate('/curso');
-    } else {
-      alert('Você precisa acertar pelo menos 70% para desbloquear a próxima aula.');
     }
   };
 
@@ -159,6 +103,25 @@ export default function QuizPage() {
       <div className={styles.container3}>
         <div className={styles.container2}>
           <h2>Você acertou {score}%</h2>
+
+          {score >= 70 ? (
+            <>
+              <p className={styles.successText}>
+                Parabéns! Você desbloqueou a próxima aula.
+              </p>
+              <button
+                onClick={() => navigate('/curso')}
+                className={styles.buttonFinal}
+              >
+                Ir para o Curso
+              </button>
+            </>
+          ) : (
+            <p className={styles.errorText}>
+              Você precisa de pelo menos 70% para desbloquear a próxima aula.
+            </p>
+          )}
+
           <button
             onClick={() => {
               setCurrentQuestion(0);
@@ -166,13 +129,12 @@ export default function QuizPage() {
               setSubmitted(false);
               setScore(0);
             }}
-            className={styles.button}
+            className={styles.buttonFinal}
           >
             Refazer Quiz
           </button>
         </div>
       </div>
-
     );
   }
 

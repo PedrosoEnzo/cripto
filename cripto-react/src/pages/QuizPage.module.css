@@ -115,6 +115,20 @@
   transition: background-color 0.3s ease;
   height: 50%;
 }
+.buttonFinal {
+    background-color: #7a00ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 30%;
+  margin-right: 12px;
+  margin-top: 20px;
+}
 
 .button:disabled {
   background-color: #5a0055;
