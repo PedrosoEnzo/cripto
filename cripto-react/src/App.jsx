@@ -55,6 +55,14 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/simulador"
+          element={
+            <PrivateRoute>
+              <SimulatorPage />
+            </PrivateRoute>
+          }
+        />
 
         <Route
           path="/perfil"
@@ -73,8 +81,7 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/privacidade" element={<Privacidade />} />
         <Route path="/perfilQuiz" element={<PerfilQuiz />} />
-        <Route path="/newPassword" element={<NewPassword/>}/>
-        <Route path="/simulador" element={<SimulatorPage/>} />
+        <Route path="/newPassword" element={<NewPassword />} />
       </Routes>
 
       {isLoggedIn && <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />}
