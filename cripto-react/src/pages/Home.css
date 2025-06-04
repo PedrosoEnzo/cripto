@@ -273,6 +273,11 @@ body {
   line-height: 1.6;
 }
 
+.descricaoEsquerda h2 {
+  font-size: 33px;
+  width: 80%;
+}
+
 
 
 .comunidadeButton:hover {
@@ -393,12 +398,17 @@ body {
   margin-top: 10%;
 }
 
+.comunidadeRight .tituloCharme {
+  color: #861888;
+}
+
 .comunidadeRight p {
-  width: 60%;
-  margin-top: 100px;
+  width: 80%;
+  margin-top: 20px;
   font-size: 20px;
   color: #cfcfcf;
   text-align: left;
+  margin-left: 6%;
 }
 
 .comunidadeButton {
@@ -416,6 +426,7 @@ body {
   white-space: nowrap;
   margin-left: auto;
   width: 30%;
+  margin-top: 10%;
 }
 
 .comunidadeButton:hover {
