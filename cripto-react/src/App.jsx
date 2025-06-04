@@ -50,6 +50,15 @@ function App() {
         {/* 🔒 Rotas protegidas */}
 
         <Route
+          path="/curso"
+          element={
+            <PrivateRoute>
+              <CoursePage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
           path="/perfil"
           element={
             <PrivateRoute>
@@ -69,8 +78,7 @@ function App() {
 
 
 
-        {/* 🎓 Acesso livre */}
-        <Route path="/curso" element={<CoursePage />} />
+        {/*Acesso livre */}
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/about" element={<About />} />
