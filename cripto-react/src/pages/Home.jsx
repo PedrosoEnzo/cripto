@@ -82,9 +82,8 @@ export default function Home() {
           </div>
         </div>
         {/* Seção Comunidade Ativa */}
-        <div className="comunidadeSection scroll-animation">
-          <div className="comunidadeContent">
-            <h2>Uma comunidade unida pelo futuro financeiro</h2>
+        <div className="comunidadeContent">
+          <div className="comunidadeRight">
             <p>
               Na ChainX, você não está sozinho. Conecte-se com milhares de usuários apaixonados por
               investimentos, troque experiências e cresça junto com a revolução cripto.
@@ -97,6 +96,8 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+
 
       </div>
 
