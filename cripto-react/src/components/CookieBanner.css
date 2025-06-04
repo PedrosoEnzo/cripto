@@ -19,6 +19,7 @@
   margin: 0;
   flex: 1;
   color: #000;
+  padding: 20px;
 }
 
 .cookie-banner button {
@@ -29,4 +30,5 @@
   cursor: pointer;
   font-weight: bold;
   height: 35px;
+  margin-top: 25px;
 }

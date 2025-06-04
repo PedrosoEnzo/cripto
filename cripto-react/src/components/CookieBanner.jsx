@@ -21,8 +21,7 @@ export default function CookieBanner() {
   return (
     <div className="cookie-banner">
       <p>
-        Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita o uso de cookies.
-      </p>
+        Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita o uso de cookies. <br /><a href="/privacidade">Termos e Política de Privacidade</a></p>
       <button onClick={handleAccept}>Aceitar</button>
     </div>
   );
