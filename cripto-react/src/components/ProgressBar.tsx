@@ -8,7 +8,6 @@ export default function ProgressBar({ progress }) {
   return (
     <div className={styles.progressContainer}>
       <div className={styles.progressBar} style={{ width: `${roundedProgress}%` }}>
-        <span className={styles.progressText}>{roundedProgress}%</span>
       
       </div>
     </div>

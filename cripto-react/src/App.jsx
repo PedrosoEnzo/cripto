@@ -57,14 +57,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route
-          path="/curso"
-          element={
-            <PrivateRoute>
-              <CoursePage />
-            </PrivateRoute>
-          }
-        />
+  
         <Route
           path="/simulador"
           element={
@@ -77,6 +70,7 @@ function App() {
 
 
         {/* 🎓 Acesso livre */}
+        <Route path="/curso" element={<CoursePage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/about" element={<About />} />
