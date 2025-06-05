@@ -21,7 +21,7 @@
 }
 
 .info {
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,15 +64,15 @@ button {
   cursor: pointer;
   height: 30px;
   width: 200px;
-  background: linear-gradient(to right, #3f025b, #b12092);
+  background: linear-gradient(135deg, #732d91, #8e44ad);
   color: #ffffff;
-  margin-top: auto; 
+  margin-top: auto;
   margin-bottom: 30px;
-  align-self: center; 
+  align-self: center;
 }
 
 button:hover {
-  background: linear-gradient(to right, #3f025b,  #b12092);
+  background: linear-gradient(135deg, #532069, #67327e);
 }
 
 .locked {

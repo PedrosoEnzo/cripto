@@ -6,15 +6,15 @@
   padding: 5px 40px;
   background-color: rgba(10, 0, 19, 0.185);
   position: sticky;
-  background-color: rgba(38, 10, 42, 0.063); 
-  backdrop-filter: blur(3px); 
+  background-color: rgba(38, 10, 42, 0.063);
+  backdrop-filter: blur(3px);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  border-radius: 0 0 24px 24px; 
-  
+  border-radius: 0 0 24px 24px;
+
 }
 
 .logo {
@@ -43,12 +43,12 @@
 .nav:hover {
   background-color: transparent;
   color: #fff;
-   box-shadow: 0 0 8px #80789a;
+  box-shadow: 0 0 8px #80789a;
 }
 
 /* Botão Cadastre-se */
 .cadastroButton {
-  background: linear-gradient(135deg, #3f025b, #b12092);
+  background: linear-gradient(135deg, #732d91, #8e44ad);
   color: #fff;
   font-size: 18px;
   border: none;
