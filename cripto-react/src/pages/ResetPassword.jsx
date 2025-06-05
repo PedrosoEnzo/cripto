@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './ResetPassword.css';
 
 export function ResetPassword() {
@@ -7,6 +7,9 @@ export function ResetPassword() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { state } = useLocation()
+
+  console.log(state)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +22,12 @@ export function ResetPassword() {
     // Verifica se o código digitado é igual ao armazenado
     if (code === storedCode) {
       // Código correto → redireciona para /perfil
-      navigate('/newPassword');
+      navigate('/newPassword', {
+       state: {
+         email: state.email
+       }
+      })
+     
     } else {
       // Código errado → mostra erro
       setError('Código inválido!');

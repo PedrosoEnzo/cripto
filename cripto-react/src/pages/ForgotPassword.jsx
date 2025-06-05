@@ -45,7 +45,11 @@ export function ForgotPassword() {
       localStorage.setItem('resetEmail', email);
       
       setTimeout(() => {
-        navigate('/resetPassword');
+        navigate('/resetPassword', {
+          state: {
+            email: email
+          }
+        });
       }, 2000);
     } catch (error) {
       console.error('Erro ao enviar e-mail:', error);

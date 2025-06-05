@@ -51,7 +51,7 @@ const verificarToken = (req, res, next) => {
   });
 };
 
-// 🔐 Cadastro
+// Cadastro
 app.post('/cadastro', async (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -72,7 +72,7 @@ app.post('/cadastro', async (req, res) => {
   }
 });
 
-// 🔑 Login
+// Login
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
 
@@ -104,7 +104,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// 🔒 Rota protegida - Perfil
+//  Rota protegida - Perfil
 app.get('/perfil', verificarToken, async (req, res) => {
   try {
     const [result] = await db.query('SELECT id, nome, email FROM usuarios WHERE id = ?', [req.user.id]);
@@ -120,7 +120,7 @@ app.get('/perfil', verificarToken, async (req, res) => {
   }
 });
 
-// 🔒 Rotas protegidas - Curso e Simulador
+// Rotas protegidas - Curso e Simulador
 app.get('/curso', verificarToken, (req, res) => {
   res.json({ message: 'Acesso autorizado ao curso', user: req.user });
 });
@@ -144,15 +144,83 @@ app.put('/atualizarperfil', verificarToken, async (req, res) => {
   }
 });
 
-// 🚀 Encerrar conexão ao fechar
+// Encerrar conexão ao fechar
 process.on('SIGINT', async () => {
   await db.end();
   console.log('Conexão encerrada');
   process.exit();
 });
 
-// 🔥 Start servidor
+// Start servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
+
+
+
+
+
+// Rotas para a validação e update das senhas
+
+app.post('/newPassword', async (req, res) => {
+  const { novaSenha, confirmarNovaSenha } = req.body;
+  const {email } = req.body;
+  console.log(email)
+
+  try {
+    // Validações
+    if (novaSenha) {
+      return res.status(400).json({ 
+        alert: 'Por favor, preencha todos os campos.' 
+      });
+    }
+
+    if (novaSenha !== confirmarNovaSenha) {
+      return res.status(400).json({ 
+        alert: 'As senhas não coincidem.' 
+      });
+    }
+
+    if (novaSenha.length < 6) {
+      return res.status(400).json({ 
+        alert: 'A senha deve ter pelo menos 6 caracteres.' 
+      });
+    }
+
+    // Verificar se a nova senha é diferente da atual
+    const [user] = await db.query('SELECT senha FROM usuarios WHERE email = ?', [email]);
+    
+    const senhaIgual = await bcrypt.compare(novaSenha, user[0].senha);
+    if (senhaIgual) {
+      return res.status(400).json({ 
+        alert: 'A nova senha não pode ser igual à senha atual.' 
+      });
+    }
+
+    // Hash da nova senha
+    const hashedPassword = await bcrypt.hash(novaSenha, 10);
+
+    // Atualiza a senha no banco de dados
+    await db.query(
+      'UPDATE usuarios SET senha = ? WHERE id = ?',
+      [hashedPassword, userId]
+    );
+
+    // Resposta de sucesso
+    res.status(200).json({ 
+      message: 'Senha alterada com sucesso!' 
+    });
+
+  } catch (error) {
+    console.error('Erro ao redefinir senha:', error);
+    res.status(500).json({ 
+      alert: 'Erro ao redefinir senha. Tente novamente.',
+      error: error.message 
+    });
+  }
+});
+
+

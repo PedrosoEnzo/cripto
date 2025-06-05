@@ -1,15 +1,19 @@
 import { useState } from "react";
-import NavBar2 from "../components/Navbar2";
+
 import "./NewPassword.module.css";
+import { useLocation } from "react-router-dom";
 
 function newPassword() {
   const [formData, setFormData] = useState({
     novaSenha: "",
     confirmarNovaSenha: "",
   });
+  const {state} = useLocation()
   const [mensagem, setMensagem] = useState(null);
   const [erro, setErro] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log(state.email)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,14 +41,11 @@ function newPassword() {
 
     const token = sessionStorage.getItem("token");
 
-    fetch("http://localhost:5000/redefinirsenha", {
+    fetch("http://localhost:5000/newPassword", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
       body: JSON.stringify({
         novaSenha: formData.novaSenha,
+        email: state.email
       }),
     })
       .then((res) => {
@@ -73,7 +74,6 @@ function newPassword() {
 
   return (
     <div className="reset-password-container">
-      <NavBar2 />
       <div className="reset-password-box">
         <div className="reset-password-header">
           <h1>Redefinir Senha</h1>
