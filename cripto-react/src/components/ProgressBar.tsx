@@ -8,13 +8,7 @@ export default function ProgressBar({ progress }) {
   return (
     <div className={styles.progressContainer}>
       <div className={styles.progressBar} style={{ width: `${roundedProgress}%` }}>
-        <span className={styles.progressText}>{roundedProgress}%</span>
-        <img 
-          src={imgBarra} 
-          alt="Imagem na barra"
-          className={styles.progressImage}
-          style={{ transform: `translateX(${roundedProgress}%)` }}
-        />
+      
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import ModuleSection from "../components/ModuleSection";
 import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
+import ProfileMenu from "../components/ProfileMenu";
 
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
@@ -19,7 +20,7 @@ export default function CoursePage() {
     {
       title: "Básico I",
       lessons: [
-         {
+        {
           id: 1,
           title: "Aula 1: Introdução",
           description: "Conheça os conceitos fundamentais de investimentos...",
@@ -85,7 +86,7 @@ export default function CoursePage() {
     {
       title: "Avançado",
       lessons: [
-         {
+        {
           id: 11,
           title: "Aula 1: Estratégias de Investimento",
           description:
@@ -118,13 +119,13 @@ export default function CoursePage() {
 
     return courseData.map((mod) => ({
       ...mod,
-       lessons: mod.lessons.map((lesson) => {
-        
+      lessons: mod.lessons.map((lesson) => {
+
         const index = allLessons.findIndex((l) => l.id === lesson.id);
-        const isUnlocked = completedLessons.includes( lesson.id as never);
+        const isUnlocked = completedLessons.includes(lesson.id as never);
 
         const isLocked =
-         lesson.id === 1 ? false : !completedLessons.includes((lesson.id - 1) as never);
+          lesson.id === 1 ? false : !completedLessons.includes((lesson.id - 1) as never);
 
         return {
           ...lesson,
@@ -138,20 +139,32 @@ export default function CoursePage() {
   const courseDataWithLocks = getCourseDataWithLocks();
 
   return (
-     <>
+    <>
       <div className={styles.container}>
         <div className={styles.header}>
           <FaArrowLeft
-            className={styles.backArrow}
-            onClick={() => navigate("/")}
+            className="backArrow"
+            onClick={() => navigate(-1)}
+            style={{ cursor: "pointer", fontSize: 24, margin: "1rem" }}
+            aria-label="Voltar"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                navigate(-1);
+              }
+            }}
           />
+          <div className={styles.perfil}>
+            <ProfileMenu />
+          </div>
           <h1 className={styles.title}>
             ChainX <span>Educ</span>
           </h1>
         </div>
-   <ProgressBar progress={progress} />
+        <ProgressBar progress={progress} />
 
-    {courseDataWithLocks.map((mod, idx) => (
+        {courseDataWithLocks.map((mod, idx) => (
           <ModuleSection
             key={idx}
             title={mod.title}
@@ -162,7 +175,7 @@ export default function CoursePage() {
           />
         ))}
 
- {visibleAd && (
+        {visibleAd && (
           <div className={styles.floatingAd}>
             <button
               className={styles.closeButton}
@@ -180,7 +193,7 @@ export default function CoursePage() {
           </div>
         )}
       </div>
-      
+
       <Footer />
     </>
   );

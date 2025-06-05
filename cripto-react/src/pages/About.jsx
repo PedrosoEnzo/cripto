@@ -30,7 +30,7 @@ const developers = [
   },
   {
     name: 'Julia',
-    role: 'Design',
+    role: 'Front-End',
     img: juliaPerfil,
     instagram: 'https://www.instagram.com/julia_miranda288/',
     github: 'https://github.com/Jumiranda28',

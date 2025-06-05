@@ -14,6 +14,15 @@
   width: 100%;
 }
 
+.backArrow {
+  position: absolute;
+  left: 50px;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
 .title {
   font-size: 60px;
   color: #fff;
@@ -22,7 +31,7 @@
   letter-spacing: 2px;
 }
 
-.corTitulo{
+.corTitulo {
   color: #b120b1;
 
 }
@@ -60,9 +69,10 @@
   gap: 15px;
   border: 4px solid transparent;
   border-radius: 30px;
-  background:
-  linear-gradient(#00000018, #00000021) padding-box,
-  linear-gradient(to right, #b120921e, #3f025b15, #b120921a) border-box;
+  backdrop-filter: blur(20px);
+  background: rgba(133, 131, 131, 0.06);
+  box-shadow: 0 8px 32px rgba(94, 5, 123, 0.103);
+
 }
 
 .simulatorForm label {
@@ -76,8 +86,8 @@
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #555;
-  background-color: #00000017;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 
@@ -88,8 +98,8 @@
   height: 60px;
   max-width: 100%;
   border-radius: 18px;
-  background-color: transparent;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   transition: border-color 0.3s ease;
 }
 
@@ -103,7 +113,7 @@
   padding: 12px;
   height: 50px;
   color: #fff;
-  background: linear-gradient(to right, #3f025b27, #b120922a);
+  background: linear-gradient(to right, #3f025bc8, #b12092);
   border: none;
   border-radius: 50px;
   font-size: 1.2em;
@@ -138,9 +148,6 @@
   align-items: center;
   border: 4px solid transparent;
   border-radius: 30px;
-  background:
-  linear-gradient(#0000002a, #000000d8) padding-box,
-  linear-gradient(to right, #b1209227, #3f025b83) border-box;
 }
 
 .chartContainer svg .chart-line {

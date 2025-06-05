@@ -5,6 +5,8 @@ import cursos from '../assets/curso2.png';
 import cursos1 from '../assets/curso1.png';
 import cursos2 from '../assets/curso3.png';
 import Footer from '../components/Footer';
+import CookieBanner from '../components/CookieBanner';
+
 
 export default function Home() {
   useEffect(() => {
@@ -26,14 +28,15 @@ export default function Home() {
 
   return (
     <>
+      <CookieBanner />
 
       <div className="background-blur-effect" />
 
       {/* Título e Imagem da Moeda */}
       <div className="navbar-img-moeda">
         <div className="content">
-           <h1>Você está pronto <br />para o futuro das finanças?</h1>
-           <p>Simule, aprenda e invista!</p>
+          <h1>Torne-se um investidor <br />completo.</h1>
+          <p>Comece hoje com a ChainX.</p>
         </div>
         <img src={corrente} alt="corrente" className="corrente-image" />
       </div>
@@ -59,7 +62,7 @@ export default function Home() {
         <div className="plataformaCursosContent">
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img className="iconCurso"  src={cursos1} alt="Simulador de Investimentos" />
+              <img className="iconCurso" src={cursos1} alt="Simulador de Investimentos" />
               <h3>Simulador de Investimentos</h3>
               <p>Aprenda a investir com segurança e confiança.</p>
             </div>
@@ -67,7 +70,7 @@ export default function Home() {
 
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img  className="iconCurso" src={cursos} alt="Conteúdo Exclusivo" />
+              <img className="iconCurso" src={cursos} alt="Conteúdo Exclusivo" />
               <h3>Conteúdo Exclusivo</h3>
               <p>Acesse cursos e materiais de alta qualidade.</p>
             </div>
@@ -75,13 +78,37 @@ export default function Home() {
 
           <div className="plataformaCursosCard scroll-animation">
             <div className="plataformaCursosCardIcon">
-              <img className="iconCurso"  src={cursos2} alt="Comunidade Ativa" />
+              <img className="iconCurso" src={cursos2} alt="Comunidade Ativa" />
               <h3>Comunidade Ativa</h3>
               <p>Participe de discussões e trocas de experiências.</p>
             </div>
           </div>
         </div>
+        {/* Seção Comunidade Ativa */}
+        <div className="comunidadeContent">
+          <div className="comunidadeRight">
+            <div className="descricaoEsquerda">
+              <h2 className="h2Comunidade">Evolua Junto com a Comunidade <span className="tituloCharme">ChainX</span></h2>
+              <p>
+                Na ChainX, você não está sozinho. Conecte-se com milhares de usuários apaixonados por
+                investimentos, troque experiências e cresça junto com a revolução cripto.
+              </p>
+            </div>
+            <button
+              className="comunidadeButton"
+              onClick={() => window.location.href = "/comunidade"}
+            >
+              Acessar Comunidade
+            </button>
+          </div>
+        </div>
+
+
+
       </div>
+
+
+
 
       <Footer />
     </>

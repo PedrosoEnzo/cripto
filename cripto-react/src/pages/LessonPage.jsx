@@ -20,8 +20,17 @@ export default function LessonPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <FaArrowLeft
-          className={styles.backArrow}
-          onClick={() => navigate("/curso")}
+          className="backArrow"
+          onClick={() => navigate(-1)}
+          style={{ cursor: "pointer", fontSize: 24, margin: "1rem" }}
+          aria-label="Voltar"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              navigate(-1);
+            }
+          }}
         />
         <h1 className={styles.title}>
           <a href="/curso" className={styles.link}>
@@ -34,12 +43,12 @@ export default function LessonPage() {
         <h2 className={styles.subtitle}>Aula {id}</h2>
 
         <div className={styles.content}>
-         <div className={styles.videoContainer}>
-  <video width="100%" height="auto" controls>
-    <source src={aulaVideo} type="video/mp4" />
-    Seu navegador não suporta a tag de vídeo.
-  </video>
-</div>
+          <div className={styles.videoContainer}>
+            <video width="100%" height="auto" controls>
+              <source src={aulaVideo} type="video/mp4" />
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
 
 
           <div className={styles.pdfContainer}>
@@ -48,6 +57,10 @@ export default function LessonPage() {
               <li><a href={anexo1} target="_blank" rel="noopener noreferrer">E-book Poupar vs. Investir</a></li>
               <li><a href={anexo2} target="_blank" rel="noopener noreferrer">E-book Descobrindo o seu perfil</a></li>
               <li><a href="/perfilQuiz">Quiz para descobrir seu perfil de investidor</a></li>
+            </ul>
+            <br />
+            <ul className={styles.comunidadeLink}>
+              <li><a href="https://discord.gg/taXQXJSS" target="_blank">Acessar comunidade</a></li>
             </ul>
           </div>
         </div>

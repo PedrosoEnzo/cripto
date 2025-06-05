@@ -11,14 +11,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #3f025b, #460a38);
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  .backArrow {
+    position: absolute;
+    left: 50px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    top: 15%;
+  }
+
+.background-blur-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
+        radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
+        radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
+    filter: blur(120px);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 /* Cartão do perfil */
 .profileContainer {
-  background-color: #fff;
+     backdrop-filter: blur(20px);
+     background: rgba(255, 255, 255, 0.06);
   padding: 3rem 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(63, 2, 91, 0.25);
@@ -34,7 +58,7 @@
 /* Título */
 .title {
   font-size: 2rem;
-  color: #b12092;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 

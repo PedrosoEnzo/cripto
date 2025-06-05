@@ -5,6 +5,8 @@ import Zynx from '../assets/mascote/Assistent.png';
 import BotaoChat from '../assets/ButtonAss.jpeg';
 import styles from './Assistent.module.css';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 
 const Assistent = ({ apiKey }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +36,7 @@ const Assistent = ({ apiKey }) => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          
           body: JSON.stringify({ contents: [{ parts: [{ text: input }] }] }),
         }
       );
@@ -90,7 +93,11 @@ const Assistent = ({ apiKey }) => {
                   </div>
                 )}
                 <div className={styles.messageContent}>
-                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  <div className={styles.markdownTableWrapper}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {msg.content}
+                    </ReactMarkdown>
+                  </div>
                   <span className={styles.messageTime}>
                     {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
@@ -121,8 +128,8 @@ const Assistent = ({ apiKey }) => {
               disabled={isLoading}
               autoFocus
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={isLoading || !input.trim()}
               aria-label="Enviar mensagem"
             >
@@ -131,8 +138,8 @@ const Assistent = ({ apiKey }) => {
           </form>
         </div>
       ) : (
-        <button 
-          className={styles.floatingButton} 
+        <button
+          className={styles.floatingButton}
           onClick={toggleChat}
           aria-label="Abrir chat"
         >
