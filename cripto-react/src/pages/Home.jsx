@@ -35,8 +35,9 @@ export default function Home() {
       {/* Título e Imagem da Moeda */}
       <div className="navbar-img-moeda">
         <div className="content">
-          <h1>Torne-se um investidor <br />completo.</h1>
-          <p>Comece hoje com a ChainX.</p>
+          <h1>Você está pronto<br />
+          para o mundo financeiro?</h1>
+          <p>Simule, aprenda e invista com segurança com segurança e inovação.</p>
         </div>
         <img src={corrente} alt="corrente" className="corrente-image" />
       </div>
