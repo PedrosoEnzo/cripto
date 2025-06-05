@@ -16,6 +16,7 @@ body::before {
     z-index: -1;
     animation: bgShift 10s ease infinite;
     pointer-events: none;
+
 }
 
 .background-blur-effect {
