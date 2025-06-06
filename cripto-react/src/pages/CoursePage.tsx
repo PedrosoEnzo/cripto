@@ -7,6 +7,8 @@ import { FaArrowLeft } from "react-icons/fa";
 import adImage from "../assets/ChainAds.png";
 import Footer from "../components/Footer";
 import ProfileMenu from "../components/ProfileMenu";
+import adVideo from "../assets/ChainAdVideo.mp4";
+
 
 export default function CoursePage() {
   const [progress, setProgress] = useState(0);
@@ -174,7 +176,6 @@ export default function CoursePage() {
             onComplete={completedLessons}
           />
         ))}
-
         {visibleAd && (
           <div className={styles.floatingAd}>
             <button
@@ -192,6 +193,8 @@ export default function CoursePage() {
             </a>
           </div>
         )}
+
+
       </div>
 
       <Footer />

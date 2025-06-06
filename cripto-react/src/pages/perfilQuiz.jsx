@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./perfilQuiz.module.css";
 
+
 const perguntas = [
   {
     pergunta: "Qual seu conhecimento sobre investimentos?",
@@ -83,12 +84,12 @@ export default function Quiz() {
           Refazer Quiz
         </button>
         <br />
-        <a href="/lesson/:id">Voltar para a aula</a>
+        <a href="/lesson/1">Voltar para a aula</a>
       </div>
     );
   }
 
-  const perguntaAtual = perguntas[indice];
+  const perguntaAtual = perguntas[indice];  
 
   return (
     <div className={styles.container}>

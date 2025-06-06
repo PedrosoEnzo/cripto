@@ -32,6 +32,7 @@ export default function SimulatorPage() {
   const [cryptoType, setCryptoType] = useState("bitcoin");
   const [rate, setRate] = useState(null);
   const [riskLevel, setRiskLevel] = useState("");
+  const [cryptoPrice, setCryptoPrice] = useState(null);
   const [initialInvestment, setInitialInvestment] = useState("");
   const [monthlyContribution, setMonthlyContribution] = useState("");
   const [years, setYears] = useState("");
@@ -69,6 +70,18 @@ export default function SimulatorPage() {
       setRate(15);
       setRiskLevel("Alto risco");
     } else if (type === "crypto") {
+      const cryptoRates = {
+        bitcoin: 49.8,
+        ethereum: 35.6,
+        solana: 32.3,
+        ripple: 27.4,
+        cardano: 42.1,
+      };
+
+      const selectedRate = cryptoRates[cryptoType] ?? 30;
+      setRate(selectedRate);
+      setRiskLevel("Alto risco");
+
       try {
         const response = await fetch(
           `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoType}&vs_currencies=usd`
@@ -77,15 +90,13 @@ export default function SimulatorPage() {
         const priceNow = data[cryptoType]?.usd;
 
         if (priceNow) {
-          setRate(50);
+          setCryptoPrice(priceNow);
         } else {
-          setRate(30);
+          setCryptoPrice(null);
         }
-        setRiskLevel("Alto risco");
       } catch (error) {
         console.error("Erro ao buscar preço da cripto:", error);
-        setRate(30);
-        setRiskLevel("Alto risco");
+        setCryptoPrice(null);
       }
     }
   };
@@ -117,7 +128,7 @@ export default function SimulatorPage() {
     let accumulatedValue = P;
     for (let i = 0; i < n; i++) {
       accumulatedValue = accumulatedValue * (1 + r) + PMT;
-      values.push(accumulatedValue);  // Salva como número, não string
+      values.push(accumulatedValue);
     }
 
     setFinalAmount(values[n - 1]);
@@ -255,6 +266,17 @@ export default function SimulatorPage() {
                   <p className={styles.riskText}>
                     Nível de Risco: <strong>{riskLevel}</strong>
                   </p>
+                  {investmentType === "crypto" && cryptoPrice !== null && (
+                    <p className={styles.riskText}>
+                      Preço Atual ({cryptoType.charAt(0).toUpperCase() + cryptoType.slice(1)}):{" "}
+                      <strong>
+                        {cryptoPrice.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })}
+                      </strong>
+                    </p>
+                  )}
                 </>
               ) : (
                 <p className={styles.selicText}>Carregando informações...</p>

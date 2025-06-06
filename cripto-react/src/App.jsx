@@ -49,14 +49,7 @@ function App() {
 
         {/* 🔒 Rotas protegidas */}
 
-        <Route
-          path="/curso"
-          element={
-            <PrivateRoute>
-              <CoursePage />
-            </PrivateRoute>
-          }
-        />
+
 
         <Route
           path="/perfil"
@@ -66,19 +59,27 @@ function App() {
             </PrivateRoute>
           }
         />
-  
-        <Route
-          path="/simulador"
+
+         <Route
+          path="/curso"
           element={
             <PrivateRoute>
-              <SimulatorPage />
+              <CoursePage />
             </PrivateRoute>
           }
         />
 
 
 
+
+  
+
+
+
+
+
         {/*Acesso livre */}
+        <Route path="/simulador" element={<SimulatorPage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/about" element={<About />} />
