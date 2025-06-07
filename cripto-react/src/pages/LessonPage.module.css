@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #000, #272042);
+  background: linear-gradient(to bottom, #000, #2b2042);
 }
 
 .header {

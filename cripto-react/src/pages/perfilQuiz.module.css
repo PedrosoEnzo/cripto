@@ -53,3 +53,14 @@ h2 {
   height: 40px;
   font-size: 15px;
 }
+
+.linkPdf {
+  margin-bottom: 1rem;
+  display: inline-block;
+    text-decoration: none;
+  font-weight: bold;
+}
+
+.linkPdf:hover {
+  color: rgb(98, 0, 128);
+}

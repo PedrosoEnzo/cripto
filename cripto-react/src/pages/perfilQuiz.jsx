@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./perfilQuiz.module.css";
-
+import conservadorPdf from '../assets/pdf/conservador.pdf';
+import moderadoPdf from '../assets/pdf/moderado.pdf';
+import ousadoPdf from '../assets/pdf/ousado.pdf';
 
 const perguntas = [
   {
@@ -51,6 +53,19 @@ const obterPerfil = (pontuacao) => {
   return "Ousado";
 };
 
+const obterLinkPdf = (perfil) => {
+  switch (perfil) {
+    case "Conservador":
+      return conservadorPdf;
+    case "Moderado":
+      return moderadoPdf;
+    case "Ousado":
+      return ousadoPdf;
+    default:
+      return "#";
+  }
+};
+
 export default function Quiz() {
   const [indice, setIndice] = useState(0);
   const [pontuacao, setPontuacao] = useState(0);
@@ -68,11 +83,24 @@ export default function Quiz() {
   };
 
   if (finalizado) {
+    const perfil = obterPerfil(pontuacao);
+
     return (
       <div className={styles.container}>
         <h2 className={styles.resultado}>
-          Seu perfil de investidor é: <strong>{obterPerfil(pontuacao)}</strong>
+          Seu perfil de investidor é: <strong>{perfil}</strong>
         </h2>
+
+        <a
+          href={obterLinkPdf(perfil)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.linkPdf}
+        >
+          Ver Estratégias para Perfil {perfil}
+        </a>
+
+        <br />
         <button
           onClick={() => {
             setIndice(0);
@@ -89,20 +117,19 @@ export default function Quiz() {
     );
   }
 
-  const perguntaAtual = perguntas[indice];  
+  const perguntaAtual = perguntas[indice];
 
   return (
     <div className={styles.container}>
       <h2 className={styles.pergunta}>{perguntaAtual.pergunta}</h2>
       {perguntaAtual.opcoes.map((opcao, idx) => (
-        <div opcao>
-        <button
-          key={idx}
-          onClick={() => responder(opcao.pontuacao)}
-          className={styles.botao}
-        >
-          {opcao.texto}
-        </button>
+        <div key={idx}>
+          <button
+            onClick={() => responder(opcao.pontuacao)}
+            className={styles.botao}
+          >
+            {opcao.texto}
+          </button>
         </div>
       ))}
       <p>
@@ -111,4 +138,3 @@ export default function Quiz() {
     </div>
   );
 }
-
