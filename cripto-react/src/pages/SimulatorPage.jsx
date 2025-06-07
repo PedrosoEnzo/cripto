@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { FaInfoCircle } from "react-icons/fa";
+
 
 import { Line } from "react-chartjs-2";
 import {
@@ -251,10 +253,20 @@ export default function SimulatorPage() {
                           currency: "BRL",
                         })}
                       </strong>
+                      <div className={styles.tooltip}>
+                        <FaInfoCircle />
+                        <span className={styles.tooltipText}>
+                          Esta projeção é apenas ilustrativa e não representa garantia de retorno futuro.
+                        </span>
+                      </div>
+
                     </>
                   )}
                 </div>
+
               )}
+
+
             </div>
 
             <div className={styles.chartContainer}>

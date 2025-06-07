@@ -190,3 +190,38 @@
 .riskText {
   color: #fff;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #7d7a7ac8;
+  font-size: 1.1rem;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.tooltipText {
+  visibility: hidden;
+  width: 240px;
+  background-color: #33333376;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 13px;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
