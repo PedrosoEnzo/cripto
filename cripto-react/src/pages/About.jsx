@@ -12,6 +12,7 @@ import marianaPerfil from '../assets/marianaPerfil.jpeg';
 import instagram from '../assets/instagram.png';
 import github from '../assets/github.png';
 import Footer from '../components/Footer';
+import NavBar from '../components/NavBarAbout';
 
 const developers = [
   {
@@ -93,9 +94,7 @@ function About() {
     <>
       <div className="background-blur-effect" />
 
-      <div className="voltarHome">
-        <a href="/"><img src={logo} alt="Logo Chain-X" /></a>
-      </div>
+      <NavBar />
 
       <section className="intro">
         <div className="textoEsquerdo">

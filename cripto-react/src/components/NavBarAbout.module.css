@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 40px;
+  background-color: rgba(10, 0, 19, 0.185);
+  position: sticky;
+  background-color: rgba(38, 10, 42, 0.063);
+  backdrop-filter: blur(3px);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 0 0 24px 24px; 
+  
+}
+
+
+.logo {
+  cursor: pointer;
+}
+
+/* Navegação */
+.navLinks {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Links */
+.nav {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav:hover {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 8px #80789a;
+}
+
+/* Botão Cadastre-se */
+.cadastroButton {
+    background: linear-gradient(135deg, #732d91, #8e44ad);
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cadastroButton:hover {
+  color: #fff;
+  box-shadow: 0 0 10px #110e1d;
+  transform: scale(1.05);
+}
+ 
