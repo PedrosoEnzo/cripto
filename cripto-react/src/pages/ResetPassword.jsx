@@ -23,11 +23,11 @@ export function ResetPassword() {
     if (code === storedCode) {
       // Código correto → redireciona para /perfil
       navigate('/newPassword', {
-       state: {
-         email: state.email
-       }
+        state: {
+          email: state.email
+        }
       })
-     
+
     } else {
       // Código errado → mostra erro
       setError('Código inválido!');
@@ -42,6 +42,7 @@ export function ResetPassword() {
         <h1>Redefinir Senha</h1>
         <p>Digite o código enviado para seu e-mail:</p>
 
+
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -52,7 +53,10 @@ export function ResetPassword() {
             required
           />
 
-          {error && <p className="error-message">{error}</p>}
+          {error &&
+            <p className="error-message">{error}</p>
+          }
+
 
           <button type="submit" disabled={isLoading}>
             {isLoading ? 'Verificando...' : 'Confirmar'}
