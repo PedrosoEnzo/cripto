@@ -1,5 +1,5 @@
 import express from 'express';
-import mysql from 'mysql2/promise'; // Usando Promises para conexão com MySQL
+import mysql from 'mysql2/promise'; 
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
@@ -156,9 +156,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-
-
 
 
 

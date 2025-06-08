@@ -11,8 +11,7 @@ const Cadastro = () => {
   const [senha, setSenha] = useState("");
   const [confirmsenha, setConfirmsenha] = useState("");
   const [message, setMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showPasswords, setShowPasswords] = useState(false); // controla ambos
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -57,6 +56,7 @@ const Cadastro = () => {
             <h2>Bem-vindo!</h2>
             <h4>Crie sua conta.</h4>
           </div>
+
           <div className="inputs">
             <input
               placeholder="Nome:"
@@ -66,6 +66,7 @@ const Cadastro = () => {
               required
             />
           </div>
+
           <div>
             <input
               placeholder="Email:"
@@ -76,11 +77,11 @@ const Cadastro = () => {
             />
           </div>
 
-          {/* Campo de Senha com ícone */}
+          {/* Senha com botão visível */}
           <div style={{ position: "relative" }}>
             <input
               placeholder="Senha:"
-              type={showPassword ? "text" : "password"}
+              type={showPasswords ? "text" : "password"}
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
@@ -88,52 +89,36 @@ const Cadastro = () => {
             />
             <button
               type="button"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={() => setShowPasswords(!showPasswords)}
               style={{
                 position: "absolute",
-                right: "10px",
+                right: "-65px",
+
                 top: "50%",
                 transform: "translateY(-50%)",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
                 fontSize: "18px",
+                marginTop: "-5px",
                 color: "#666",
               }}
               aria-label="Mostrar ou ocultar senha"
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
+              {showPasswords ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
 
-          {/* Campo de Confirmar Senha com ícone */}
-          <div style={{ position: "relative" }}>
+          {/* Confirmar senha sem botão */}
+          <div>
             <input
               placeholder="Confirmar Senha:"
-              type={showConfirmPassword ? "text" : "password"}
+              type={showPasswords ? "text" : "password"}
               value={confirmsenha}
               onChange={(e) => setConfirmsenha(e.target.value)}
               required
-              style={{ width: "100%", paddingRight: "40px" }}
+              style={{ width: "100%" }}
             />
-            <button
-              type="button"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              style={{
-                position: "absolute",
-                right: "-60px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "18px",
-                color: "#666",
-              }}
-              aria-label="Mostrar ou ocultar confirmação de senha"
-            >
-              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
           </div>
 
           {error && <div className="error-message">{error}</div>}
@@ -141,6 +126,7 @@ const Cadastro = () => {
             Já possui uma conta? <a href="/login">Entrar</a>
           </p>
           <br />
+
           <button id="button" type="submit">
             Cadastrar
           </button>
