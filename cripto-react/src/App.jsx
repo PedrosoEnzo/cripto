@@ -69,16 +69,20 @@ function App() {
           }
         />
 
-                <Route
+
+        
+        {/*Acesso livre
+        
+        
+                        <Route
           path="/simulador"
           element={
             <PrivateRoute>
               <SimulatorPage />
             </PrivateRoute>
           }
-        />
-        
-        {/*Acesso livre */}
+        />*/}
+        <Route path="/simulador" element={<SimulatorPage />} />
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/about" element={<About />} />
