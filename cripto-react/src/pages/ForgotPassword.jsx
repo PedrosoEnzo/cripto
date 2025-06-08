@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import './ForgotPassword.css';
+import logo from '../assets/logo.png'; // Certifique-se de que o caminho está correto
 
 export function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ export function ForgotPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email.includes('@')) {
       setMessage('Por favor, insira um e-mail válido');
       return;
@@ -39,11 +40,11 @@ export function ForgotPassword() {
       );
 
       setMessage('Código enviado com sucesso! Verifique seu e-mail.');
-      
+
       // Armazena o código no localStorage temporariamente
       localStorage.setItem('resetCode', verificationCode);
       localStorage.setItem('resetEmail', email);
-      
+
       setTimeout(() => {
         navigate('/resetPassword', {
           state: {
@@ -61,6 +62,11 @@ export function ForgotPassword() {
 
   return (
     <div className="forgot-password-container">
+      <div className="voltarHome">
+        <a href="/">
+          <img src={logo} alt="Logo Chain-X" />
+        </a>
+      </div>
       <div className="forgot-password-box">
         <div className="forgot-password-header">
           <h1>Esqueceu a senha?</h1>

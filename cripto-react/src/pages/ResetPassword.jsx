@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ResetPassword.css';
+import logo from '../assets/logo.png';
 
 export function ResetPassword() {
   const [code, setCode] = useState('');
@@ -38,6 +39,11 @@ export function ResetPassword() {
 
   return (
     <div className="reset-password-container">
+      <div className="voltarHome">
+        <a href="/">
+          <img src={logo} alt="Logo Chain-X" />
+        </a>
+      </div>
       <div className="reset-password-box">
         <h1>Redefinir Senha</h1>
         <p>Digite o código enviado para seu e-mail:</p>

@@ -112,6 +112,34 @@ input:focus {
     background: #ffffff8e;
 }
 
+/*OLHOS*/
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* espaço para o ícone no canto */
+  box-sizing: border-box;
+}
+
+.eye-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+
+
+
 #button {
     background: linear-gradient(135deg,  #732d91, #8e44ad);
     color: #fff;
