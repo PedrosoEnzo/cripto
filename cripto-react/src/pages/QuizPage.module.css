@@ -174,3 +174,13 @@
     gap: 12px;
   }
 }
+
+fieldset {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+fieldset:focus-within {
+  outline: 2px dashed #aaa; /* ou uma cor acessível */
+}

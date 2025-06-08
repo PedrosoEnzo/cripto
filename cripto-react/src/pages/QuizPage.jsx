@@ -90,7 +90,6 @@ export default function QuizPage() {
     setSubmitted(true);
 
     if (percentage >= 70) {
-      // Atualiza progresso no localStorage
       const stored = localStorage.getItem('chainx-progress');
       const completed = stored ? JSON.parse(stored) : [];
       const updated = completed.includes(1) ? completed : [...completed, 1];
@@ -102,24 +101,26 @@ export default function QuizPage() {
     return (
       <div className={styles.container3}>
         <div className={styles.container2}>
-          <h2>Você acertou {score}%</h2>
+          <h2 aria-level="1" role="heading">Você acertou {score}%</h2>
 
           {score >= 70 ? (
-            <>
-              <p className={styles.successText}>
-                Parabéns! Você desbloqueou a próxima aula.
-              </p>
-              <button
-                onClick={() => navigate('/curso')}
-                className={styles.buttonFinal}
-              >
-                Ir para o Curso
-              </button>
-            </>
+            <p className={styles.successText} role="alert">
+              Parabéns! Você desbloqueou a próxima aula.
+            </p>
           ) : (
-            <p className={styles.errorText}>
+            <p className={styles.errorText} role="alert">
               Você precisa de pelo menos 70% para desbloquear a próxima aula.
             </p>
+          )}
+
+          {score >= 70 && (
+            <button
+              onClick={() => navigate('/curso')}
+              className={styles.buttonFinal}
+              aria-label="Ir para a próxima aula"
+            >
+              Ir para o Curso
+            </button>
           )}
 
           <button
@@ -130,6 +131,7 @@ export default function QuizPage() {
               setScore(0);
             }}
             className={styles.buttonFinal}
+            aria-label="Refazer o quiz"
           >
             Refazer Quiz
           </button>
@@ -143,26 +145,28 @@ export default function QuizPage() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Poupar vs. Investir</h2>
+      <h2 className={styles.title} role="heading" aria-level="1">Poupar vs. Investir</h2>
 
       <div className={styles.questionBlock}>
-        <p className={styles.questionText}>
-          <strong>{currentQuestion + 1}. {question.question}</strong>
-        </p>
-        {question.options.map((option, idx) => (
-          <label key={idx} className={styles.optionLabel}>
-            <input
-              type="radio"
-              name={`question-${currentQuestion}`}
-              value={idx}
-              checked={selectedAnswer === idx}
-              onChange={() => handleOptionChange(idx)}
-              disabled={submitted}
-              className={styles.radio}
-            />
-            <span>{option}</span>
-          </label>
-        ))}
+        <fieldset>
+          <legend className={styles.questionText}>
+            {currentQuestion + 1}. {question.question}
+          </legend>
+          {question.options.map((option, idx) => (
+            <label key={idx} className={styles.optionLabel}>
+              <input
+                type="radio"
+                name={`question-${currentQuestion}`}
+                value={idx}
+                checked={selectedAnswer === idx}
+                onChange={() => handleOptionChange(idx)}
+                disabled={submitted}
+                className={styles.radio}
+              />
+              <span>{option}</span>
+            </label>
+          ))}
+        </fieldset>
       </div>
 
       <div className={styles.navigationButtons}>
@@ -170,6 +174,7 @@ export default function QuizPage() {
           onClick={handlePrev}
           disabled={currentQuestion === 0}
           className={styles.button}
+          aria-label="Ir para a pergunta anterior"
         >
           Anterior
         </button>
@@ -179,6 +184,7 @@ export default function QuizPage() {
             onClick={handleNext}
             disabled={selectedAnswer === null}
             className={styles.button}
+            aria-label="Ir para a próxima pergunta"
           >
             Próxima
           </button>
@@ -187,6 +193,7 @@ export default function QuizPage() {
             onClick={handleSubmit}
             disabled={selectedAnswer === null}
             className={styles.button}
+            aria-label="Enviar as respostas do quiz"
           >
             Enviar Respostas
           </button>

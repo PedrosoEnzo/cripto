@@ -9,7 +9,7 @@ import eduardaPerfil from '../assets/eduardaPerfil.jpeg';
 import enzoPerfil from '../assets/enzoPerfil.jpeg';
 import isabellaPerfil from '../assets/isabellaPerfil.jpeg';
 import marianaPerfil from '../assets/marianaPerfil.jpeg';
-import instagram from '../assets/instagram.png';
+import instagram from '../assets/icons/instagram.png';
 import github from '../assets/github.png';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBarAbout';
