@@ -53,6 +53,7 @@ export default function Home() {
         <p className="scroll-animation">- Benjamin Graham -</p>
       </div><br /><br /><br /><br /><br /><br />
 
+
       {/* Seção Plataforma de Cursos */}
       <div className="plataformaCursos">
         <h2 className="scroll-animation">

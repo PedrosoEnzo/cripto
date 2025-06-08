@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import './CookieBanner.css'; // Criaremos o CSS separado ou você pode usar o mesmo do Home.css
+import { BsCookie } from "react-icons/bs";
+import './CookieBanner.css'; 
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
@@ -20,6 +21,7 @@ export default function CookieBanner() {
 
   return (
     <div className="cookie-banner">
+       <BsCookie />
       <p>
         Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita o uso de cookies. <br /><a href="/privacidade">Termos e Política de Privacidade</a></p>
       <button onClick={handleAccept}>Aceitar</button>

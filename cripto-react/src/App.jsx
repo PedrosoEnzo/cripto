@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
 import PrivateRoute from "./components/PrivateRoute";
+import VLibras from "./components/Vlibras";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -21,6 +22,8 @@ import Privacidade from "./components/privacidade";
 import PerfilQuiz from "./pages/perfilQuiz";
 import NewPassword from "./pages/NewPassword";
 import Perfil from "./pages/ProfilePage";
+
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem("token"));
@@ -40,6 +43,7 @@ function App() {
 
   return (
     <div className="app">
+
       {showNavbar && (isLoggedIn ? <Navbar2 onLogout={handleLogout} /> : <Navbar />)}
 
       <Routes>
@@ -90,6 +94,9 @@ function App() {
       </Routes>
 
       {isLoggedIn && <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />}
+
+      
+  <VLibras />
     </div>
   );
 }
