@@ -37,7 +37,7 @@
 
 .highlight {
   font-size: 2.5;
-  color: #861888;
+  color: #8a3fa9;
 }
 
 .link {
@@ -104,7 +104,7 @@
 }
 
 .pdfContainer a:hover {
-  color: #a51ea0;
+  color: #732d91;
 }
 
 .error {
@@ -122,7 +122,7 @@
 .simulatorLink {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #791475;
+  background-color: #732d91;
   color: white;
   text-decoration: none;
   border-radius: 24px;
@@ -131,9 +131,9 @@
 }
 
 .simulatorLink:hover {
-  background-color: #590e56;
+  background-color: #732d9181;
 }
 
 .comunidadeLink a {
-  color: #861888c1;
+  color: #8739a8;
 }
