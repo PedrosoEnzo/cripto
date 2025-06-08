@@ -72,7 +72,6 @@ function App() {
             </PrivateRoute>
           }
         />
-
                 <Route
           path="/simulador"
           element={
@@ -81,8 +80,10 @@ function App() {
             </PrivateRoute>
           }
         />
+
+
         
-        {/*Acesso livre */}
+        {/*Acesso livre*/}
         <Route path="/lesson/:id" element={<LessonPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/about" element={<About />} />

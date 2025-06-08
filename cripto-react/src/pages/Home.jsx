@@ -15,6 +15,7 @@ export default function Home() {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
         }
+    
       });
     });
 

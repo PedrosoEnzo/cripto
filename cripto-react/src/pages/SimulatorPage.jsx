@@ -3,7 +3,6 @@ import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaInfoCircle } from "react-icons/fa";
 
-
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -152,14 +151,10 @@ export default function SimulatorPage() {
     <>
       <div className={styles.page}>
         <header className={styles.header}>
-          <FaArrowLeft
-            className={styles.backArrow}
-            onClick={() => navigate("/lesson/1")}
-          />
+          <FaArrowLeft className={styles.backArrow} onClick={() => navigate("/lesson/1")} />
           <a href="/lesson/1" className={styles.link}>
             <h1 className={styles.title}>
-              Simulador de{" "}
-              <span className={styles.corTitulo}>Investimentos</span>
+              Simulador de <span className={styles.corTitulo}>Investimentos</span>
             </h1>
           </a>
         </header>
@@ -171,10 +166,7 @@ export default function SimulatorPage() {
                 <label>
                   Tipo de Investimento:
                   <br />
-                  <select
-                    value={investmentType}
-                    onChange={(e) => setInvestmentType(e.target.value)}
-                  >
+                  <select value={investmentType} onChange={(e) => setInvestmentType(e.target.value)}>
                     <option value="selic">Selic</option>
                     <option value="poupanca">Poupança</option>
                     <option value="tesouro">Tesouro Direto</option>
@@ -188,10 +180,7 @@ export default function SimulatorPage() {
                   <label>
                     Criptomoeda:
                     <br />
-                    <select
-                      value={cryptoType}
-                      onChange={(e) => setCryptoType(e.target.value)}
-                    >
+                    <select value={cryptoType} onChange={(e) => setCryptoType(e.target.value)}>
                       <option value="bitcoin">Bitcoin (BTC)</option>
                       <option value="ethereum">Ethereum (ETH)</option>
                       <option value="solana">Solana (SOL)</option>
@@ -203,38 +192,17 @@ export default function SimulatorPage() {
 
                 <label>
                   Valor Inicial:
-                  <input
-                    type="number"
-                    value={initialInvestment}
-                    onChange={(e) => setInitialInvestment(e.target.value)}
-                    min="0.01"
-                    step="0.01"
-                    required
-                  />
+                  <input type="number" value={initialInvestment} onChange={(e) => setInitialInvestment(e.target.value)} min="0.01" step="0.01" required />
                 </label>
 
                 <label>
                   Aporte Mensal:
-                  <input
-                    type="number"
-                    value={monthlyContribution}
-                    onChange={(e) => setMonthlyContribution(e.target.value)}
-                    min="0.00"
-                    step="0.01"
-                    required
-                  />
+                  <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)} min="0.00" step="0.01" required />
                 </label>
 
                 <label>
                   Tempo (anos):
-                  <input
-                    type="number"
-                    value={years}
-                    onChange={(e) => setYears(e.target.value)}
-                    min="1"
-                    max="100"
-                    required
-                  />
+                  <input type="number" value={years} onChange={(e) => setYears(e.target.value)} min="1" max="100" required />
                 </label>
 
                 <button type="submit">Simular</button>
@@ -246,47 +214,27 @@ export default function SimulatorPage() {
                     <span style={{ color: "red" }}>{finalAmount}</span>
                   ) : (
                     <>
-                      Valor Futuro Estimado:{" "}
-                      <strong>
-                        {finalAmount.toLocaleString("pt-BR", {
-                          style: "currency",
-                          currency: "BRL",
-                        })}
-                      </strong>
+                      Valor Futuro Estimado: <strong>{finalAmount.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</strong>
                       <div className={styles.tooltip}>
                         <FaInfoCircle />
                         <span className={styles.tooltipText}>
                           Esta projeção é apenas ilustrativa e não representa garantia de retorno futuro.
                         </span>
                       </div>
-
                     </>
                   )}
                 </div>
-
               )}
-
-
             </div>
 
             <div className={styles.chartContainer}>
               {rate !== null ? (
                 <>
-                  <p className={styles.selicText}>
-                    Taxa Atual Estimada: <strong>{rate}% a.a.</strong>
-                  </p>
-                  <p className={styles.riskText}>
-                    Nível de Risco: <strong>{riskLevel}</strong>
-                  </p>
+                  <p className={styles.selicText}>Taxa Atual Estimada: <strong>{rate}% a.a.</strong></p>
+                  <p className={styles.riskText}>Nível de Risco: <strong>{riskLevel}</strong></p>
                   {investmentType === "crypto" && cryptoPrice !== null && (
                     <p className={styles.riskText}>
-                      Preço Atual ({cryptoType.charAt(0).toUpperCase() + cryptoType.slice(1)}):{" "}
-                      <strong>
-                        {cryptoPrice.toLocaleString("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        })}
-                      </strong>
+                      Preço Atual ({cryptoType.charAt(0).toUpperCase() + cryptoType.slice(1)}): <strong>{cryptoPrice.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong>
                     </p>
                   )}
                 </>
@@ -295,56 +243,29 @@ export default function SimulatorPage() {
               )}
 
               {chartData && (
-                <Line
-                  data={chartData}
-                  options={{
-                    responsive: true,
-                    plugins: {
-                      legend: {
-                        display: true,
-                        position: "top",
-                        labels: {
-                          color: "#fff",
-                        },
-                      },
-                      tooltip: {
-                        callbacks: {
-                          label: (context) =>
-                            `R$ ${context.raw.toLocaleString("pt-BR", {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2,
-                            })}`,
-                        },
-                      },
-                    },
-                    scales: {
-                      x: {
-                        title: {
-                          display: true,
-                          text: "Meses",
-                          color: "#fff",
-                        },
-                        ticks: {
-                          color: "#fff",
-                        },
-                      },
-                      y: {
-                        title: {
-                          display: true,
-                          text: "Valor Acumulado (R$)",
-                          color: "#fff",
-                        },
-                        ticks: {
-                          color: "#fff",
-                          callback: (value) =>
-                            `R$ ${value.toLocaleString("pt-BR", {
-                              minimumFractionDigits: 0,
-                            })}`,
-                        },
-                      },
-                    },
-                  }}
-                />
+                <>
+                  <Line data={chartData} options={{ responsive: true, plugins: { legend: { display: true, position: "top", labels: { color: "#fff" } }, tooltip: { callbacks: { label: (context) => `R$ ${context.raw.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` } } }, scales: { x: { title: { display: true, text: "Meses", color: "#fff" }, ticks: { color: "#fff" } }, y: { title: { display: true, text: "Valor Acumulado (R$)", color: "#fff" }, ticks: { color: "#fff", callback: (value) => `R$ ${value.toLocaleString("pt-BR", { minimumFractionDigits: 0 })}` } } } }} />
+                  <div className={styles.investmentExplanation}>
+                    {(() => {
+                      switch (investmentType) {
+                        case "selic":
+                          return "Aqui, simulamos um investimento que rende igual à taxa Selic. É uma opção segura, indicada para quem quer evitar grandes riscos e está investindo no curto ou médio prazo.";
+                        case "poupanca":
+                          return " Esta simulação mostra quanto seu dinheiro renderia se ficasse guardado na poupança. Apesar de segura e sem impostos, pode perder para a inflação com o tempo.";
+                        case "tesouro":
+                          return "A simulação considera um rendimento médio desses títulos. Eles são considerados seguros e podem render mais que a poupança, dependendo do tipo escolhido.";
+                        case "fii":
+                          return "Simula o rendimento médio de quem investe em FIIs. O risco é moderado, pois o valor pode variar, mas você pode receber “aluguéis” mensais.";
+                        case "acoes":
+                          return " Considera uma média de rendimento a longo prazo. As ações têm mais risco, mas também maior potencial de lucro.";
+                        case "crypto":
+                          return "Mostra quanto seu dinheiro poderia render baseado na valorização histórica da criptomoeda escolhida. É um investimento de alto risco, mas que pode trazer grandes retornos.";
+                        default:
+                          return "";
+                      }
+                    })()}
+                  </div>
+                </>
               )}
             </div>
           </div>
