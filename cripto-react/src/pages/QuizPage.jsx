@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './QuizPage.module.css';
 
@@ -6,50 +6,50 @@ const questions = [
   {
     question: "Por que investir é importante, segundo o conteúdo da aula?",
     options: [
-      "A) Porque é obrigatório por lei",
-      "B) Para fugir dos impostos",
-      "C) Para evitar que o dinheiro perca valor com o tempo devido à inflação",
-      "D) Para guardar dinheiro no cofre"
+      "Porque é obrigatório por lei",
+      "Para fugir dos impostos",
+      "Para evitar que o dinheiro perca valor com o tempo devido à inflação",
+      "Para guardar dinheiro no cofre"
     ],
     correctAnswer: 2,
   },
   {
     question: "O que é inflação?",
     options: [
-      "A) Quando o governo imprime mais dinheiro",
-      "B) Quando o salário das pessoas aumenta",
-      "C) Quando os preços dos produtos caem",
-      "D) Quando o dinheiro perde valor com o tempo"
+      "Quando o governo imprime mais dinheiro",
+      "Quando o salário das pessoas aumenta",
+      "Quando os preços dos produtos caem",
+      "Quando o dinheiro perde valor com o tempo"
     ],
     correctAnswer: 3,
   },
   {
     question: "Qual é a principal diferença entre poupar e investir?",
     options: [
-      "A) Poupar dá mais lucro",
-      "B) Poupar é guardar dinheiro, investir é fazê-lo crescer",
-      "C) Investir é ilegal",
-      "D) Investir é só para bancos"
+      "Poupar dá mais lucro",
+      "Poupar é guardar dinheiro, investir é fazê-lo crescer",
+      "Investir é ilegal",
+      "Investir é só para bancos"
     ],
     correctAnswer: 1,
   },
   {
     question: "Quem pode começar a investir, segundo a aula?",
     options: [
-      "A) Apenas quem entende de economia",
-      "B) Somente pessoas com muito dinheiro",
-      "C) Qualquer pessoa que queira aprender",
-      "D) Apenas empresários"
+      "Apenas quem entende de economia",
+      "Somente pessoas com muito dinheiro",
+      "Qualquer pessoa que queira aprender",
+      "Apenas empresários"
     ],
     correctAnswer: 2,
   },
   {
     question: "Qual das opções abaixo representa um perfil conservador de investidor?",
     options: [
-      "A) Aceita correr mais riscos em busca de lucros",
-      "B) Sempre investe em ações",
-      "C) Investe apenas em criptomoedas",
-      "D) Gosta de segurança e estabilidade"
+      "Aceita correr mais riscos em busca de lucros",
+      "Sempre investe em ações",
+      "Investe apenas em criptomoedas",
+      "Gosta de segurança e estabilidade"
     ],
     correctAnswer: 3,
   },
@@ -61,6 +61,14 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const legendRef = useRef(null);
+
+  // Foca o legend ao mudar de pergunta
+  useEffect(() => {
+    if (legendRef.current) {
+      legendRef.current.focus();
+    }
+  }, [currentQuestion]);
 
   const handleOptionChange = (optionIndex) => {
     const newAnswers = [...answers];
@@ -100,8 +108,10 @@ export default function QuizPage() {
   if (submitted) {
     return (
       <div className={styles.container3}>
-        <div className={styles.container2}>
-          <h2 aria-level="1" role="heading">Você acertou {score}%</h2>
+        <div className={styles.container2} aria-live="assertive">
+          <h2 tabIndex={-1} role="heading" aria-level="1">
+            Você acertou {score}%
+          </h2>
 
           {score >= 70 ? (
             <p className={styles.successText} role="alert">
@@ -145,11 +155,17 @@ export default function QuizPage() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title} role="heading" aria-level="1">Poupar vs. Investir</h2>
+      <h2 className={styles.title} role="heading" aria-level="1">
+        Poupar vs. Investir
+      </h2>
 
       <div className={styles.questionBlock}>
         <fieldset>
-          <legend className={styles.questionText}>
+          <legend
+            tabIndex={-1}
+            ref={legendRef}
+            className={styles.questionText}
+          >
             {currentQuestion + 1}. {question.question}
           </legend>
           {question.options.map((option, idx) => (
@@ -176,7 +192,7 @@ export default function QuizPage() {
           className={styles.button}
           aria-label="Ir para a pergunta anterior"
         >
-          Anterior
+           Anterior
         </button>
 
         {currentQuestion < questions.length - 1 ? (
