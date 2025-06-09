@@ -6,50 +6,50 @@ const questions = [
   {
     question: "Por que investir é importante, segundo o conteúdo da aula?",
     options: [
-      "Porque é obrigatório por lei",
-      "Para fugir dos impostos",
-      "Para evitar que o dinheiro perca valor com o tempo devido à inflação",
-      "Para guardar dinheiro no cofre"
+      "A) Porque é obrigatório por lei",
+      "B) Para fugir dos impostos",
+      "C) Para evitar que o dinheiro perca valor com o tempo devido à inflação",
+      "D) Para guardar dinheiro no cofre"
     ],
     correctAnswer: 2,
   },
   {
     question: "O que é inflação?",
     options: [
-      "Quando o governo imprime mais dinheiro",
-      "Quando o salário das pessoas aumenta",
-      "Quando os preços dos produtos caem",
-      "Quando o dinheiro perde valor com o tempo"
+      "A) Quando o governo imprime mais dinheiro",
+      "B) Quando o salário das pessoas aumenta",
+      "C) Quando os preços dos produtos caem",
+      "D) Quando o dinheiro perde valor com o tempo"
     ],
     correctAnswer: 3,
   },
   {
     question: "Qual é a principal diferença entre poupar e investir?",
     options: [
-      "Poupar dá mais lucro",
-      "Poupar é guardar dinheiro, investir é fazê-lo crescer",
-      "Investir é ilegal",
-      "Investir é só para bancos"
+      "A) Poupar dá mais lucro",
+      "B) Poupar é guardar dinheiro, investir é fazê-lo crescer",
+      "C) Investir é ilegal",
+      "D) Investir é só para bancos"
     ],
     correctAnswer: 1,
   },
   {
     question: "Quem pode começar a investir, segundo a aula?",
     options: [
-      "Apenas quem entende de economia",
-      "Somente pessoas com muito dinheiro",
-      "Qualquer pessoa que queira aprender",
-      "Apenas empresários"
+      "A) Apenas quem entende de economia",
+      "B) Somente pessoas com muito dinheiro",
+      "C) Qualquer pessoa que queira aprender",
+      "D) Apenas empresários"
     ],
     correctAnswer: 2,
   },
   {
     question: "Qual das opções abaixo representa um perfil conservador de investidor?",
     options: [
-      "Aceita correr mais riscos em busca de lucros",
-      "Sempre investe em ações",
-      "Investe apenas em criptomoedas",
-      "Gosta de segurança e estabilidade"
+      "A) Aceita correr mais riscos em busca de lucros",
+      "B) Sempre investe em ações",
+      "C) Investe apenas em criptomoedas",
+      "D) Gosta de segurança e estabilidade"
     ],
     correctAnswer: 3,
   },
