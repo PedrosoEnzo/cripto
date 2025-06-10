@@ -14,35 +14,36 @@
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-  .backArrow {
-    position: absolute;
-    left: 50px;
-    font-size: 24px;
-    color: #ffffff;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    top: 15%;
-  }
+
+.backArrow {
+  position: absolute;
+  left: 50px;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  top: 15%;
+}
 
 .background-blur-effect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
-        radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
-        radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
-    filter: blur(120px);
-    opacity: 0.8;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: radial-gradient(circle at 30% 30%, #c800ff88, transparent 25%),
+    radial-gradient(circle at 70% 60%, #7a00ff88, transparent 25%),
+    radial-gradient(circle at 50% 90%, #ff00ff55, transparent 25%);
+  filter: blur(120px);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 /* Cartão do perfil */
 .profileContainer {
-     backdrop-filter: blur(20px);
-     background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.06);
   padding: 3rem 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(63, 2, 91, 0.25);
@@ -52,7 +53,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem; /* espaçamento entre os elementos */
+  gap: 1.2rem;
+  /* espaçamento entre os elementos */
 }
 
 /* Título */
@@ -66,7 +68,7 @@
 .name,
 .bio {
   font-size: 1.2rem;
-  color: #3f025b;
+  color: #fff;
   font-weight: 600;
   width: 100%;
   text-align: left;
@@ -76,7 +78,7 @@
 /* Bio (email) um pouco mais leve */
 .bio {
   font-weight: 400;
-  color: #555;
+  color: #fff;
   margin-bottom: 2rem;
 }
 
@@ -104,28 +106,34 @@
   cursor: pointer;
   user-select: none;
   text-align: center;
-  display: inline-flex; /* inline-flex para alinhar texto */
-  align-items: center; /* vertical align */
-  justify-content: center; /* horizontal align */
+  display: inline-flex;
+  /* inline-flex para alinhar texto */
+  align-items: center;
+  /* vertical align */
+  justify-content: center;
+  /* horizontal align */
   transition: all 0.3s ease;
-  text-decoration: none; /* importante para <a> */
+  text-decoration: none;
+  /* importante para <a> */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   box-sizing: border-box;
-  color: white; /* padrão */
-  background: linear-gradient(135deg,  #732d91, #8e44ad);
+  color: white;
+  /* padrão */
+  background: linear-gradient(135deg, #732d91, #8e44ad);
 }
 
 .button:hover {
-  background: linear-gradient(135deg,  #732d91, #8e44ad);
+  background: linear-gradient(135deg, #732d91, #8e44ad);
   transform: scale(1.05);
 }
 
 /* Botão cancelar com cor diferente */
 .cancelButton {
-  background: #ccc !important; /* use !important se necessário */
-  color: #000 !important;
+  background: #732d91 !important;
+  /* use !important se necessário */
+  color: #fff !important;
 }
 
 .cancelButton:hover {
@@ -137,8 +145,9 @@
 p {
   color: #fff;
   font-size: 1rem;
-  
+
 }
+
 a {
   color: #9a0ddb;
 }
