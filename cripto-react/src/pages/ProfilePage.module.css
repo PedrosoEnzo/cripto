@@ -114,11 +114,11 @@
   text-overflow: ellipsis;
   box-sizing: border-box;
   color: white; /* padrão */
-  background: linear-gradient(90deg, #3f025b, #b12092);
+  background: linear-gradient(135deg,  #732d91, #8e44ad);
 }
 
 .button:hover {
-  background: linear-gradient(90deg, #b12092, #3f025b);
+  background: linear-gradient(135deg,  #732d91, #8e44ad);
   transform: scale(1.05);
 }
 

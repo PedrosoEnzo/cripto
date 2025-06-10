@@ -77,7 +77,7 @@ const ProfileMenu = () => {
               </div>
             </>
           ) : (
-            <p>Carregando dados do usuário...</p>
+            <p></p>
           )}
 
           {usuario ? (
