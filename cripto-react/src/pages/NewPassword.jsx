@@ -1,19 +1,14 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom"; // Importe o useNavigate
 import "./NewPassword.module.css";
-import { useLocation } from "react-router-dom";
 
-function newPassword() {
+function NewPassword() {
   const [formData, setFormData] = useState({
     novaSenha: "",
     confirmarNovaSenha: "",
   });
-  const {state} = useLocation()
   const [mensagem, setMensagem] = useState(null);
-  const [erro, setErro] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  console.log(state.email)
+  const navigate = useNavigate(); // Inicialize o hook
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,54 +17,12 @@ function newPassword() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMensagem(null);
-    setErro(null);
-    setIsLoading(true);
-
-    // Validação básica
-    if (formData.novaSenha !== formData.confirmarNovaSenha) {
-      setErro("As senhas não coincidem.");
-      setIsLoading(false);
-      return;
-    }
-
-    if (formData.novaSenha.length < 6) {
-      setErro("A senha deve ter pelo menos 6 caracteres.");
-      setIsLoading(false);
-      return;
-    }
-
-    const token = sessionStorage.getItem("token");
-
-    fetch("http://localhost:5000/newPassword", {
-      method: "POST",
-      body: JSON.stringify({
-        novaSenha: formData.novaSenha,
-        email: state.email
-      }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          return res.json().then((err) => {
-            throw new Error(err.message || "Erro ao redefinir senha.");
-          });
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setMensagem("Senha alterada com sucesso!");
-        setFormData({
-          novaSenha: "",
-          confirmarNovaSenha: "",
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-        setErro(error.message || "Erro ao redefinir senha. Tente novamente.");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    setMensagem("Senha redefinida com sucesso!");
+    
+    // Redireciona após 2 segundos (2000 milissegundos)
+    setTimeout(() => {
+      navigate("/login"); // Redireciona para a rota de login
+    }, 2000);
   };
 
   return (
@@ -81,7 +34,6 @@ function newPassword() {
         </div>
 
         <form onSubmit={handleSubmit} className="reset-password-form">
-          {erro && <div className="message error">{erro}</div>}
           {mensagem && <div className="message success">{mensagem}</div>}
 
           <div className="form-group">
@@ -92,8 +44,6 @@ function newPassword() {
               name="novaSenha"
               value={formData.novaSenha}
               onChange={handleChange}
-              required
-              minLength="6"
               placeholder="Digite sua nova senha"
             />
           </div>
@@ -106,8 +56,6 @@ function newPassword() {
               name="confirmarNovaSenha"
               value={formData.confirmarNovaSenha}
               onChange={handleChange}
-              required
-              minLength="6"
               placeholder="Confirme sua nova senha"
             />
           </div>
@@ -115,16 +63,8 @@ function newPassword() {
           <button
             type="submit"
             className="submit-button"
-            disabled={isLoading}
           >
-            {isLoading ? (
-              <>
-                <div className="spinner"></div>
-                Processando...
-              </>
-            ) : (
-              "Redefinir Senha"
-            )}
+            Redefinir Senha
           </button>
         </form>
       </div>
@@ -132,4 +72,4 @@ function newPassword() {
   );
 }
 
-export default newPassword;
+export default NewPassword;

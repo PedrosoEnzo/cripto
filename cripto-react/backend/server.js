@@ -162,62 +162,31 @@ app.listen(PORT, () => {
 
 // Rotas para a validação e update das senhas
 
-app.post('/newPassword', async (req, res) => {
-  const { novaSenha, confirmarNovaSenha } = req.body;
-  const {email } = req.body;
-  console.log(email)
-
+router.post('/newPassword', async (req, res) => {
   try {
-    // Validações
-    if (novaSenha) {
-      return res.status(400).json({ 
-        alert: 'Por favor, preencha todos os campos.' 
-      });
+    const { novaSenha, email } = req.body;
+
+    // 1. Verificar se o usuário existe
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "Usuário não encontrado." });
     }
 
-    if (novaSenha !== confirmarNovaSenha) {
-      return res.status(400).json({ 
-        alert: 'As senhas não coincidem.' 
-      });
-    }
+    // 2. Criptografar a nova senha
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(novaSenha, salt);
 
-    if (novaSenha.length < 6) {
-      return res.status(400).json({ 
-        alert: 'A senha deve ter pelo menos 6 caracteres.' 
-      });
-    }
+    // 3. Atualizar a senha no banco de dados
+    user.password = hashedPassword;
+    await user.save();
 
-    // Verificar se a nova senha é diferente da atual
-    const [user] = await db.query('SELECT senha FROM usuarios WHERE email = ?', [email]);
-    
-    const senhaIgual = await bcrypt.compare(novaSenha, user[0].senha);
-    if (senhaIgual) {
-      return res.status(400).json({ 
-        alert: 'A nova senha não pode ser igual à senha atual.' 
-      });
-    }
-
-    // Hash da nova senha
-    const hashedPassword = await bcrypt.hash(novaSenha, 10);
-
-    // Atualiza a senha no banco de dados
-    await db.query(
-      'UPDATE usuarios SET senha = ? WHERE id = ?',
-      [hashedPassword, userId]
-    );
-
-    // Resposta de sucesso
-    res.status(200).json({ 
-      message: 'Senha alterada com sucesso!' 
-    });
-
+    // 4. Responder com sucesso
+    res.status(200).json({ message: "Senha alterada com sucesso!" });
   } catch (error) {
-    console.error('Erro ao redefinir senha:', error);
-    res.status(500).json({ 
-      alert: 'Erro ao redefinir senha. Tente novamente.',
-      error: error.message 
-    });
+    console.error("Erro ao alterar senha:", error);
+    res.status(500).json({ message: "Erro interno do servidor." });
   }
 });
+
 
 
