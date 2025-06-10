@@ -4,7 +4,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
 import PrivateRoute from "./components/PrivateRoute";
-import VLibras from "./components/Vlibras";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -96,8 +95,6 @@ function App() {
 
       {isLoggedIn && <Assistent apiKey={import.meta.env.VITE_GEMINI_API_KEY} />}
 
-      
-  <VLibras />
     </div>
   );
 }
